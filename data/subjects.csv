@@ -1,0 +1,6 @@
+namespace_organization,namespace_name,subject_name,kind,sex,race,ethnicity,vital_status,age_at_vital_status,associated_diagnoses
+STJUDE,PNOC,SUBJECT001,Participant,F,White,Not Hispanic or Latino,Alive,2555,Acute Lymphoblastic Leukemia
+TREEHOUSE,COMPBIO,SUBJECT002,Participant,M,Asian,Not reported,Dead,4380,Glioblastoma
+COG,AML0531,SUBJECT003,Participant,F,Black or African American,Hispanic or Latino,Alive,3650,Acute Myeloid Leukemia
+STJUDE,PNOC,SUBJECT004,Cell Line,U,Not Reported,Unknown,Unknown,,Neuroblastoma
+TREEHOUSE,COMPBIO,SUBJECT005,Organoid,F,White,Not Hispanic or Latino,Alive,1825,Medulloepithelioma

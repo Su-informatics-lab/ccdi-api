@@ -1,0 +1,6 @@
+namespace_organization,namespace_name,file_name,sample_namespace_organization,sample_namespace_name,sample_names,type,size,md5_checksum,description
+STJUDE,PNOC,RNASeq_001.fastq.gz,STJUDE,PNOC,SAMPLE001,FASTQ,1073741824,d41d8cd98f00b204e9800998ecf8427e,RNA sequencing raw reads
+TREEHOUSE,COMPBIO,WGS_002.bam,TREEHOUSE,COMPBIO,SAMPLE002,BAM,2147483648,e3b0c44298fc1c149afbf4c8996fb924,Whole genome sequencing aligned reads
+COG,AML0531,RNASeq_003.fastq.gz,COG,AML0531,SAMPLE003,FASTQ,536870912,da39a3ee5e6b4b0d3255bfef95601890,RNA sequencing raw reads
+STJUDE,PNOC,WXS_004.bam,STJUDE,PNOC,SAMPLE004,BAM,3221225472,5d41402abc4b2a76b9719d911017c592,Whole exome sequencing aligned reads
+TREEHOUSE,COMPBIO,scRNA_005.h5,TREEHOUSE,COMPBIO,SAMPLE005,HDF5,268435456,7d793037a0760186574b0282f2f435e7,Single cell RNA sequencing count matrix
