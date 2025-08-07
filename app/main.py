@@ -5,7 +5,7 @@ FastAPI implementation of the CCDI Data Federation Participating Nodes API.
 This API provides access to subjects, samples, files, and metadata.
 """
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import logging
@@ -74,14 +74,20 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include routers
-app.include_router(subject.router, prefix="/subject", tags=["Subject"])
-app.include_router(sample.router, prefix="/sample", tags=["Sample"])
-app.include_router(file.router, prefix="/file", tags=["File"])
-app.include_router(metadata.router, prefix="/metadata", tags=["Metadata"])
-app.include_router(namespace.router, prefix="/namespace", tags=["Namespace"])
-app.include_router(organization.router, prefix="/organization", tags=["Organization"])
-app.include_router(info.router, prefix="/info", tags=["Info"])
+# Create API router with v1 prefix
+api_v1_router = APIRouter(prefix="/api/v1")
+
+# Include all routers under the API v1 router
+api_v1_router.include_router(subject.router, prefix="/subject", tags=["Subject"])
+api_v1_router.include_router(sample.router, prefix="/sample", tags=["Sample"])
+api_v1_router.include_router(file.router, prefix="/file", tags=["File"])
+api_v1_router.include_router(metadata.router, prefix="/metadata", tags=["Metadata"])
+api_v1_router.include_router(namespace.router, prefix="/namespace", tags=["Namespace"])
+api_v1_router.include_router(organization.router, prefix="/organization", tags=["Organization"])
+api_v1_router.include_router(info.router, prefix="/info", tags=["Info"])
+
+# Include the API router in the main app
+app.include_router(api_v1_router)
 
 # Root endpoint
 @app.get("/", tags=["Root"])
