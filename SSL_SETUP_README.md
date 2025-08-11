@@ -6,8 +6,8 @@ This guide provides step-by-step instructions to set up SSL/TLS encryption for t
 
 ### Prerequisites
 
-1. **Domain**: ccdi.cis230185.projects.jetstream-cloud.org (configured and pointing to your server)
-2. **Email**: wang208@iu.edu (for Let's Encrypt notifications)
+1. **Domain**: (configured and pointing to your server)
+2. **Email**: (for Let's Encrypt notifications)
 3. **Certbot**: Already installed on Ubuntu server
 4. **Docker**: Docker and Docker Compose installed
 5. **Ports**: 80 and 443 open in firewall
