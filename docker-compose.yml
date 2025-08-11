@@ -1,10 +1,8 @@
-version: '3.8'
-
 services:
   ccdi-api:
     build: .
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"  # Internal port only, not exposed to host
     environment:
       - PYTHONPATH=/app
     volumes:
@@ -17,8 +15,9 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+    networks:
+      - ccdi-network
 
-  # Optional: Add nginx for production
   nginx:
     image: nginx:alpine
     ports:
@@ -28,5 +27,9 @@ services:
     depends_on:
       - ccdi-api
     restart: unless-stopped
-    profiles:
-      - production
+    networks:
+      - ccdi-network
+
+networks:
+  ccdi-network:
+    driver: bridge
