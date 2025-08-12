@@ -39,7 +39,8 @@ This is a Python FastAPI server that implements the CCDI (Childhood Cancer Data 
 
 1. **Install dependencies**:
    ```bash
-   # Dependencies are already installed via uv
+   # Dependencies are managed via uv
+   uv sync
    ```
 
 2. **Start the server**:
