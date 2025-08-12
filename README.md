@@ -37,7 +37,7 @@ This is a Python FastAPI server that implements the CCDI (Childhood Cancer Data 
 
 ## Quick Start
 
-1. **Install dependencies**:
+1. **Install dependencies**:  
    Install uv first if necessary, [uv installation](https://docs.astral.sh/uv/getting-started/installation/#installation-methods)
    ```bash
    # Dependencies are managed via uv
