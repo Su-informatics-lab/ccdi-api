@@ -1,0 +1,2 @@
+# Test dependencies for CCDI API test suite
+requests>=2.28.0
