@@ -98,13 +98,13 @@ async def root():
         "version": "v1.2.0",
         "description": "API for accessing CCDI federated data",
         "endpoints": {
-            "subjects": "/subject",
-            "samples": "/sample", 
-            "files": "/file",
-            "metadata": "/metadata",
-            "namespaces": "/namespace",
-            "organizations": "/organization",
-            "info": "/info",
+            "subjects": "/api/v1/subject",
+            "samples": "/api/v1/sample",
+            "files": "/api/v1/file",
+            "metadata": "/api/v1/metadata",
+            "namespaces": "/api/v1/namespace",
+            "organizations": "/api/v1/organization",
+            "info": "/api/v1/info",
             "docs": "/docs",
             "openapi": "/openapi.json"
         }
