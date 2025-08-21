@@ -64,6 +64,8 @@ This directory contains CSV files that serve as the data source for the CCDI (Ch
 | `library_strategy` | String | Sequencing library strategy (e.g., "RNA-Seq", "WGS", "WXS") |
 | `library_source_material` | String | Source material type ("Bulk Tissue", "Bulk Cells") |
 | `preservation_method` | String | Sample preservation method ("Fresh", "FFPE", "Frozen") |
+| `tumor_grade` | String | Tumor grade classification ("G1 Low Grade", "G2 Intermediate Grade", "G3 High Grade", "G4 Anaplastic", "Not Applicable") |
+| `specimen_molecular_analyte_type` | String | Type of molecular analyte extracted ("DNA", "RNA", "Protein") |
 | `diagnosis` | String | Specific diagnosis for this sample |
 | `age_at_diagnosis` | Integer | Age in days at time of diagnosis |
 | `age_at_collection` | Integer | Age in days when sample was collected |

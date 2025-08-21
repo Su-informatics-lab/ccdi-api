@@ -1,7 +1,7 @@
-namespace_organization,namespace_name,sample_name,subject_namespace_organization,subject_namespace_name,subject_name,disease_phase,tissue_type,tumor_classification,anatomical_sites,library_strategy,library_source_material,preservation_method,diagnosis,age_at_diagnosis,age_at_collection
-STJUDE,PNOC,SAMPLE001,STJUDE,PNOC,SUBJECT001,Initial Diagnosis,Tumor,Primary,Brain,RNA-Seq,Bulk Tissue,Fresh,Acute Lymphoblastic Leukemia,2555,2600
-TREEHOUSE,COMPBIO,SAMPLE002,TREEHOUSE,COMPBIO,SUBJECT002,Progression,Tumor,Metastatic,Brain,WGS,Bulk Tissue,FFPE,Glioblastoma Multiforme,4015,4380
-COG,AML0531,SAMPLE003,COG,AML0531,SUBJECT003,Relapse,Tumor,Primary,Bone Marrow,RNA-Seq,Bulk Cells,Fresh,Acute Myeloid Leukemia,3285,3650
-STJUDE,PNOC,SAMPLE004,STJUDE,PNOC,SUBJECT001,Initial Diagnosis,Normal,Not Reported,Brain,WXS,Bulk Tissue,Frozen,Acute Lymphoblastic Leukemia,2555,2700
-TREEHOUSE,COMPBIO,SAMPLE005,TREEHOUSE,COMPBIO,SUBJECT002,Refractory,Tumor,Regional,Brain,RNA-Seq,Single-cells,Fresh,Glioblastoma,4015,4200
-COG,AML0531,SAMPLE006,COG,AML0531,SUBJECT003,Progression,Peritumoral,Primary,Bone Marrow,WGS,Bulk Tissue,FFPE,Acute Myeloid Leukemia,3285,3500
+namespace_organization,namespace_name,sample_name,subject_namespace_organization,subject_namespace_name,subject_name,disease_phase,tissue_type,tumor_classification,anatomical_sites,library_strategy,library_source_material,preservation_method,tumor_grade,specimen_molecular_analyte_type,diagnosis,age_at_diagnosis,age_at_collection
+STJUDE,PNOC,SAMPLE001,STJUDE,PNOC,SUBJECT001,Initial Diagnosis,Tumor,Primary,Brain,RNA-Seq,Bulk Tissue,Fresh,G2 Intermediate Grade,RNA,Acute Lymphoblastic Leukemia,2555,2600
+TREEHOUSE,COMPBIO,SAMPLE002,TREEHOUSE,COMPBIO,SUBJECT002,Progression,Tumor,Metastatic,Brain,WGS,Bulk Tissue,FFPE,G4 Anaplastic,DNA,Glioblastoma Multiforme,4015,4380
+COG,AML0531,SAMPLE003,COG,AML0531,SUBJECT003,Relapse,Tumor,Primary,Bone Marrow,RNA-Seq,Bulk Cells,Fresh,G3 High Grade,RNA,Acute Myeloid Leukemia,3285,3650
+STJUDE,PNOC,SAMPLE004,STJUDE,PNOC,SUBJECT001,Initial Diagnosis,Normal,Not Reported,Brain,WXS,Bulk Tissue,Frozen,Not Applicable,DNA,Acute Lymphoblastic Leukemia,2555,2700
+TREEHOUSE,COMPBIO,SAMPLE005,TREEHOUSE,COMPBIO,SUBJECT002,Refractory,Tumor,Regional,Brain,RNA-Seq,Single-cells,Fresh,G3 High Grade,RNA,Glioblastoma,4015,4200
+COG,AML0531,SAMPLE006,COG,AML0531,SUBJECT003,Progression,Peritumoral,Primary,Bone Marrow,WGS,Bulk Tissue,FFPE,G2 Intermediate Grade,DNA,Acute Myeloid Leukemia,3285,3500
