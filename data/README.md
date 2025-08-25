@@ -45,6 +45,7 @@ This directory contains CSV files that serve as the data source for the CCDI (Ch
 | `ethnicity` | String | Ethnicity category (e.g., "Not Hispanic or Latino", "Hispanic or Latino", "Unknown") |
 | `vital_status` | String | Current vital status ("Alive", "Dead", "Unknown") |
 | `age_at_vital_status` | Integer | Age in days at the time of vital status determination (empty for cell lines) |
+| `identifiers` | String | External identifier for the subject (e.g., study-specific ID, medical record number) |
 | `associated_diagnoses` | String | Primary diagnosis or cancer type |
 
 ### samples.csv
