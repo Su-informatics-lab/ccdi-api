@@ -1,6 +1,505 @@
-namespace_organization,namespace_name,subject_name,kind,sex,race,ethnicity,vital_status,age_at_vital_status,identifiers,associated_diagnoses
-STJUDE,PNOC,SUBJECT001,Participant,F,White,Not Hispanic or Latino,Alive,2555,PNOC-001,Acute Lymphoblastic Leukemia
-TREEHOUSE,COMPBIO,SUBJECT002,Participant,M,Asian,Not reported,Dead,4380,TH-COMP-002,Glioblastoma
-COG,AML0531,SUBJECT003,Participant,F,Black or African American,Hispanic or Latino,Alive,3650,AML0531-003,Acute Myeloid Leukemia
-STJUDE,PNOC,SUBJECT004,Cell Line,U,Not Reported,Unknown,Unknown,,PNOC-CL-004,Neuroblastoma
-TREEHOUSE,COMPBIO,SUBJECT005,Organoid,F,White,Not Hispanic or Latino,Alive,1825,TH-ORG-005,Medulloepithelioma
+namespace_organization,namespace_name,subject_name,kind,sex,race,ethnicity,vital_status,age_at_vital_status,associated_diagnosis
+IUSCCC,PST001,535,Participant,M,Unknown,Unknown,Unknown,0,Secondary malignant neoplasm of lung
+IUSCCC,PST001,358,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,359,Participant,F,Unknown,Unknown,Dead,6491.0,"Malignant neoplasm of pelvic bones, sacrum and coccyx"
+IUSCCC,PST001,372,Participant,F,Unknown,Unknown,Unknown,0,Secondary malignant neoplastic disease
+IUSCCC,PST001,434,Participant,F,Unknown,Unknown,Dead,2990.0,Malignant neoplasm of cerebrum (excluding lobes and ventricles)
+IUSCCC,PST001,494,Participant,F,Unknown,Unknown,Unknown,0,Neoplasm of brain
+IUSCCC,PST001,373,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,364,Participant,M,Unknown,Unknown,Dead,3479.0,Malignant tumor of adrenal gland
+IUSCCC,PST001,367,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,368,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of kidney
+IUSCCC,PST001,369,Participant,M,Unknown,Unknown,Unknown,0,Neoplasm of digestive system
+IUSCCC,PST001,502,Participant,F,Unknown,Unknown,Dead,1454.0,Malignant tumor of kidney
+IUSCCC,PST001,531,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of ribs and/or sternum and/or clavicle
+IUSCCC,PST001,537,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,539,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of adrenal gland
+IUSCCC,PST001,436,Participant,F,Unknown,Unknown,Dead,146.0,Malignant neoplasm of cerebrum (excluding lobes and ventricles)
+IUSCCC,PST001,375,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,536,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of adrenal gland
+IUSCCC,PST001,459,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,529,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of connective and soft tissue of upper limb and shoulder
+IUSCCC,PST001,442,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,512,Participant,M,Unknown,Unknown,Unknown,0,"Malignant neoplasm of upper lobe, bronchus or lung"
+IUSCCC,PST001,379,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of connective and soft tissue of hip and lower limb
+IUSCCC,PST001,380,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebellum
+IUSCCC,PST001,381,Participant,F,Unknown,Unknown,Dead,4477.0,Malignant tumor of ovary
+IUSCCC,PST001,374,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,503,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of abdomen
+IUSCCC,PST001,478,Participant,F,Unknown,Unknown,Dead,5044.0,Malignant neoplasm of brain
+IUSCCC,PST001,530,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,477,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,528,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,408,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebral meninges
+IUSCCC,PST001,432,Participant,M,Unknown,Unknown,Unknown,0,Neoplasm of digestive system
+IUSCCC,PST001,393,Participant,F,Unknown,Unknown,Unknown,0,Secondary malignant neoplasm of pleura
+IUSCCC,PST001,383,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of connective and soft tissue of hip and lower limb
+IUSCCC,PST001,294,Participant,F,Unknown,Unknown,Unspecified,6672.0,"Malignant neoplasm of pelvic bones, sacrum and coccyx"
+IUSCCC,PST001,389,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of ovary
+IUSCCC,PST001,390,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebral meninges
+IUSCCC,PST001,392,Participant,F,Unknown,Unknown,Dead,5719.0,"Malignant neoplasm of pelvic bones, sacrum and coccyx"
+IUSCCC,PST001,396,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of lower limb
+IUSCCC,PST001,398,Participant,F,Unknown,Unknown,Dead,2619.0,Malignant tumor of lung
+IUSCCC,PST001,505,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of central nervous system
+IUSCCC,PST001,532,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of optic nerve
+IUSCCC,PST001,534,Participant,F,Unknown,Unknown,Dead,1719.0,Malignant neoplasm of central nervous system
+IUSCCC,PST001,204,Participant,M,Unknown,Unknown,Unknown,0,Acute lymphoid leukemia
+IUSCCC,PST001,205,Participant,M,Unknown,Unknown,Unspecified,3529.0,Malignant tumor of pelvis
+IUSCCC,PST001,456,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,428,Participant,M,Unknown,Unknown,Dead,3182.0,Malignant neoplasm of temporal lobe
+IUSCCC,PST001,527,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebellum
+IUSCCC,PST001,129,Participant,M,White,Not Hispanic or Latino,Unknown,0,Malignant neoplasm of mandible
+IUSCCC,PST001,448,Participant,M,Unknown,Unknown,Unknown,0,Liver cell carcinoma
+IUSCCC,PST001,452,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of skin of upper limb and shoulder
+IUSCCC,PST001,444,Participant,F,Unknown,Unknown,Dead,6345.0,Secondary malignant neoplasm of lymph nodes of upper limb
+IUSCCC,PST001,237,Participant,F,Black or African American,Not Hispanic or Latino,Dead,4840.0,Primary malignant neoplasm of upper limb bones and scapula
+IUSCCC,PST001,500,Participant,M,Unknown,Unknown,Unknown,0,Secondary malignant neoplasm of bone marrow
+IUSCCC,PST001,351,Participant,M,White,Unknown,Unspecified,6040.0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,429,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of adrenal gland
+IUSCCC,PST001,284,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brainstem
+IUSCCC,PST001,438,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,417,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,406,Participant,M,Unknown,Unknown,Unknown,0,Primary malignant neoplasm
+IUSCCC,PST001,445,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of thyroid gland
+IUSCCC,PST001,533,Participant,F,Unknown,Unknown,Unknown,0,Overlapping malignant neoplasm of pancreas
+IUSCCC,PST001,394,Participant,F,Unknown,Unknown,Unknown,0,Acute lymphoid leukemia
+IUSCCC,PST001,403,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of retromolar area
+IUSCCC,PST001,449,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of parietal lobe
+IUSCCC,PST001,457,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,538,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,416,Participant,M,Unknown,Unknown,Unknown,0,Malignant mesothelioma of pleura
+IUSCCC,PST001,443,Participant,F,Unknown,Unknown,Dead,1321.0,Malignant neoplasm of frontal lobe
+IUSCCC,PST001,508,Participant,F,Unknown,Unknown,Unknown,0,Primary malignant neoplasm of cerebellum
+IUSCCC,PST001,453,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of spinal cord
+IUSCCC,PST001,484,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,409,Participant,M,Unknown,Unknown,Unknown,0,"Malignant neoplasm of pelvic bones, sacrum and coccyx"
+IUSCCC,PST001,437,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,430,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,472,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of adrenal gland
+IUSCCC,PST001,384,Participant,M,Unknown,Hispanic or Latino,Unknown,0,Primary malignant neoplasm
+IUSCCC,PST001,223,Participant,F,Unknown,Unknown,Unknown,0,Leukemia
+IUSCCC,PST001,206,Participant,F,Unknown,Unknown,Unknown,0,Primary malignant neoplasm of spinal cord
+IUSCCC,PST001,222,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,213,Participant,F,Unknown,Unknown,Unknown,0,B-cell acute lymphoblastic leukemia
+IUSCCC,PST001,202,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of skin of lower limb and hip
+IUSCCC,PST001,224,Participant,F,Unknown,Unknown,Unspecified,5206.0,Renal cell carcinoma
+IUSCCC,PST001,455,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,320,Participant,F,Unknown,Unknown,Unknown,0,Primary malignant neoplasm of orbit
+IUSCCC,PST001,38,Participant,F,Unknown,Unknown,Unknown,0,Non-rhabdomyosarcoma soft tissue sarcoma
+IUSCCC,PST001,463,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,355,Participant,F,Unknown,Unknown,Unknown,0,Neuroblastoma
+IUSCCC,PST001,343,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,337,Participant,M,Unknown,Unknown,Unknown,0,B-cell acute lymphoblastic leukemia
+IUSCCC,PST001,349,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of anterior wall of nasopharynx
+IUSCCC,PST001,40,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of pineal gland
+IUSCCC,PST001,69,Participant,F,Unknown,Unknown,Unknown,0,Embryonal rhabdomyosarcoma
+IUSCCC,PST001,13,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of temporal lobe
+IUSCCC,PST001,14,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,16,Participant,M,Unknown,Unknown,Dead,2353.0,Embryonal rhabdomyosarcoma
+IUSCCC,PST001,21,Participant,M,Unknown,Unknown,Unspecified,5130.0,Secondary malignant neoplasm of liver and intrahepatic bile duct
+IUSCCC,PST001,32,Participant,F,Unknown,Unknown,Unknown,0,Pineal tumor
+IUSCCC,PST001,24,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of ill-defined site
+IUSCCC,PST001,49,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of thymus
+IUSCCC,PST001,145,Participant,M,Unknown,Unknown,Unspecified,2493.0,Nephroblastoma
+IUSCCC,PST001,59,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,71,Participant,F,Unknown,Unknown,Unknown,0,Primary malignant neoplasm of brain stem
+IUSCCC,PST001,79,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brainstem
+IUSCCC,PST001,22,Participant,M,Unknown,Unknown,Unknown,0,"Acute myeloid leukemia, disease"
+IUSCCC,PST001,35,Participant,M,Unknown,Unknown,Unknown,0,Primary malignant neoplasm
+IUSCCC,PST001,46,Participant,M,Unknown,Unknown,Unknown,0,"Hodgkin's disease, nodular sclerosis of lymph nodes of head, face AND/OR neck"
+IUSCCC,PST001,517,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of peripheral nerve of thorax
+IUSCCC,PST001,193,Participant,M,White,Not Hispanic or Latino,Unspecified,4092.0,T-cell acute lymphoblastic leukemia
+IUSCCC,PST001,66,Participant,M,Unknown,Unknown,Dead,4834.0,Malignant neoplastic disease
+IUSCCC,PST001,70,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,77,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of optic nerve
+IUSCCC,PST001,78,Participant,M,Unknown,Unknown,Unknown,0,Common acute lymphoblastic leukemia
+IUSCCC,PST001,6,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebral ventricles
+IUSCCC,PST001,226,Participant,M,Black or African American,Not Hispanic or Latino,Unknown,0,"Acute myeloid leukemia, disease"
+IUSCCC,PST001,227,Participant,F,White,Not Hispanic or Latino,Dead,4221.0,Malignant neoplasm of brain
+IUSCCC,PST001,19,Participant,F,Unknown,Unknown,Unknown,0,Primary malignant neoplasm of the peritoneum
+IUSCCC,PST001,30,Participant,M,Unknown,Unknown,Dead,1279.0,Neuroblastoma
+IUSCCC,PST001,37,Participant,F,Unknown,Unknown,Unknown,0,Neoplasm of digestive system
+IUSCCC,PST001,41,Participant,M,Unknown,Unknown,Unspecified,5856.0,Primary malignant neoplasm
+IUSCCC,PST001,36,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of bones of skull and face
+IUSCCC,PST001,315,Participant,M,White,Not Hispanic or Latino,Unspecified,3088.0,Malignant neoplasm of brain
+IUSCCC,PST001,87,Participant,M,Black or African American,Hispanic or Latino,Unspecified,6599.0,Non-rhabdomyosarcoma soft tissue sarcoma
+IUSCCC,PST001,385,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of connective and soft tissue of hip and lower limb
+IUSCCC,PST001,391,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of frontal lobe
+IUSCCC,PST001,96,Participant,M,White,Not Hispanic or Latino,Unknown,0,Retinoblastoma
+IUSCCC,PST001,110,Participant,M,White,Hispanic or Latino,Unknown,0,Malignant neoplasm of cerebellum
+IUSCCC,PST001,123,Participant,M,White,Not Hispanic or Latino,Unspecified,6072.0,Malignant neoplasm of brain
+IUSCCC,PST001,125,Participant,F,White,Not Hispanic or Latino,Unknown,0,B-cell acute lymphoblastic leukemia
+IUSCCC,PST001,370,Participant,F,White,Hispanic or Latino,Unknown,0,Primary malignant neoplasm of soft tissues
+IUSCCC,PST001,400,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of connective and soft tissue of upper limb and shoulder
+IUSCCC,PST001,395,Participant,F,Unknown,Unknown,Dead,5469.0,Secondary malignant neoplasm of lung
+IUSCCC,PST001,203,Participant,M,Unknown,Unknown,Unknown,0,Neuroblastoma
+IUSCCC,PST001,218,Participant,M,Unknown,Unknown,Unknown,0,Acute lymphoid leukemia
+IUSCCC,PST001,386,Participant,M,Unknown,Unknown,Dead,5711.0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,76,Participant,M,Unknown,Unknown,Unknown,0,Nephroblastoma
+IUSCCC,PST001,466,Participant,M,Unknown,Unknown,Unknown,0,"Malignant neoplasm of head, neck and face"
+IUSCCC,PST001,344,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,338,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of frontal lobe
+IUSCCC,PST001,3,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,266,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebellum
+IUSCCC,PST001,526,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of ovary
+IUSCCC,PST001,62,Participant,F,Unknown,Unknown,Unknown,0,T-cell acute lymphoblastic leukemia
+IUSCCC,PST001,454,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,56,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of bone
+IUSCCC,PST001,119,Participant,U,Unknown,Unknown,Unknown,0,Diffuse large B-cell lymphoma
+IUSCCC,PST001,81,Participant,M,Unknown,Unknown,Unknown,0,"Acute myeloid leukemia, disease"
+IUSCCC,PST001,167,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebral ventricles
+IUSCCC,PST001,120,Participant,M,Unknown,Unknown,Unknown,0,Acute leukemia
+IUSCCC,PST001,126,Participant,M,Unknown,Unknown,Unknown,0,Acute lymphoid leukemia
+IUSCCC,PST001,131,Participant,M,Unknown,Unknown,Dead,3789.0,Malignant neoplastic disease
+IUSCCC,PST001,148,Participant,F,Unknown,Unknown,Dead,6827.0,Malignant melanoma of scalp and/or neck
+IUSCCC,PST001,152,Participant,M,Unknown,Unknown,Unknown,0,Leukemia
+IUSCCC,PST001,112,Participant,M,Unknown,Unknown,Unknown,0,Fibrohistiocytic tumor
+IUSCCC,PST001,212,Participant,M,Unknown,Unknown,Unknown,0,Neoplasm of brain
+IUSCCC,PST001,185,Participant,M,Unknown,Unknown,Unknown,0,T-cell acute lymphoblastic leukemia
+IUSCCC,PST001,103,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of connective and soft tissue of upper limb and shoulder
+IUSCCC,PST001,156,Participant,M,Unknown,Unknown,Unknown,0,"Acute myeloid leukemia, disease"
+IUSCCC,PST001,160,Participant,M,Unknown,Unknown,Unknown,0,Alveolar rhabdomyosarcoma
+IUSCCC,PST001,104,Participant,M,Unknown,Unknown,Unspecified,7763.0,Primary malignant neoplasm of nervous system
+IUSCCC,PST001,142,Participant,M,Unknown,Unknown,Unknown,0,Neoplasm of digestive system
+IUSCCC,PST001,97,Participant,F,Unknown,Unknown,Unknown,0,Tumor lysis syndrome
+IUSCCC,PST001,186,Participant,M,Unknown,Unknown,Unknown,0,Neuroblastoma
+IUSCCC,PST001,196,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of retina
+IUSCCC,PST001,230,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of adrenal gland
+IUSCCC,PST001,246,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of orbital bone
+IUSCCC,PST001,256,Participant,M,Unknown,Unknown,Unknown,0,B-cell acute lymphoblastic leukemia
+IUSCCC,PST001,264,Participant,M,Unknown,Unknown,Dead,6912.0,Malignant neoplasm of connective and soft tissue of hip and lower limb
+IUSCCC,PST001,283,Participant,M,Unknown,Unknown,Dead,5457.0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,175,Participant,M,Unknown,Unknown,Unknown,0,Anaplastic large T-cell systemic malignant lymphoma
+IUSCCC,PST001,177,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,190,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebrum (excluding lobes and ventricles)
+IUSCCC,PST001,195,Participant,F,Unknown,Unknown,Unknown,0,B-cell acute lymphoblastic leukemia
+IUSCCC,PST001,248,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of brainstem
+IUSCCC,PST001,255,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of connective and soft tissue of upper limb and shoulder
+IUSCCC,PST001,257,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of short bone of lower limb
+IUSCCC,PST001,191,Participant,M,Unknown,Unknown,Unknown,0,Large cell anaplastic lymphoma
+IUSCCC,PST001,180,Participant,M,Black or African American,Not Hispanic or Latino,Unspecified,6403.0,T-cell acute lymphoblastic leukemia
+IUSCCC,PST001,201,Participant,F,White,Not Hispanic or Latino,Unknown,0,Neoplasm of brain
+IUSCCC,PST001,163,Participant,M,Black or African American,Not Hispanic or Latino,Unspecified,8592.0,Primary malignant neoplasm of kidney
+IUSCCC,PST001,23,Participant,F,Black or African American,Not Hispanic or Latino,Unspecified,5194.0,Leukemia
+IUSCCC,PST001,48,Participant,F,White,Not Hispanic or Latino,Unspecified,4292.0,Neoplasm of brain
+IUSCCC,PST001,63,Participant,F,Black or African American,Not Hispanic or Latino,Unspecified,1836.0,Malignant neoplasm of brain
+IUSCCC,PST001,92,Participant,M,White,Not Hispanic or Latino,Unspecified,6929.0,Malignant neoplasm of brain
+IUSCCC,PST001,140,Participant,F,White,Not Hispanic or Latino,Unspecified,6374.0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,141,Participant,F,White,Not Hispanic or Latino,Unspecified,5321.0,Secondary malignant neoplasm of lung
+IUSCCC,PST001,138,Participant,F,Unknown,Unknown,Unspecified,1090.0,Medulloblastoma
+IUSCCC,PST001,154,Participant,M,White,Not Hispanic or Latino,Unspecified,1157.0,Neuroblastoma
+IUSCCC,PST001,117,Participant,F,Unknown,Unknown,Unknown,0,Secondary malignant neoplasm of bone
+IUSCCC,PST001,250,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brainstem
+IUSCCC,PST001,53,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of adrenal gland
+IUSCCC,PST001,207,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,461,Participant,F,Unknown,Unknown,Unknown,0,Embryonal rhabdomyosarcoma
+IUSCCC,PST001,467,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,519,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,498,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,73,Participant,F,Unknown,Unknown,Unknown,0,Acute lymphoid leukemia
+IUSCCC,PST001,54,Participant,M,Unknown,Unknown,Unknown,0,Neoplasm of brain
+IUSCCC,PST001,93,Participant,M,Unknown,Unknown,Unknown,0,Histiocytic sarcoma (clinical)
+IUSCCC,PST001,357,Participant,U,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,236,Participant,F,Unknown,Not Hispanic or Latino,Unknown,0,Disorder of optic chiasm due to neoplasm
+IUSCCC,PST001,469,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,495,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of head of pancreas
+IUSCCC,PST001,127,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,260,Participant,F,Unknown,Unknown,Dead,7289.0,Malignant neoplastic disease
+IUSCCC,PST001,130,Participant,F,Unknown,Unknown,Unknown,0,"Acute myeloid leukemia, disease"
+IUSCCC,PST001,261,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brainstem
+IUSCCC,PST001,281,Participant,F,Unknown,Unknown,Unknown,0,Nephroblastoma
+IUSCCC,PST001,285,Participant,M,Unknown,Unknown,Dead,8608.0,Malignant neoplasm of bone
+IUSCCC,PST001,136,Participant,F,Unknown,Unknown,Unspecified,6307.0,Common acute lymphoblastic leukemia
+IUSCCC,PST001,159,Participant,F,Unknown,Unknown,Unknown,0,Chronic leukemia
+IUSCCC,PST001,161,Participant,M,Unknown,Unknown,Unspecified,1536.0,Hepatoblastoma
+IUSCCC,PST001,247,Participant,M,Unknown,Unknown,Dead,2411.0,Malignant neoplasm of brain
+IUSCCC,PST001,258,Participant,F,Unknown,Unknown,Unknown,0,Nephroblastoma
+IUSCCC,PST001,491,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of spinal cord
+IUSCCC,PST001,268,Participant,M,Unknown,Unknown,Dead,6939.0,Malignant tumor of pleura
+IUSCCC,PST001,272,Participant,F,Unknown,Unknown,Unspecified,5032.0,Malignant neoplasm of peripheral nerves and autonomic nervous system
+IUSCCC,PST001,276,Participant,M,Unknown,Unknown,Unknown,0,Non-rhabdomyosarcoma soft tissue sarcoma
+IUSCCC,PST001,55,Participant,M,Unknown,Unknown,Unknown,0,Overlapping malignant neoplasm of brain
+IUSCCC,PST001,253,Participant,M,Unknown,Unknown,Unknown,0,Precursor T-cell lymphoblastic lymphoma
+IUSCCC,PST001,269,Participant,M,Unknown,Unknown,Unknown,0,Fibrohistiocytic tumor
+IUSCCC,PST001,277,Participant,M,Unknown,Unknown,Unknown,0,Secondary malignant neoplasm of lung
+IUSCCC,PST001,325,Participant,M,Unknown,Unknown,Unknown,0,B-cell acute lymphoblastic leukemia
+IUSCCC,PST001,336,Participant,M,Unknown,Unknown,Unknown,0,Brain tumor
+IUSCCC,PST001,292,Participant,M,Unknown,Unknown,Unspecified,5585.0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,318,Participant,F,Unknown,Unknown,Dead,4737.0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,271,Participant,M,Unknown,Unknown,Unknown,0,Acute lymphoid leukemia
+IUSCCC,PST001,306,Participant,F,Unknown,Unknown,Unknown,0,Neuroblastoma
+IUSCCC,PST001,291,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of spinal cord
+IUSCCC,PST001,301,Participant,F,Unknown,Unknown,Unknown,0,Malignant neuroendocrine tumor
+IUSCCC,PST001,313,Participant,M,Unknown,Unknown,Unknown,0,Juvenile myelomonocytic leukemia
+IUSCCC,PST001,314,Participant,M,Unknown,Unknown,Dead,7135.0,Malignant neoplasm of bone
+IUSCCC,PST001,287,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,312,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,471,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,302,Participant,F,Unknown,Unknown,Unknown,0,Gastrointestinal stromal tumor of stomach
+IUSCCC,PST001,279,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,169,Participant,F,Unknown,Unknown,Unknown,0,Acute leukemia
+IUSCCC,PST001,411,Participant,F,Unknown,Unknown,Unknown,0,Secondary malignant neoplasm of liver and intrahepatic bile duct
+IUSCCC,PST001,139,Participant,F,Unknown,Unknown,Unknown,0,Primary malignant neoplasm of cranial nerve
+IUSCCC,PST001,17,Participant,M,White,Not Hispanic or Latino,Unknown,0,Embryonal rhabdomyosarcoma
+IUSCCC,PST001,20,Participant,F,White,Not Hispanic or Latino,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,28,Participant,M,Black or African American,Not Hispanic or Latino,Dead,2145.0,Alveolar rhabdomyosarcoma
+IUSCCC,PST001,231,Participant,F,White,Not Hispanic or Latino,Unknown,0,Precursor T-cell lymphoblastic lymphoma
+IUSCCC,PST001,496,Participant,M,White,Hispanic or Latino,Unknown,0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,330,Participant,M,White,Not Hispanic or Latino,Unknown,0,Acute lymphoid leukemia
+IUSCCC,PST001,346,Participant,M,White,Not Hispanic or Latino,Unspecified,7298.0,Malignant neoplasm of bone
+IUSCCC,PST001,4,Participant,F,White,Not Hispanic or Latino,Unspecified,6262.0,Malignant tumor of lymphoid hemopoietic and related tissue
+IUSCCC,PST001,476,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,173,Participant,F,Unknown,Unknown,Unknown,0,Leukemia
+IUSCCC,PST001,410,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,172,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of mediastinum
+IUSCCC,PST001,176,Participant,M,Unknown,Unknown,Unknown,0,Non-rhabdomyosarcoma soft tissue sarcoma
+IUSCCC,PST001,501,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,179,Participant,M,Unknown,Unknown,Unknown,0,Tumor lysis syndrome
+IUSCCC,PST001,215,Participant,M,Unknown,Unknown,Dead,3476.0,Neuroblastoma
+IUSCCC,PST001,122,Participant,M,Unknown,Unknown,Unknown,0,Common acute lymphoblastic leukemia
+IUSCCC,PST001,415,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebrum (excluding lobes and ventricles)
+IUSCCC,PST001,497,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of bones of skull and face
+IUSCCC,PST001,249,Participant,F,Unknown,Unknown,Unspecified,2977.0,Overlapping malignant neoplasm of brain
+IUSCCC,PST001,251,Participant,M,Unknown,Unknown,Dead,7482.0,Malignant neoplasm of parietal lobe
+IUSCCC,PST001,307,Participant,M,Unknown,Unknown,Unspecified,6955.0,T-cell acute lymphoblastic leukemia
+IUSCCC,PST001,426,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebral ventricles
+IUSCCC,PST001,420,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of pineal gland
+IUSCCC,PST001,333,Participant,F,Unknown,Unknown,Unspecified,2058.0,Pleuropulmonary blastoma
+IUSCCC,PST001,334,Participant,M,Unknown,Not Hispanic or Latino,Unspecified,3638.0,Neuroblastoma
+IUSCCC,PST001,340,Participant,M,Unknown,Unknown,Unknown,0,Primary malignant neoplasm of brain stem
+IUSCCC,PST001,509,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,51,Participant,F,Unknown,Unknown,Dead,3289.0,Glioblastoma multiforme
+IUSCCC,PST001,422,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of temporal lobe
+IUSCCC,PST001,289,Participant,F,Unknown,Unknown,Unknown,0,Primary malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,47,Participant,M,White,Not Hispanic or Latino,Unspecified,9401.0,Non-rhabdomyosarcoma soft tissue sarcoma
+IUSCCC,PST001,50,Participant,F,White,Not Hispanic or Latino,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,345,Participant,M,White,Not Hispanic or Latino,Dead,4080.0,Malignant neoplasm of brainstem
+IUSCCC,PST001,440,Participant,F,Unknown,Unknown,Unknown,0,Secondary malignant neoplasm of bone
+IUSCCC,PST001,61,Participant,M,Unknown,Unknown,Unknown,0,Leukemia
+IUSCCC,PST001,68,Participant,F,White,Not Hispanic or Latino,Unspecified,7321.0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,86,Participant,F,White,Hispanic or Latino,Unspecified,2059.0,"Acute myeloid leukemia, disease"
+IUSCCC,PST001,52,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebellum
+IUSCCC,PST001,418,Participant,F,Unknown,Unknown,Dead,2071.0,Malignant tumor of pineal gland
+IUSCCC,PST001,419,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brainstem
+IUSCCC,PST001,121,Participant,M,Unknown,Unknown,Unspecified,5355.0,Malignant neoplasm of connective and soft tissue of hip and lower limb
+IUSCCC,PST001,487,Participant,F,Unknown,Unknown,Unknown,0,Primary malignant neoplasm
+IUSCCC,PST001,424,Participant,F,Unknown,Unknown,Unknown,0,Primary malignant neoplasm
+IUSCCC,PST001,504,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,165,Participant,F,Unknown,Unknown,Unknown,0,Secondary malignant neoplasm of bone
+IUSCCC,PST001,182,Participant,M,Unknown,Unknown,Unspecified,1581.0,Non-rhabdomyosarcoma soft tissue sarcoma
+IUSCCC,PST001,189,Participant,M,Unknown,Unknown,Unknown,0,Peripheral T-cell lymphoma (clinical)
+IUSCCC,PST001,481,Participant,M,Unknown,Unknown,Unknown,0,Overlapping malignant neoplasm of brain
+IUSCCC,PST001,423,Participant,F,Unknown,Unknown,Dead,3053.0,Malignant neoplasm of brain
+IUSCCC,PST001,464,Participant,M,Unknown,Unknown,Unknown,0,Secondary malignant neoplasm of bone
+IUSCCC,PST001,515,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of kidney
+IUSCCC,PST001,326,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of temporal lobe
+IUSCCC,PST001,74,Participant,F,Unknown,Unknown,Unspecified,5629.0,Malignant neoplasm of upper limb bones and scapula
+IUSCCC,PST001,376,Participant,F,Unknown,Unknown,Unknown,0,Primary malignant neoplasm of kidney
+IUSCCC,PST001,84,Participant,M,Unknown,Unknown,Unspecified,2508.0,Burkitt's lymphoma (clinical)
+IUSCCC,PST001,113,Participant,F,Unknown,Unknown,Unknown,0,B-cell acute lymphoblastic leukemia
+IUSCCC,PST001,106,Participant,M,Unknown,Unknown,Unspecified,5309.0,Malignant neoplasm of brain
+IUSCCC,PST001,108,Participant,M,Unknown,Unknown,Unspecified,6741.0,Malignant tumor of pineal gland
+IUSCCC,PST001,482,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,511,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,479,Participant,M,Unknown,Unknown,Unknown,0,Secondary malignant neoplasm of intra-abdominal lymph nodes
+IUSCCC,PST001,451,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of kidney
+IUSCCC,PST001,137,Participant,M,Unknown,Unknown,Unspecified,3159.0,"Acute myeloid leukemia, disease"
+IUSCCC,PST001,518,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,378,Participant,M,Unknown,Unknown,Unknown,0,"Malignant neoplasm of head, neck and face"
+IUSCCC,PST001,158,Participant,F,Unknown,Unknown,Unspecified,4979.0,T-cell acute lymphoblastic leukemia
+IUSCCC,PST001,474,Participant,F,Unknown,Unknown,Dead,3131.0,Malignant neoplasm of brain
+IUSCCC,PST001,475,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of kidney
+IUSCCC,PST001,316,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,414,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,1,Participant,M,White,Not Hispanic or Latino,Unknown,0,Acute lymphoid leukemia
+IUSCCC,PST001,5,Participant,F,White,Hispanic or Latino,Unspecified,5912.0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,75,Participant,F,White,Not Hispanic or Latino,Unknown,0,B-cell acute lymphoblastic leukemia
+IUSCCC,PST001,80,Participant,F,White,Not Hispanic or Latino,Unknown,0,Malignant neoplasm of cerebrum (excluding lobes and ventricles)
+IUSCCC,PST001,209,Participant,M,White,Not Hispanic or Latino,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,9,Participant,F,White,Hispanic or Latino,Unspecified,5338.0,Lymphoid leukemia
+IUSCCC,PST001,25,Participant,M,White,Not Hispanic or Latino,Unspecified,5907.0,Malignant neoplasm of connective and soft tissue of hip and lower limb
+IUSCCC,PST001,192,Participant,F,White,Not Hispanic or Latino,Unknown,0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,194,Participant,M,White,Not Hispanic or Latino,Unspecified,4963.0,Glioblastoma multiforme
+IUSCCC,PST001,490,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,233,Participant,M,White,Hispanic or Latino,Unknown,0,Non-rhabdomyosarcoma soft tissue sarcoma
+IUSCCC,PST001,210,Participant,M,White,Hispanic or Latino,Unknown,0,Neoplasm of brain
+IUSCCC,PST001,225,Participant,M,White,Not Hispanic or Latino,Unspecified,6552.0,Acute leukemia
+IUSCCC,PST001,489,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of connective and soft tissue of upper limb and shoulder
+IUSCCC,PST001,299,Participant,M,White,Not Hispanic or Latino,Unspecified,4044.0,Malignant tumor of spinal cord
+IUSCCC,PST001,243,Participant,F,White,Hispanic or Latino,Unspecified,6882.0,Non-rhabdomyosarcoma soft tissue sarcoma
+IUSCCC,PST001,245,Participant,M,White,Not Hispanic or Latino,Unspecified,1722.0,Embryonal rhabdomyosarcoma
+IUSCCC,PST001,254,Participant,M,Black or African American,Not Hispanic or Latino,Unspecified,3454.0,Malignant neoplasm of brainstem
+IUSCCC,PST001,262,Participant,F,White,Not Hispanic or Latino,Unspecified,3303.0,Alveolar rhabdomyosarcoma
+IUSCCC,PST001,282,Participant,F,White,Not Hispanic or Latino,Unspecified,4961.0,Neoplasm of brain
+IUSCCC,PST001,290,Participant,M,Black or African American,Not Hispanic or Latino,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,293,Participant,M,Black or African American,Not Hispanic or Latino,Unspecified,8058.0,Malignant tumor of lower limb
+IUSCCC,PST001,298,Participant,M,White,Not Hispanic or Latino,Unspecified,6694.0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,67,Participant,F,Unknown,Unknown,Unknown,0,Primary malignant neoplasm
+IUSCCC,PST001,91,Participant,F,Unknown,Unknown,Unknown,0,Acute leukemia
+IUSCCC,PST001,143,Participant,M,Unknown,Unknown,Unspecified,6193.0,Acute lymphoblastic leukemia *Philadelphia Like*
+IUSCCC,PST001,267,Participant,F,Unknown,Unknown,Unspecified,6247.0,Neuroendocrine tumor
+IUSCCC,PST001,431,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of brainstem
+IUSCCC,PST001,241,Participant,F,Unknown,Unknown,Unknown,0,"Hodgkin's disease, nodular sclerosis of intrathoracic lymph nodes"
+IUSCCC,PST001,447,Participant,F,Unknown,Unknown,Unknown,0,Neoplasm of digestive system
+IUSCCC,PST001,465,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of undescended testis
+IUSCCC,PST001,221,Participant,M,Unknown,Unknown,Unknown,0,Primary malignant neoplasm of pelvis
+IUSCCC,PST001,488,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebral ventricles
+IUSCCC,PST001,468,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of kidney
+IUSCCC,PST001,211,Participant,F,Unknown,Unknown,Unspecified,1780.0,Malignant neoplasm of frontal lobe
+IUSCCC,PST001,234,Participant,F,Unknown,Unknown,Unspecified,3782.0,B-cell acute lymphoblastic leukemia
+IUSCCC,PST001,244,Participant,F,Unknown,Unknown,Unknown,0,Non-Hodgkin's lymphoma (clinical)
+IUSCCC,PST001,514,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of mandible
+IUSCCC,PST001,525,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of connective and soft tissue of hip and lower limb
+IUSCCC,PST001,300,Participant,M,Unknown,Unknown,Unspecified,8262.0,Malignant neoplasm of brain
+IUSCCC,PST001,305,Participant,M,Unknown,Unknown,Unspecified,3924.0,Malignant neoplasm of brain
+IUSCCC,PST001,252,Participant,M,Unknown,Unknown,Unspecified,5433.0,Malignant tumor of nasal cavity
+IUSCCC,PST001,270,Participant,F,Unknown,Unknown,Unknown,0,Non-rhabdomyosarcoma soft tissue sarcoma
+IUSCCC,PST001,278,Participant,M,Unknown,Unknown,Unspecified,5853.0,Medulloblastoma
+IUSCCC,PST001,297,Participant,M,Unknown,Unknown,Unspecified,6458.0,Non-rhabdomyosarcoma soft tissue sarcoma
+IUSCCC,PST001,323,Participant,M,Unknown,Unknown,Dead,5946.0,Secondary malignant neoplasm of lung
+IUSCCC,PST001,339,Participant,F,Unknown,Unknown,Unspecified,5849.0,Neuroblastoma
+IUSCCC,PST001,342,Participant,F,Unknown,Unknown,Unknown,0,Non-rhabdomyosarcoma soft tissue sarcoma
+IUSCCC,PST001,10,Participant,F,Unknown,Unknown,Unspecified,7098.0,Non-rhabdomyosarcoma soft tissue sarcoma
+IUSCCC,PST001,11,Participant,M,Unknown,Unknown,Dead,2314.0,Neuroblastoma
+IUSCCC,PST001,18,Participant,M,Unknown,Unknown,Unspecified,5393.0,Hepatoblastoma
+IUSCCC,PST001,371,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,83,Participant,F,Black or African American,Hispanic or Latino,Unknown,0,Malignant tumor of ovary
+IUSCCC,PST001,88,Participant,F,Unknown,Unknown,Unspecified,2445.0,Leukemia
+IUSCCC,PST001,317,Participant,M,White,Not Hispanic or Latino,Unknown,0,Neoplasm of brain
+IUSCCC,PST001,365,Participant,F,White,Not Hispanic or Latino,Unknown,0,Secondary malignant neoplasm of retroperitoneum and peritoneum
+IUSCCC,PST001,366,Participant,F,White,Not Hispanic or Latino,Unknown,0,Malignant neoplasm of connective and soft tissue of hip and lower limb
+IUSCCC,PST001,168,Participant,F,Unknown,Unknown,Unspecified,811.0,"Acute myeloid leukemia, disease"
+IUSCCC,PST001,350,Participant,F,Unknown,Unknown,Unknown,0,Medulloblastoma
+IUSCCC,PST001,178,Participant,M,White,Not Hispanic or Latino,Unspecified,5138.0,Non-rhabdomyosarcoma soft tissue sarcoma
+IUSCCC,PST001,26,Participant,M,White,Unknown,Unknown,0,Malignant tumor of kidney
+IUSCCC,PST001,288,Participant,F,Unknown,Unknown,Unspecified,5833.0,Alveolar rhabdomyosarcoma
+IUSCCC,PST001,523,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,57,Participant,M,Black or African American,Not Hispanic or Latino,Unknown,0,Malignant neoplasm of occipital lobe
+IUSCCC,PST001,319,Participant,F,White,Not Hispanic or Latino,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,356,Participant,M,Unknown,Unknown,Unknown,0,Leukemia
+IUSCCC,PST001,118,Participant,M,White,Not Hispanic or Latino,Unknown,0,Gastrointestinal stromal tumor
+IUSCCC,PST001,124,Participant,M,White,Not Hispanic or Latino,Unspecified,6600.0,Primary malignant neoplasm of respiratory tract
+IUSCCC,PST001,72,Participant,M,Unknown,Unknown,Unspecified,821.0,Malignant neoplasm of brain
+IUSCCC,PST001,184,Participant,F,Black or African American,Not Hispanic or Latino,Dead,6987.0,Malignant neoplastic disease
+IUSCCC,PST001,274,Participant,M,White,Not Hispanic or Latino,Unspecified,5583.0,Precursor T-cell lymphoblastic lymphoma
+IUSCCC,PST001,361,Participant,M,Unknown,Unknown,Dead,9126.0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,153,Participant,M,Unknown,Unknown,Unspecified,3547.0,Pleuropulmonary blastoma
+IUSCCC,PST001,296,Participant,F,White,Not Hispanic or Latino,Unspecified,6247.0,"Acute myeloid leukemia, disease"
+IUSCCC,PST001,45,Participant,F,White,Not Hispanic or Latino,Dead,6255.0,CA - Cancer
+IUSCCC,PST001,377,Participant,F,White,Not Hispanic or Latino,Dead,7367.0,Primary malignant neoplasm of cranial nerve
+IUSCCC,PST001,433,Participant,F,Unknown,Unknown,Dead,3904.0,Malignant neoplasm of brain
+IUSCCC,PST001,492,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,31,Participant,M,Unknown,Unknown,Unknown,0,Hodgkin's disease (clinical)
+IUSCCC,PST001,33,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,382,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of mandible
+IUSCCC,PST001,58,Participant,F,Unknown,Unknown,Unspecified,2180.0,Embryonal rhabdomyosarcoma
+IUSCCC,PST001,64,Participant,M,Unknown,Unknown,Unspecified,7520.0,Non-rhabdomyosarcoma soft tissue sarcoma
+IUSCCC,PST001,220,Participant,F,Unknown,Unknown,Unspecified,6234.0,Precursor T-cell lymphoblastic lymphoma
+IUSCCC,PST001,421,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of ribs and/or sternum and/or clavicle
+IUSCCC,PST001,114,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebellum
+IUSCCC,PST001,82,Participant,M,Unknown,Unknown,Unspecified,6323.0,"Acute myeloid leukemia, disease"
+IUSCCC,PST001,85,Participant,F,Unknown,Unknown,Unknown,0,Hodgkin's disease (clinical)
+IUSCCC,PST001,458,Participant,M,Unknown,Unknown,Dead,4705.0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,7,Participant,F,Black or African American,Not Hispanic or Latino,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,94,Participant,M,Unknown,Unknown,Unspecified,4656.0,Medulloblastoma
+IUSCCC,PST001,99,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebellum
+IUSCCC,PST001,133,Participant,F,Unknown,Unknown,Unspecified,7465.0,"Acute myeloid leukemia, disease"
+IUSCCC,PST001,435,Participant,F,Unknown,Unknown,Unknown,0,Neoplasm of short bone of upper limb
+IUSCCC,PST001,147,Participant,F,Unknown,Unknown,Dead,5019.0,Nephroblastoma
+IUSCCC,PST001,155,Participant,M,Unknown,Unknown,Unspecified,6465.0,Glioblastoma multiforme
+IUSCCC,PST001,507,Participant,F,Unknown,Unknown,Dead,516.0,Malignant neoplasm of cerebellum
+IUSCCC,PST001,170,Participant,F,Unknown,Unknown,Unspecified,6912.0,Acute lymphoid leukemia
+IUSCCC,PST001,524,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebral ventricles
+IUSCCC,PST001,181,Participant,F,Unknown,Unknown,Unknown,0,Embryonal rhabdomyosarcoma
+IUSCCC,PST001,107,Participant,F,Unknown,Unknown,Unknown,0,Neoplasm of brain
+IUSCCC,PST001,29,Participant,M,White,Not Hispanic or Latino,Unknown,0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,187,Participant,M,Unknown,Unknown,Unknown,0,B-cell acute lymphoblastic leukemia
+IUSCCC,PST001,157,Participant,F,White,Not Hispanic or Latino,Unknown,0,Malignant tumor of lymphoid hemopoietic and related tissue
+IUSCCC,PST001,109,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of kidney
+IUSCCC,PST001,162,Participant,M,White,Not Hispanic or Latino,Unknown,0,Overlapping malignant neoplasm of brain
+IUSCCC,PST001,166,Participant,M,Black or African American,Not Hispanic or Latino,Unspecified,6669.0,Secondary malignant neoplastic disease
+IUSCCC,PST001,39,Participant,F,Black or African American,Not Hispanic or Latino,Unknown,0,Primary malignant neoplasm of nervous system
+IUSCCC,PST001,200,Participant,F,Unknown,Unknown,Unspecified,2738.0,"Acute myeloid leukemia, disease"
+IUSCCC,PST001,42,Participant,M,White,Not Hispanic or Latino,Unspecified,7421.0,Primary malignant neoplasm of soft tissues of upper limb
+IUSCCC,PST001,65,Participant,F,White,Not Hispanic or Latino,Unknown,0,Malignant tumor of spinal cord
+IUSCCC,PST001,197,Participant,M,White,Not Hispanic or Latino,Unknown,0,Malignant neoplasm of cerebellum
+IUSCCC,PST001,89,Participant,M,White,Not Hispanic or Latino,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,115,Participant,M,White,Hispanic or Latino,Unknown,0,B-cell acute lymphoblastic leukemia
+IUSCCC,PST001,98,Participant,M,White,Not Hispanic or Latino,Unknown,0,Neoplasm of brain
+IUSCCC,PST001,128,Participant,M,White,Hispanic or Latino,Unknown,0,Malignant neoplasm of cerebellum
+IUSCCC,PST001,151,Participant,F,Black or African American,Not Hispanic or Latino,Dead,3378.0,Embryonal rhabdomyosarcoma
+IUSCCC,PST001,427,Participant,M,White,Not Hispanic or Latino,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,470,Participant,M,White,Hispanic or Latino,Unknown,0,"Malignant neoplasm of pelvic bones, sacrum and coccyx"
+IUSCCC,PST001,199,Participant,M,White,Not Hispanic or Latino,Unknown,0,Malignant neoplasm of brainstem
+IUSCCC,PST001,228,Participant,M,Unknown,Unknown,Unspecified,6983.0,Embryonal rhabdomyosarcoma
+IUSCCC,PST001,232,Participant,M,Unknown,Unknown,Unspecified,8530.0,Malignant neoplasm of bone
+IUSCCC,PST001,516,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of kidney
+IUSCCC,PST001,441,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of nasopharynx
+IUSCCC,PST001,238,Participant,M,Unknown,Unknown,Unspecified,8660.0,Precursor T-cell lymphoblastic lymphoma
+IUSCCC,PST001,242,Participant,M,Unknown,Unknown,Unspecified,7535.0,Non-rhabdomyosarcoma soft tissue sarcoma
+IUSCCC,PST001,263,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of orbital bone
+IUSCCC,PST001,265,Participant,F,Unknown,Unknown,Unknown,0,B-cell acute lymphoblastic leukemia
+IUSCCC,PST001,275,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,387,Participant,M,Unknown,Unknown,Unknown,0,Sarcoma of liver
+IUSCCC,PST001,499,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,60,Participant,F,Unknown,Unknown,Unspecified,2149.0,Acute lymphoblastic leukemia *Philadelphia Like*
+IUSCCC,PST001,90,Participant,F,Unknown,Unknown,Unknown,0,Alveolar rhabdomyosarcoma
+IUSCCC,PST001,102,Participant,M,Unknown,Unknown,Unknown,0,Malignant histiocytosis (clinical)
+IUSCCC,PST001,485,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of connective and soft tissue of thorax
+IUSCCC,PST001,460,Participant,F,Unknown,Unknown,Dead,5364.0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,520,Participant,F,Unknown,Unknown,Unknown,0,Gastrointestinal stromal tumor
+IUSCCC,PST001,132,Participant,M,Unknown,Unknown,Unspecified,6677.0,Primary malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,308,Participant,M,Unknown,Unknown,Unknown,0,Malignant tumor of vertebral column
+IUSCCC,PST001,522,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,388,Participant,F,Unknown,Unknown,Dead,4409.0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,399,Participant,M,Unknown,Unknown,Dead,3233.0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,144,Participant,F,Unknown,Hispanic or Latino,Unspecified,8414.0,Embryonal rhabdomyosarcoma
+IUSCCC,PST001,304,Participant,M,Unknown,Unknown,Unspecified,4950.0,Embryonal rhabdomyosarcoma
+IUSCCC,PST001,149,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,150,Participant,M,Unknown,Unknown,Unspecified,2677.0,Nephroblastoma
+IUSCCC,PST001,329,Participant,F,Unknown,Unknown,Unspecified,7255.0,Round cell carcinoma
+IUSCCC,PST001,164,Participant,M,Unknown,Unknown,Unspecified,7269.0,Malignant tumor of scrotum
+IUSCCC,PST001,146,Participant,F,Unknown,Unknown,Unknown,0,Acute lymphoid leukemia
+IUSCCC,PST001,174,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebrum (excluding lobes and ventricles)
+IUSCCC,PST001,198,Participant,M,Unknown,Unknown,Unknown,0,Common acute lymphoblastic leukemia
+IUSCCC,PST001,462,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of skeletal system
+IUSCCC,PST001,2,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of optic nerve
+IUSCCC,PST001,8,Participant,M,Unknown,Unknown,Unspecified,6944.0,Malignant neoplasm of temporal lobe
+IUSCCC,PST001,397,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of connective and soft tissue of upper limb and shoulder
+IUSCCC,PST001,510,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebellum
+IUSCCC,PST001,12,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of adrenal gland
+IUSCCC,PST001,15,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,521,Participant,F,Unknown,Unknown,Unknown,0,Secondary malignant neoplasm of unknown site
+IUSCCC,PST001,43,Participant,F,Unknown,Unknown,Unspecified,5755.0,Malignant neoplastic disease
+IUSCCC,PST001,116,Participant,F,Unknown,Unknown,Unknown,0,Primary malignant neoplasm
+IUSCCC,PST001,286,Participant,M,White,Not Hispanic or Latino,Unknown,0,Malignant neoplasm of cerebral ventricles
+IUSCCC,PST001,332,Participant,F,White,Unknown,Unspecified,8944.0,B-cell acute lymphoblastic leukemia
+IUSCCC,PST001,171,Participant,M,White,Not Hispanic or Latino,Unspecified,7244.0,Primary malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,353,Participant,F,White,Not Hispanic or Latino,Unknown,0,Neuroblastoma
+IUSCCC,PST001,183,Participant,F,White,Not Hispanic or Latino,Unknown,0,Large cell anaplastic lymphoma
+IUSCCC,PST001,214,Participant,M,Unknown,Unknown,Unspecified,6433.0,Renal cell carcinoma
+IUSCCC,PST001,401,Participant,F,Unknown,Unknown,Unknown,0,Malignant tumor of pineal gland
+IUSCCC,PST001,216,Participant,M,Unknown,Unknown,Unspecified,4706.0,Malignant neoplasm of brainstem
+IUSCCC,PST001,402,Participant,F,Unknown,Unknown,Dead,8240.0,Malignant neoplasm of brain
+IUSCCC,PST001,219,Participant,M,Unknown,Unknown,Unknown,0,Acute lymphoid leukemia
+IUSCCC,PST001,347,Participant,M,Unknown,Unknown,Unknown,0,Leukemia
+IUSCCC,PST001,229,Participant,M,Unknown,Unknown,Unknown,0,Acute lymphoid leukemia
+IUSCCC,PST001,280,Participant,M,Unknown,Unknown,Unspecified,3053.0,Leukemia
+IUSCCC,PST001,303,Participant,F,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
+IUSCCC,PST001,309,Participant,M,Unknown,Unknown,Unknown,0,Nephroblastoma
+IUSCCC,PST001,273,Participant,F,Unknown,Unknown,Unknown,0,B-cell acute lymphoblastic leukemia
+IUSCCC,PST001,310,Participant,M,Unknown,Unknown,Unspecified,7060.0,Malignant neoplasm of brain
+IUSCCC,PST001,322,Participant,F,Unknown,Unknown,Unspecified,4084.0,Malignant neoplasm of temporal lobe
+IUSCCC,PST001,439,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,412,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,331,Participant,M,Unknown,Unknown,Unspecified,2433.0,Neuroblastoma
+IUSCCC,PST001,404,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplastic disease
+IUSCCC,PST001,335,Participant,M,Unknown,Unknown,Unspecified,7500.0,Primary malignant neoplasm of soft tissues of trunk
+IUSCCC,PST001,486,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebellum
+IUSCCC,PST001,348,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of cerebral ventricles
+IUSCCC,PST001,208,Participant,M,Black or African American,Not Hispanic or Latino,Dead,4551.0,Malignant neoplasm of long bone of lower limb
+IUSCCC,PST001,235,Participant,M,White,Not Hispanic or Latino,Unknown,0,"Acute myeloid leukemia, disease"
+IUSCCC,PST001,259,Participant,M,White,Not Hispanic or Latino,Unknown,0,T-cell acute lymphoblastic leukemia
+IUSCCC,PST001,324,Participant,M,Black or African American,Not Hispanic or Latino,Unknown,0,Hodgkin's disease (clinical)
+IUSCCC,PST001,352,Participant,M,White,Not Hispanic or Latino,Unspecified,3241.0,Primary malignant neoplasm of adrenal gland
+IUSCCC,PST001,354,Participant,F,White,Not Hispanic or Latino,Unknown,0,Acute lymphoid leukemia
