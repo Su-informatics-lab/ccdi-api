@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # SSL Setup Script for CCDI API
-# Domain: ccdi.cis230185.projects.jetstream-cloud.org
+# Domain: ccdi.ipo.sulab.io
 # Email: wang208@iu.edu
 
 set -e
 
-DOMAIN="ccdi.cis230185.projects.jetstream-cloud.org"
+DOMAIN="ccdi.ipo.sulab.io"
 EMAIL="wang208@iu.edu"
 
 echo "🔐 Setting up SSL certificates for $DOMAIN..."

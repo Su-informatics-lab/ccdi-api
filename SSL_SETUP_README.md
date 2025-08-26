@@ -1,8 +1,14 @@
 # CCDI API SSL Setup Guide
 
-## SSL Configuration for ccdi.cis230185.projects.jetstream-cloud.org
+## SSL Configuration for ccdi.ipo.sulab.io
 
-This guide provides step-by-step instructions to set up SSL/TLS encryption for the CCDI API using Let's Encrypt certificates.
+This guide provides step-by-step instructions to scurl -I http://ccdi.ipo.sulab.io
+
+# Test HTTPS redirect
+curl -I https://ccdi.ipo.sulab.io
+
+# Test API endpoint
+curl https://ccdi.ipo.sulab.io/api/v1/infoSL/TLS encryption for the CCDI API using Let's Encrypt certificates.
 
 ### Prerequisites
 
@@ -66,7 +72,7 @@ This will:
 #### Certificate Management
 
 - **Auto-renewal**: Certbot container runs every 12 hours
-- **Location**: `/etc/letsencrypt/live/ccdi.cis230185.projects.jetstream-cloud.org/`
+- **Location**: `/etc/letsencrypt/live/ccdi.ipo.sulab.io/`
 - **Files**:
   - `fullchain.pem` - Certificate chain
   - `privkey.pem` - Private key
@@ -74,10 +80,10 @@ This will:
 
 ### Access Points (After SSL Setup)
 
-- **HTTPS API**: https://ccdi.cis230185.projects.jetstream-cloud.org
-- **API Info**: https://ccdi.cis230185.projects.jetstream-cloud.org/api/v1/info
-- **Swagger Docs**: https://ccdi.cis230185.projects.jetstream-cloud.org/docs
-- **All Endpoints**: https://ccdi.cis230185.projects.jetstream-cloud.org/api/v1/{endpoint}
+- **HTTPS API**: https://ccdi.ipo.sulab.io
+- **API Info**: https://ccdi.ipo.sulab.io/api/v1/info
+- **Swagger Docs**: https://ccdi.ipo.sulab.io/docs
+- **All Endpoints**: https://ccdi.ipo.sulab.io/api/v1/{endpoint}
 
 ### Management Commands
 
@@ -120,13 +126,13 @@ docker-compose -f docker-compose_ssl.yml logs nginx
 
 ```bash
 # Test HTTP redirect
-curl -I http://ccdi.cis230185.projects.jetstream-cloud.org
+curl -I http://ccdi.ipo.sulab.io
 
 # Test HTTPS connection
-curl -I https://ccdi.cis230185.projects.jetstream-cloud.org
+curl -I https://ccdi.ipo.sulab.io
 
 # Test API endpoint
-curl https://ccdi.cis230185.projects.jetstream-cloud.org/api/v1/info
+curl https://ccdi.ipo.sulab.io/api/v1/info
 ```
 
 #### Port Issues
@@ -167,10 +173,10 @@ After deployment, test the API:
 
 ```bash
 # Test HTTPS endpoint
-curl https://ccdi.cis230185.projects.jetstream-cloud.org/api/v1/info
+curl https://ccdi.ipo.sulab.io/api/v1/info
 
 # Test SSL certificate
-openssl s_client -connect ccdi.cis230185.projects.jetstream-cloud.org:443 -servername ccdi.cis230185.projects.jetstream-cloud.org < /dev/null
+openssl s_client -connect ccdi.ipo.sulab.io:443 -servername ccdi.ipo.sulab.io < /dev/null
 ```
 
 ### Support

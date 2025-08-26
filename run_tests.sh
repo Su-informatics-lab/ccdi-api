@@ -36,7 +36,7 @@ usage() {
     echo ""
     echo "Examples:"
     echo "  $0 http://localhost:8000"
-    echo "  $0 -t python -v https://ccdi.cis230185.projects.jetstream-cloud.org"
+    echo "  $0 -t python -v https://ccdi.ipo.sulab.io"
     echo "  $0 -t python -i -r results.json http://localhost:8000"
 }
 

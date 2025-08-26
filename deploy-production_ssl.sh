@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # CCDI API SSL Deployment Script
-# Domain: ccdi.cis230185.projects.jetstream-cloud.org
+# Domain: ccdi.ipo.sulab.io
 
 set -e
 
-DOMAIN="ccdi.cis230185.projects.jetstream-cloud.org"
+DOMAIN="ccdi.ipo.sulab.io"
 
 echo "🚀 Deploying CCDI API with SSL for $DOMAIN..."
 

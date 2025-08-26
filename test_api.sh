@@ -34,7 +34,7 @@ usage() {
     echo ""
     echo "Examples:"
     echo "  $0 http://localhost:8000"
-    echo "  $0 https://ccdi.cis230185.projects.jetstream-cloud.org"
+    echo "  $0 https://ccdi.ipo.sulab.io"
     echo "  $0 -v -t 60 https://api.example.com"
 }
 

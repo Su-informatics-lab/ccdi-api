@@ -10,7 +10,7 @@ Usage:
 
 Examples:
     python test_api.py http://localhost:8000
-    python test_api.py https://ccdi.cis230185.projects.jetstream-cloud.org --verbose
+    python test_api.py https://ccdi.ipo.sulab.io --verbose
     python test_api.py http://localhost:8000 --timeout 60 --report-file results.json
 """
 

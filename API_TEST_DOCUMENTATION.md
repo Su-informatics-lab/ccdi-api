@@ -21,7 +21,10 @@ Options:
 
 Examples:
   ./test_api.sh http://localhost:8000
-  ./test_api.sh -v https://ccdi.cis230185.projects.jetstream-cloud.org
+  **Test against production server:**
+```bash
+./test_api.sh -v https://ccdi.ipo.sulab.io
+```
   ./test_api.sh -t 60 http://localhost:8000
 ```
 
@@ -47,7 +50,10 @@ Options:
 
 Examples:
   ./test_api.py http://localhost:8000
-  ./test_api.py -v -r results.json https://ccdi.cis230185.projects.jetstream-cloud.org
+  **Test against production server:**
+```bash
+./test_api.py -v -r results.json https://ccdi.ipo.sulab.io
+```
 ```
 
 ### 3. Test Runner (`run_tests.sh`)
@@ -230,7 +236,9 @@ docker run -d -p 8000:8000 ccdi-api
 ./test_api.sh http://localhost:8000
 
 # Test production deployment
-./test_api.sh https://ccdi.cis230185.projects.jetstream-cloud.org
+```bash
+./test_api.sh https://ccdi.ipo.sulab.io
+```
 ```
 
 ## Troubleshooting
