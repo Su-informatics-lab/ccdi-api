@@ -136,7 +136,7 @@ class DataLoader:
         """Load subjects data."""
         try:
             subjects_file = self.data_dir / "subjects.csv"
-            self.subjects_df = pd.read_csv(subjects_file)
+            self.subjects_df = pd.read_csv(subjects_file,dtype={'subject_name': str})
             self.subjects_df = self.subjects_df.fillna('')  # Replace NaN with empty strings
             logger.info(f"Loaded {len(self.subjects_df)} subjects")
         except Exception as e:
