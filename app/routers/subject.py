@@ -48,14 +48,19 @@ def create_subject_from_row(row: dict) -> Subject:
     if row.get('ethnicity'):
         metadata.ethnicity = MetadataField(value=row['ethnicity'])
     
+    if row.get('identifiers'):
+        metadata.identifiers = [MetadataField(value=row['identifiers'])]
+    
     if row.get('vital_status'):
         metadata.vital_status = MetadataField(value=row['vital_status'])
     
     if row.get('age_at_vital_status'):
         metadata.age_at_vital_status = MetadataField(value=row['age_at_vital_status'])
     
-    if row.get('associated_diagnoses'):
-        metadata.associated_diagnoses = [MetadataField(value=row['associated_diagnoses'])]
+    # Handle both possible column names for associated diagnoses
+    diagnosis_field = row.get('associated_diagnoses') or row.get('associated_diagnosis')
+    if diagnosis_field:
+        metadata.associated_diagnoses = [MetadataField(value=diagnosis_field)]
     
     return Subject(
         id=subject_id,
@@ -91,6 +96,7 @@ async def get_subjects(
             'sex': sex,
             'race': race,
             'ethnicity': ethnicity,
+            'identifiers': identifiers,
             'vital_status': vital_status,
             'age_at_vital_status': age_at_vital_status
         }
@@ -166,7 +172,7 @@ async def get_subjects_count_by_field(
             )
         
         # Check if field is supported
-        supported_fields = ['sex', 'race', 'ethnicity', 'vital_status', 'kind']
+        supported_fields = ['sex', 'race', 'ethnicity', 'identifiers', 'vital_status', 'kind']
         if field not in supported_fields:
             raise HTTPException(
                 status_code=422,
@@ -244,7 +250,13 @@ async def get_subjects_by_diagnosis(
         
         # Apply diagnosis search filter (case-insensitive contains)
         if search:
-            diagnosis_mask = df['associated_diagnoses'].str.contains(search, case=False, na=False)
+            # Check both possible column names for diagnosis
+            if 'associated_diagnoses' in df.columns:
+                diagnosis_mask = df['associated_diagnoses'].str.contains(search, case=False, na=False)
+            elif 'associated_diagnosis' in df.columns:
+                diagnosis_mask = df['associated_diagnosis'].str.contains(search, case=False, na=False)
+            else:
+                diagnosis_mask = df.index == df.index  # No filtering if column doesn't exist
             df = df[diagnosis_mask]
         
         # Apply other filters
@@ -252,6 +264,7 @@ async def get_subjects_by_diagnosis(
             'sex': sex,
             'race': race,
             'ethnicity': ethnicity,
+            'identifiers': identifiers,
             'vital_status': vital_status,
             'age_at_vital_status': age_at_vital_status
         }

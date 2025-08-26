@@ -138,6 +138,16 @@ class DataLoader:
             subjects_file = self.data_dir / "subjects.csv"
             self.subjects_df = pd.read_csv(subjects_file,dtype={'subject_name': str})
             self.subjects_df = self.subjects_df.fillna('')  # Replace NaN with empty strings
+            
+            # Check if 'identifiers' column exists, if not create it
+            if 'identifiers' not in self.subjects_df.columns:
+                # Generate identifiers as namespace_name + "_" + subject_name
+                self.subjects_df['identifiers'] = (
+                    self.subjects_df['namespace_name'] + "_" + 
+                    self.subjects_df['subject_name'].astype(str)
+                )
+                logger.info("Generated identifiers column: namespace_name + '_' + subject_name")
+            
             logger.info(f"Loaded {len(self.subjects_df)} subjects")
         except Exception as e:
             logger.error(f"Error loading subjects: {e}")
