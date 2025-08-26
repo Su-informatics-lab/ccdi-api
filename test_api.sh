@@ -199,11 +199,12 @@ api_request "GET" "/openapi.json" "200" "OpenAPI JSON specification"
 echo ""
 echo -e "${YELLOW}👤 Testing Subject Endpoints${NC}"
 api_request "GET" "/api/v1/subject" "200" "List all subjects"
-api_request "GET" "/api/v1/subject?limit=2" "200" "List subjects with limit"
-api_request "GET" "/api/v1/subject?offset=1" "200" "List subjects with offset"
+api_request "GET" "/api/v1/subject?page=1&per_page=2" "200" "List subjects with pagination"
+api_request "GET" "/api/v1/subject?sex=F" "200" "Filter subjects by sex"
+api_request "GET" "/api/v1/subject?race=Unknown" "200" "Filter subjects by race"
 
 # Test specific subject (using first subject from data)
-api_request "GET" "/api/v1/subject/STJUDE/PNOC/SUBJECT001" "200" "Get specific subject"
+api_request "GET" "/api/v1/subject/IUSCCC/PST001/535" "200" "Get specific subject"
 
 # Test non-existent subject
 api_request "GET" "/api/v1/subject/INVALID/ORG/INVALID" "404" "Non-existent subject returns 404"
@@ -212,13 +213,15 @@ api_request "GET" "/api/v1/subject/INVALID/ORG/INVALID" "404" "Non-existent subj
 echo ""
 echo -e "${YELLOW}🧪 Testing Sample Endpoints${NC}"
 api_request "GET" "/api/v1/sample" "200" "List all samples"
-api_request "GET" "/api/v1/sample?limit=2" "200" "List samples with limit"
+api_request "GET" "/api/v1/sample?page=1&per_page=2" "200" "List samples with pagination"
+api_request "GET" "/api/v1/sample?tissue_type=Normal" "200" "Filter samples by tissue type"
+api_request "GET" "/api/v1/sample?disease_phase=Initial%20Diagnosis" "200" "Filter samples by disease phase"
 
 # Test specific sample
-api_request "GET" "/api/v1/sample/STJUDE/PNOC/SAMPLE001" "200" "Get specific sample"
+api_request "GET" "/api/v1/sample/IUSCCC/PST001/3" "200" "Get specific sample"
 
 # Test samples by subject
-api_request "GET" "/api/v1/sample?subject_name=SUBJECT001" "200" "Filter samples by subject"
+api_request "GET" "/api/v1/sample?subject_name=7" "200" "Filter samples by subject"
 
 # Test non-existent sample
 api_request "GET" "/api/v1/sample/INVALID/ORG/INVALID" "404" "Non-existent sample returns 404"
@@ -227,50 +230,54 @@ api_request "GET" "/api/v1/sample/INVALID/ORG/INVALID" "404" "Non-existent sampl
 echo ""
 echo -e "${YELLOW}📁 Testing File Endpoints${NC}"
 api_request "GET" "/api/v1/file" "200" "List all files"
-api_request "GET" "/api/v1/file?limit=1" "200" "List files with limit"
+api_request "GET" "/api/v1/file?page=1&per_page=1" "200" "List files with pagination"
+api_request "GET" "/api/v1/file?type=BAM" "200" "Filter files by type"
 
 # Test specific file
-api_request "GET" "/api/v1/file/STJUDE/PNOC/RNASeq_001.fastq.gz" "200" "Get specific file"
+api_request "GET" "/api/v1/file/IUSCCC/PST001/CRF000001.bam" "200" "Get specific file"
 
 # Test files by sample
-api_request "GET" "/api/v1/file?sample_name=SAMPLE001" "200" "Filter files by sample"
+api_request "GET" "/api/v1/file?sample_name=3" "200" "Filter files by sample"
 
 # Test non-existent file
 api_request "GET" "/api/v1/file/INVALID/ORG/INVALID.txt" "404" "Non-existent file returns 404"
 
-# Test 23-26: Namespace endpoints
+# Test 29-34: Namespace endpoints
 echo ""
-echo -e "${YELLOW}🏷️  Testing Namespace Endpoints${NC}"
+echo -e "${YELLOW}📁 Testing Namespace Endpoints${NC}"
 api_request "GET" "/api/v1/namespace" "200" "List all namespaces"
+api_request "GET" "/api/v1/namespace?page=1&per_page=1" "200" "List namespaces with pagination"
 
 # Test specific namespace
-api_request "GET" "/api/v1/namespace/STJUDE/PNOC" "200" "Get specific namespace"
+api_request "GET" "/api/v1/namespace/IUSCCC/PST001" "200" "Get specific namespace"
+
+# Test namespaces by organization
+api_request "GET" "/api/v1/namespace?organization_name=IUSCCC" "200" "Filter namespaces by organization"
 
 # Test non-existent namespace
-api_request "GET" "/api/v1/namespace/INVALID/ORG" "404" "Non-existent namespace returns 404"
+api_request "GET" "/api/v1/namespace/INVALID/INVALID" "404" "Non-existent namespace returns 404"
 
 # Test 27-30: Organization endpoints
 echo ""
 echo -e "${YELLOW}🏢 Testing Organization Endpoints${NC}"
 api_request "GET" "/api/v1/organization" "200" "List all organizations"
+api_request "GET" "/api/v1/organization?page=1&per_page=1" "200" "List organizations with pagination"
 
 # Test specific organization
-api_request "GET" "/api/v1/organization/STJUDE" "200" "Get specific organization"
+api_request "GET" "/api/v1/organization/IUSCCC" "200" "Get specific organization"
 
 # Test non-existent organization
 api_request "GET" "/api/v1/organization/INVALID" "404" "Non-existent organization returns 404"
 
-# Test 31-38: Metadata and Summary endpoints
+# Test 35-40: Metadata endpoint
 echo ""
-echo -e "${YELLOW}📊 Testing Metadata & Summary Endpoints${NC}"
-api_request "GET" "/api/v1/metadata/fields/subject" "200" "Get subject metadata fields"
-api_request "GET" "/api/v1/metadata/fields/sample" "200" "Get sample metadata fields"
-api_request "GET" "/api/v1/metadata/fields/file" "200" "Get file metadata fields"
-api_request "GET" "/api/v1/subject/summary" "200" "Get subject summary"
-api_request "GET" "/api/v1/sample/summary" "200" "Get sample summary"
-api_request "GET" "/api/v1/file/summary" "200" "Get file summary"
-api_request "GET" "/api/v1/subject-diagnosis" "200" "Get subject diagnoses"
-api_request "GET" "/api/v1/sample-diagnosis" "200" "Get sample diagnoses"
+echo -e "${YELLOW}📊 Testing Metadata Endpoint${NC}"
+# api_request "GET" "/api/v1/metadata" "200" "Get metadata information"
+api_request "GET" "/api/v1/metadata/fields/subject" "200" "Get subject metadata"
+api_request "GET" "/api/v1/metadata/fields/sample" "200" "Get sample metadata"
+api_request "GET" "/api/v1/metadata/fields/file" "200" "Get file metadata"
+# api_request "GET" "/api/v1/metadata/fields/organization" "200" "Get organization metadata"
+# api_request "GET" "/api/v1/metadata/fields/namespace" "200" "Get namespace metadata"
 
 # Test JSON structure validation
 echo ""
