@@ -25,7 +25,7 @@ async def get_info(
     """Get information about this server."""
     try:
         server_info = ServerInfo(
-            name="CCDI Data Federation API Server",
+            name="IUSCCC CCDI Data Federation API Server",
             version="v1.2.0",
             description="FastAPI implementation of the CCDI Data Federation Participating Nodes API"
         )
@@ -37,7 +37,7 @@ async def get_info(
         
         data_info = DataInfo(
             last_updated=datetime.now().isoformat(),
-            source="CSV files loaded into pandas DataFrames"
+            source="Indiana University Simon Comprehensive Cancer Center"
         )
         
         return InfoResponse(
