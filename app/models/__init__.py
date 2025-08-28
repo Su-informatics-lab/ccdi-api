@@ -10,7 +10,7 @@ from enum import Enum
 # Enums based on the swagger specification
 class SubjectSex(str, Enum):
     U = "U"
-    F = "F" 
+    F = "F"
     M = "M"
     UNDIFFERENTIATED = "UNDIFFERENTIATED"
 
@@ -353,17 +353,26 @@ class FieldDescriptions(BaseModel):
 class ServerInfo(BaseModel):
     name: str
     version: str
+    owner: str
+    contact_email: str
     description: str
 
 
 class APIInfo(BaseModel):
+    api_version: str
+    documentation_url: str
+
+
+class VersionInfo(BaseModel):
     version: str
-    specification_url: str
+    about: str
 
 
 class DataInfo(BaseModel):
+    version: VersionInfo
     last_updated: str
     source: str
+    wiki_url: str
 
 
 class InfoResponse(BaseModel):
