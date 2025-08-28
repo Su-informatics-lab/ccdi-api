@@ -7,7 +7,7 @@ from typing import Optional
 import logging
 
 from app.models import (
-    File, FilesResponse, EntitySummary, CountResults, CountResult,
+    File, FilesResponse, EntitySummary, EntityCounts, CountResults, CountResult,
     FileIdentifier, SampleIdentifier, NamespaceIdentifier, MetadataField, FileMetadata, FileChecksum
 )
 from app.services.data_loader import DataLoader
@@ -96,7 +96,7 @@ async def get_files(
         df = data_loader.files_df
         if df.empty:
             return FilesResponse(
-                summary=EntitySummary(total=0),
+                summary=EntitySummary(counts=EntityCounts(total=0)),
                 data=[]
             )
         
@@ -130,7 +130,7 @@ async def get_files(
                 logger.warning(f"Failed to create file from row: {e}")
         
         return FilesResponse(
-            summary=EntitySummary(total=total_count),
+            summary=EntitySummary(counts=EntityCounts(total=total_count)),
             data=files
         )
         
@@ -180,7 +180,7 @@ async def get_files_count_by_field(
         df = data_loader.files_df
         if df.empty:
             return CountResults(
-                summary=EntitySummary(total=0),
+                summary=EntitySummary(counts=EntityCounts(total=0)),
                 data=[]
             )
         
@@ -205,7 +205,7 @@ async def get_files_count_by_field(
         count_results = [CountResult(name=item['name'], count=item['count']) for item in counts]
         
         return CountResults(
-            summary=EntitySummary(total=total),
+            summary=EntitySummary(counts=EntityCounts(total=total)),
             data=count_results
         )
         
@@ -224,7 +224,7 @@ async def get_files_summary(
     try:
         file_count = len(data_loader.files_df) if not data_loader.files_df.empty else 0
         
-        return EntitySummary(total=file_count)
+        return EntitySummary(counts=EntityCounts(total=file_count))
         
     except Exception as e:
         logger.error(f"Error getting files summary: {e}")

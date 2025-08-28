@@ -281,8 +281,12 @@ class Organization(BaseModel):
 
 
 # Response models
-class EntitySummary(BaseModel):
+class EntityCounts(BaseModel):
     total: int = Field(..., ge=0)
+
+
+class EntitySummary(BaseModel):
+    counts: EntityCounts
 
 
 class Summary(BaseModel):

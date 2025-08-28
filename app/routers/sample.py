@@ -7,7 +7,7 @@ from typing import Optional
 import logging
 
 from app.models import (
-    Sample, SamplesResponse, EntitySummary, CountResults, CountResult,
+    Sample, SamplesResponse, EntitySummary, EntityCounts, CountResults, CountResult,
     SampleIdentifier, SubjectIdentifier, NamespaceIdentifier, MetadataField, SampleMetadata
 )
 from app.services.data_loader import DataLoader
@@ -125,7 +125,7 @@ async def get_samples(
         df = data_loader.samples_df
         if df.empty:
             return SamplesResponse(
-                summary=EntitySummary(total=0),
+                summary=EntitySummary(counts=EntityCounts(total=0)),
                 data=[]
             )
         
@@ -163,7 +163,7 @@ async def get_samples(
                 logger.warning(f"Failed to create sample from row: {e}")
         
         return SamplesResponse(
-            summary=EntitySummary(total=total_count),
+            summary=EntitySummary(counts=EntityCounts(total=total_count)),
             data=samples
         )
         
@@ -213,7 +213,7 @@ async def get_samples_count_by_field(
         df = data_loader.samples_df
         if df.empty:
             return CountResults(
-                summary=EntitySummary(total=0),
+                summary=EntitySummary(counts=EntityCounts(total=0)),
                 data=[]
             )
         
@@ -242,7 +242,7 @@ async def get_samples_count_by_field(
         count_results = [CountResult(name=item['name'], count=item['count']) for item in counts]
         
         return CountResults(
-            summary=EntitySummary(total=total),
+            summary=EntitySummary(counts=EntityCounts(total=total)),
             data=count_results
         )
         
@@ -261,7 +261,7 @@ async def get_samples_summary(
     try:
         sample_count = len(data_loader.samples_df) if not data_loader.samples_df.empty else 0
         
-        return EntitySummary(total=sample_count)
+        return EntitySummary(counts=EntityCounts(total=sample_count))
         
     except Exception as e:
         logger.error(f"Error getting samples summary: {e}")
@@ -295,7 +295,7 @@ async def get_samples_by_diagnosis(
         df = data_loader.samples_df
         if df.empty:
             return SamplesResponse(
-                summary=EntitySummary(total=0),
+                summary=EntitySummary(counts=EntityCounts(total=0)),
                 data=[]
             )
         
@@ -337,7 +337,7 @@ async def get_samples_by_diagnosis(
                 logger.warning(f"Failed to create sample from row: {e}")
         
         return SamplesResponse(
-            summary=EntitySummary(total=total_count),
+            summary=EntitySummary(counts=EntityCounts(total=total_count)),
             data=samples
         )
         
