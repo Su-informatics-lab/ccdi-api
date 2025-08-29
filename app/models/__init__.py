@@ -223,7 +223,7 @@ class SampleMetadata(BaseModel):
     depositions: Optional[List[MetadataField]] = None
     diagnosis: Optional[MetadataField] = None
     identifiers: Optional[List[MetadataField]] = None
-    unharmonized: Optional[Dict[str, Any]] = None
+    unharmonized: Optional[Dict[str, Any]] = {}
 
 
 class Sample(BaseModel):
