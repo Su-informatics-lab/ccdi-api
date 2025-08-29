@@ -142,10 +142,11 @@ class DataLoader:
             # Check if 'identifiers' column exists, if not create it
             if 'identifiers' not in self.subjects_df.columns:
                 # Generate identifiers as namespace_name + "_" + subject_name
-                self.subjects_df['identifiers'] = (
-                    self.subjects_df['namespace_name'] + "_" + 
-                    self.subjects_df['subject_name'].astype(str)
-                )
+                self.subjects_df['identifiers'] = None
+                # self.subjects_df['identifiers'] = (
+                #     self.subjects_df['namespace_name'] + "_" + 
+                #     self.subjects_df['subject_name'].astype(str)
+                # )
                 logger.info("Generated identifiers column: namespace_name + '_' + subject_name")
             
             logger.info(f"Loaded {len(self.subjects_df)} subjects")
