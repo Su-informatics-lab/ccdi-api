@@ -159,6 +159,12 @@ class DataLoader:
             samples_file = self.data_dir / "samples.csv"
             self.samples_df = pd.read_csv(samples_file,dtype={'subject_name': str,'sample_name': str})
             self.samples_df = self.samples_df.fillna('')  # Replace NaN with empty strings
+            
+            # Set anatomical_sites to null after loading
+            if 'anatomical_sites' in self.samples_df.columns:
+                self.samples_df['anatomical_sites'] = None
+                logger.info("Set anatomical_sites values to null")
+            
             logger.info(f"Loaded {len(self.samples_df)} samples")
         except Exception as e:
             logger.error(f"Error loading samples: {e}")
