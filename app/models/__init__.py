@@ -196,7 +196,7 @@ class SubjectMetadata(BaseModel):
     age_at_vital_status: Optional[MetadataField] = None
     associated_diagnoses: Optional[List[MetadataField]] = None
     depositions: Optional[List[MetadataField]] = None
-    unharmonized: Optional[Dict[str, Any]] = None
+    unharmonized: Optional[Dict[str, Any]] = {}
 
 
 class Subject(BaseModel):
@@ -243,7 +243,7 @@ class FileMetadata(BaseModel):
     checksums: Optional[MetadataField] = None
     description: Optional[MetadataField] = None
     depositions: Optional[List[MetadataField]] = None
-    unharmonized: Optional[Dict[str, Any]] = None
+    unharmonized: Optional[Dict[str, Any]] = {}
 
 
 class File(BaseModel):
