@@ -8,7 +8,8 @@ import logging
 
 from app.models import (
     Sample, SamplesResponse, EntitySummary, EntityCounts, CountResults, CountResult,
-    SampleIdentifier, SubjectIdentifier, NamespaceIdentifier, MetadataField, SampleMetadata
+    SampleIdentifier, SubjectIdentifier, NamespaceIdentifier, MetadataField, SampleMetadata,
+    PageInfo
 )
 from app.services.data_loader import DataLoader
 
@@ -124,8 +125,15 @@ async def get_samples(
     try:
         df = data_loader.samples_df
         if df.empty:
+            page_info = PageInfo(
+                page=page,
+                per_page=per_page,
+                total_pages=0,
+                total_count=0
+            )
             return SamplesResponse(
                 summary=EntitySummary(counts=EntityCounts(total=0)),
+                page_info=page_info,
                 data=[]
             )
         
@@ -149,6 +157,14 @@ async def get_samples(
         
         filtered_df = data_loader.filter_dataframe(df, filters)
         total_count = len(filtered_df)
+        # Calculate pagination
+        total_pages = (total_count + per_page - 1) // per_page if total_count > 0 else 0
+        page_info = PageInfo(
+            page=page,
+            per_page=per_page,
+            total_pages=total_pages,
+            total_count=total_count
+        )
         
         # Apply pagination
         paginated_df = data_loader.paginate_dataframe(filtered_df, page, per_page)
@@ -164,6 +180,7 @@ async def get_samples(
         
         return SamplesResponse(
             summary=EntitySummary(counts=EntityCounts(total=total_count)),
+            page_info=page_info,
             data=samples
         )
         
@@ -294,8 +311,15 @@ async def get_samples_by_diagnosis(
     try:
         df = data_loader.samples_df
         if df.empty:
+            page_info = PageInfo(
+                page=page,
+                per_page=per_page,
+                total_pages=0,
+                total_count=0
+            )
             return SamplesResponse(
                 summary=EntitySummary(counts=EntityCounts(total=0)),
+                page_info=page_info,
                 data=[]
             )
         
@@ -323,6 +347,14 @@ async def get_samples_by_diagnosis(
         
         filtered_df = data_loader.filter_dataframe(df, filters)
         total_count = len(filtered_df)
+        # Calculate pagination
+        total_pages = (total_count + per_page - 1) // per_page if total_count > 0 else 0
+        page_info = PageInfo(
+            page=page,
+            per_page=per_page,
+            total_pages=total_pages,
+            total_count=total_count
+        )
         
         # Apply pagination
         paginated_df = data_loader.paginate_dataframe(filtered_df, page, per_page)
@@ -338,6 +370,7 @@ async def get_samples_by_diagnosis(
         
         return SamplesResponse(
             summary=EntitySummary(counts=EntityCounts(total=total_count)),
+            page_info=page_info,
             data=samples
         )
         

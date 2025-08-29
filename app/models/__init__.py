@@ -289,6 +289,13 @@ class EntitySummary(BaseModel):
     counts: EntityCounts
 
 
+class PageInfo(BaseModel):
+    page: int = Field(..., ge=1, description="Current page number")
+    per_page: int = Field(..., ge=1, description="Number of items per page")
+    total_pages: int = Field(..., ge=0, description="Total number of pages")
+    total_count: int = Field(..., ge=0, description="Total number of items")
+
+
 class Summary(BaseModel):
     subjects: EntitySummary
     samples: EntitySummary
@@ -297,16 +304,19 @@ class Summary(BaseModel):
 
 class SubjectsResponse(BaseModel):
     summary: EntitySummary
+    page_info: Optional[PageInfo] = None
     data: List[Subject]
 
 
 class SamplesResponse(BaseModel):
     summary: EntitySummary
+    page_info: Optional[PageInfo] = None
     data: List[Sample]
 
 
 class FilesResponse(BaseModel):
     summary: EntitySummary
+    page_info: Optional[PageInfo] = None
     data: List[File]
 
 

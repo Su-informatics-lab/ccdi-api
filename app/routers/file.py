@@ -8,7 +8,8 @@ import logging
 
 from app.models import (
     File, FilesResponse, EntitySummary, EntityCounts, CountResults, CountResult,
-    FileIdentifier, SampleIdentifier, NamespaceIdentifier, MetadataField, FileMetadata, FileChecksum
+    FileIdentifier, SampleIdentifier, NamespaceIdentifier, MetadataField, FileMetadata, FileChecksum,
+    PageInfo
 )
 from app.services.data_loader import DataLoader
 

@@ -9,7 +9,7 @@ import logging
 from app.models import (
     Subject, SubjectsResponse, Summary, EntitySummary, EntityCounts, CountResults, CountResult,
     SubjectIdentifier, NamespaceIdentifier, MetadataField, SubjectMetadata,
-    ErrorResponse, Error, FieldDescriptions, FieldDescription
+    ErrorResponse, Error, FieldDescriptions, FieldDescription, PageInfo
 )
 from app.services.data_loader import DataLoader
 
