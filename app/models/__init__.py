@@ -279,12 +279,20 @@ class Organization(BaseModel):
     name: str
     metadata: Optional[OrganizationMetadata] = None
 
-
 # Response models
-class EntityCounts(BaseModel):
+class EntityPureCounts(BaseModel):
     total: int = Field(..., ge=0)
 
 
+class EntityPureSummary(BaseModel):
+    counts: EntityPureCounts
+
+# Response models
+class EntityCounts(BaseModel):
+    all: int = Field(..., ge=0, description="Total number of items across all pages")
+    current: int = Field(..., ge=0, description="Number of items in current page/response")
+
+# Summary information for entities with pagination 
 class EntitySummary(BaseModel):
     counts: EntityCounts
 

@@ -7,7 +7,7 @@ from typing import Optional
 import logging
 
 from app.models import (
-    File, FilesResponse, EntitySummary, EntityCounts, CountResults, CountResult,
+    File, FilesResponse, EntitySummary, EntityCounts, CountResults, CountResult, EntityPureCounts, EntityPureSummary,
     FileIdentifier, SampleIdentifier, NamespaceIdentifier, MetadataField, FileMetadata, FileChecksum,
     PageInfo
 )
@@ -97,7 +97,7 @@ async def get_files(
         df = data_loader.files_df
         if df.empty:
             return FilesResponse(
-                summary=EntitySummary(counts=EntityCounts(total=0)),
+                summary=EntitySummary(counts=EntityCounts(all=0, current=0)),
                 data=[]
             )
         
@@ -131,7 +131,7 @@ async def get_files(
                 logger.warning(f"Failed to create file from row: {e}")
         
         return FilesResponse(
-            summary=EntitySummary(counts=EntityCounts(total=total_count)),
+            summary=EntitySummary(counts=EntityCounts(all=total_count, current=len(files))),
             data=files
         )
         
@@ -181,7 +181,7 @@ async def get_files_count_by_field(
         df = data_loader.files_df
         if df.empty:
             return CountResults(
-                summary=EntitySummary(counts=EntityCounts(total=0)),
+                summary=EntitySummary(counts=EntityCounts(all=0, current=0)),
                 data=[]
             )
         
@@ -206,7 +206,7 @@ async def get_files_count_by_field(
         count_results = [CountResult(name=item['name'], count=item['count']) for item in counts]
         
         return CountResults(
-            summary=EntitySummary(counts=EntityCounts(total=total)),
+            summary=EntitySummary(counts=EntityCounts(all=total, current=len(count_results))),
             data=count_results
         )
         
@@ -217,7 +217,7 @@ async def get_files_count_by_field(
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
-@router.get("/summary", response_model=EntitySummary)
+@router.get("/summary", response_model=EntityPureSummary)
 async def get_files_summary(
     data_loader: DataLoader = Depends(get_data_loader)
 ):
@@ -225,7 +225,7 @@ async def get_files_summary(
     try:
         file_count = len(data_loader.files_df) if not data_loader.files_df.empty else 0
         
-        return EntitySummary(counts=EntityCounts(total=file_count))
+        return EntityPureSummary(counts=EntityPureCounts(total=file_count))
         
     except Exception as e:
         logger.error(f"Error getting files summary: {e}")

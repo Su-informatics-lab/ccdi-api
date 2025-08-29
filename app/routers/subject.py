@@ -7,7 +7,7 @@ from typing import Optional, List
 import logging
 
 from app.models import (
-    Subject, SubjectsResponse, Summary, EntitySummary, EntityCounts, CountResults, CountResult,
+    EntityPureSummary, Subject, SubjectsResponse, EntitySummary, EntityCounts, CountResults, CountResult, EntityPureCounts,EntityPureSummary,
     SubjectIdentifier, NamespaceIdentifier, MetadataField, SubjectMetadata,
     ErrorResponse, Error, FieldDescriptions, FieldDescription, PageInfo
 )
@@ -87,7 +87,7 @@ async def get_subjects(
         df = data_loader.subjects_df
         if df.empty:
             return SubjectsResponse(
-                summary=EntitySummary(counts=EntityCounts(total=0)),
+                summary=EntitySummary(counts=EntityCounts(all=0, current=0)),
                 data=[]
             )
         
@@ -117,7 +117,7 @@ async def get_subjects(
                 logger.warning(f"Failed to create subject from row: {e}")
         
         return SubjectsResponse(
-            summary=EntitySummary(counts=EntityCounts(total=total_count)),
+            summary=EntitySummary(counts=EntityCounts(all=total_count, current=len(subjects))),
             data=subjects
         )
         
@@ -167,7 +167,7 @@ async def get_subjects_count_by_field(
         df = data_loader.subjects_df
         if df.empty:
             return CountResults(
-                summary=EntitySummary(counts=EntityCounts(total=0)),
+                summary=EntitySummary(counts=EntityCounts(all=0, current=0)),
                 data=[]
             )
         
@@ -192,7 +192,7 @@ async def get_subjects_count_by_field(
         count_results = [CountResult(name=item['name'], count=item['count']) for item in counts]
         
         return CountResults(
-            summary=EntitySummary(counts=EntityCounts(total=total)),
+            summary=EntitySummary(counts=EntityCounts(all=total, current=len(count_results))),
             data=count_results
         )
         
@@ -203,7 +203,7 @@ async def get_subjects_count_by_field(
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
-@router.get("/summary", response_model=EntitySummary)
+@router.get("/summary", response_model=EntityPureSummary)
 async def get_subjects_summary(
     data_loader: DataLoader = Depends(get_data_loader)
 ):
@@ -211,7 +211,7 @@ async def get_subjects_summary(
     try:
         subject_count = len(data_loader.subjects_df) if not data_loader.subjects_df.empty else 0
 
-        return EntitySummary(counts=EntityCounts(total=subject_count))
+        return EntityPureSummary(counts=EntityPureCounts(total=subject_count))
 
     except Exception as e:
         logger.error(f"Error getting subjects summary: {e}")
@@ -238,7 +238,7 @@ async def get_subjects_by_diagnosis(
         df = data_loader.subjects_df
         if df.empty:
             return SubjectsResponse(
-                summary=EntitySummary(counts=EntityCounts(total=0)),
+                summary=EntitySummary(counts=EntityCounts(all=0, current=0)),
                 data=[]
             )
         
@@ -279,7 +279,7 @@ async def get_subjects_by_diagnosis(
                 logger.warning(f"Failed to create subject from row: {e}")
         
         return SubjectsResponse(
-            summary=EntitySummary(counts=EntityCounts(total=total_count)),
+            summary=EntitySummary(counts=EntityCounts(all=total_count, current=len(subjects))),
             data=subjects
         )
         

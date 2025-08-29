@@ -7,7 +7,7 @@ from typing import Optional
 import logging
 
 from app.models import (
-    Sample, SamplesResponse, EntitySummary, EntityCounts, CountResults, CountResult,
+    Sample, SamplesResponse, EntitySummary, EntityCounts, CountResults, CountResult, EntityPureCounts, EntityPureSummary,
     SampleIdentifier, SubjectIdentifier, NamespaceIdentifier, MetadataField, SampleMetadata,
     PageInfo
 )
@@ -132,7 +132,7 @@ async def get_samples(
                 total_count=0
             )
             return SamplesResponse(
-                summary=EntitySummary(counts=EntityCounts(total=0)),
+                summary=EntitySummary(counts=EntityCounts(all=0, current=0)),
                 page_info=page_info,
                 data=[]
             )
@@ -179,7 +179,7 @@ async def get_samples(
                 logger.warning(f"Failed to create sample from row: {e}")
         
         return SamplesResponse(
-            summary=EntitySummary(counts=EntityCounts(total=total_count)),
+            summary=EntitySummary(counts=EntityCounts(all=total_count, current=len(samples))),
             page_info=page_info,
             data=samples
         )
@@ -230,7 +230,7 @@ async def get_samples_count_by_field(
         df = data_loader.samples_df
         if df.empty:
             return CountResults(
-                summary=EntitySummary(counts=EntityCounts(total=0)),
+                summary=EntitySummary(counts=EntityCounts(all=0, current=0)),
                 data=[]
             )
         
@@ -259,7 +259,7 @@ async def get_samples_count_by_field(
         count_results = [CountResult(name=item['name'], count=item['count']) for item in counts]
         
         return CountResults(
-            summary=EntitySummary(counts=EntityCounts(total=total)),
+            summary=EntitySummary(counts=EntityCounts(all=total, current=len(count_results))),
             data=count_results
         )
         
@@ -270,7 +270,7 @@ async def get_samples_count_by_field(
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
-@router.get("/summary", response_model=EntitySummary)
+@router.get("/summary", response_model=EntityPureSummary)
 async def get_samples_summary(
     data_loader: DataLoader = Depends(get_data_loader)
 ):
@@ -278,7 +278,7 @@ async def get_samples_summary(
     try:
         sample_count = len(data_loader.samples_df) if not data_loader.samples_df.empty else 0
         
-        return EntitySummary(counts=EntityCounts(total=sample_count))
+        return EntityPureSummary(counts=EntityPureCounts(total=sample_count))
         
     except Exception as e:
         logger.error(f"Error getting samples summary: {e}")
@@ -318,7 +318,7 @@ async def get_samples_by_diagnosis(
                 total_count=0
             )
             return SamplesResponse(
-                summary=EntitySummary(counts=EntityCounts(total=0)),
+                summary=EntitySummary(counts=EntityCounts(all=0, current=0)),
                 page_info=page_info,
                 data=[]
             )
@@ -369,7 +369,7 @@ async def get_samples_by_diagnosis(
                 logger.warning(f"Failed to create sample from row: {e}")
         
         return SamplesResponse(
-            summary=EntitySummary(counts=EntityCounts(total=total_count)),
+            summary=EntitySummary(counts=EntityCounts(all=total_count, current=len(samples))),
             page_info=page_info,
             data=samples
         )
