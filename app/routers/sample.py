@@ -117,9 +117,11 @@ async def get_samples_count_by_field(
         
         # Check if field is supported
         supported_fields = [
-            'disease_phase', 'anatomical_sites', 'library_strategy', 
-            'tissue_type', 'tumor_classification', 'preservation_method',
-            'library_source_material', 'diagnosis'
+            'disease_phase', 'anatomical_sites', 'library_selection_method', 
+            'library_strategy', 'library_source_material', 'preservation_method',
+            'tumor_grade', 'specimen_molecular_analyte_type', 'tissue_type', 
+            'tumor_classification', 'age_at_diagnosis', 'age_at_collection',
+            'tumor_tissue_morphology', 'depositions', 'diagnosis', 'identifiers'
         ]
         if field not in supported_fields:
             raise HTTPException(

@@ -142,7 +142,7 @@ async def get_subjects_count_by_field(
             )
         
         # Check if field is supported
-        supported_fields = ['sex', 'race', 'ethnicity', 'identifiers', 'vital_status', 'kind']
+        supported_fields = ['sex', 'race', 'ethnicity', 'identifiers', 'vital_status', 'age_at_vital_status','associated_diagnoses', 'depositions', 'kind']
         if field not in supported_fields:
             raise HTTPException(
                 status_code=422,

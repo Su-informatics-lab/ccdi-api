@@ -156,7 +156,7 @@ async def get_files_count_by_field(
             )
         
         # Check if field is supported
-        supported_fields = ['type', 'size']
+        supported_fields = ['type', 'size', 'checksums', 'description', 'depositions']
         if field not in supported_fields:
             raise HTTPException(
                 status_code=422,
