@@ -1,4 +1,4 @@
-namespace_organization,namespace_name,subject_name,kind,sex,race,ethnicity,vital_status,age_at_vital_status,associated_diagnoses
+namespace_organization,namespace_name,subject_name,kind,sex,race,ethnicity,vital_status,age_at_vital_status,associated_diagnosis
 IUSCCC,PST001,535,Participant,M,Unknown,Unknown,Unknown,0,Secondary malignant neoplasm of lung
 IUSCCC,PST001,358,Participant,M,Unknown,Unknown,Unknown,0,Malignant neoplasm of brain
 IUSCCC,PST001,359,Participant,F,Unknown,Unknown,Dead,6491.0,"Malignant neoplasm of pelvic bones, sacrum and coccyx"

@@ -139,6 +139,11 @@ class DataLoader:
             self.subjects_df = pd.read_csv(subjects_file,dtype={'subject_name': str})
             self.subjects_df = self.subjects_df.fillna('')  # Replace NaN with empty strings
             
+            # Rename associated_diagnosis to associated_diagnoses if it exists
+            if 'associated_diagnosis' in self.subjects_df.columns:
+                self.subjects_df = self.subjects_df.rename(columns={'associated_diagnosis': 'associated_diagnoses'})
+                logger.info("Renamed column 'associated_diagnosis' to 'associated_diagnoses'")
+            
             # Check if 'identifiers' column exists, if not create it
             if 'identifiers' not in self.subjects_df.columns:
                 # Generate identifiers as namespace_name + "_" + subject_name
