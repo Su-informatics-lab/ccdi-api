@@ -347,6 +347,30 @@ class CountResults(BaseModel):
     data: List[CountResult]
 
 
+# Swagger-compliant count models
+class ValueCount(BaseModel):
+    value: str
+    count: int = Field(..., ge=0)
+
+
+class SubjectCountResults(BaseModel):
+    total: int = Field(..., ge=0)
+    missing: int = Field(..., ge=0)
+    values: List[ValueCount]
+
+
+class SampleCountResults(BaseModel):
+    total: int = Field(..., ge=0)
+    missing: int = Field(..., ge=0)
+    values: List[ValueCount]
+
+
+class FileCountResults(BaseModel):
+    total: int = Field(..., ge=0)
+    missing: int = Field(..., ge=0)
+    values: List[ValueCount]
+
+
 # Error models
 class Error(BaseModel):
     kind: str

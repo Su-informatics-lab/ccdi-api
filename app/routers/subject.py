@@ -9,7 +9,7 @@ import logging
 from app.models import (
     EntityPureSummary, Subject, SubjectsResponse, EntitySummary, EntityCounts, CountResults, CountResult, EntityPureCounts,EntityPureSummary,
     SubjectIdentifier, NamespaceIdentifier, MetadataField, SubjectMetadata,
-    ErrorResponse, Error, FieldDescriptions, FieldDescription, PageInfo
+    ErrorResponse, Error, FieldDescriptions, FieldDescription, PageInfo, SubjectCountResults, ValueCount
 )
 from app.services.data_loader import DataLoader
 
@@ -126,7 +126,7 @@ async def get_subjects(
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
-@router.get("/by/{field}/count", response_model=CountResults)
+@router.get("/by/{field}/count", response_model=SubjectCountResults)
 async def get_subjects_count_by_field(
     field: str,
     data_loader: DataLoader = Depends(get_data_loader)
@@ -135,9 +135,10 @@ async def get_subjects_count_by_field(
     try:
         df = data_loader.subjects_df
         if df.empty:
-            return CountResults(
-                summary=EntitySummary(counts=EntityCounts(all=0, current=0)),
-                data=[]
+            return SubjectCountResults(
+                total=0,
+                missing=0,
+                values=[]
             )
         
         # Check if field is supported
@@ -158,11 +159,17 @@ async def get_subjects_count_by_field(
         counts = data_loader.count_by_field(df, field)
         total = sum(item['count'] for item in counts)
         
-        count_results = [CountResult(name=item['name'], count=item['count']) for item in counts]
+        # Count missing values (null or empty values in the field)
+        missing_count = 0
+        if field in df.columns:
+            missing_count = df[field].isnull().sum()
         
-        return CountResults(
-            summary=EntitySummary(counts=EntityCounts(all=total, current=len(count_results))),
-            data=count_results
+        value_counts = [ValueCount(value=item['name'], count=item['count']) for item in counts]
+        
+        return SubjectCountResults(
+            total=total,
+            missing=missing_count,
+            values=value_counts
         )
         
     except HTTPException:
