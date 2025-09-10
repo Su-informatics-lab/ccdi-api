@@ -126,37 +126,6 @@ async def get_subjects(
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
-@router.get("/{organization}/{namespace}/{name}", response_model=Subject)
-async def get_subject(
-    organization: str,
-    namespace: str,
-    name: str,
-    data_loader: DataLoader = Depends(get_data_loader)
-):
-    """Get a specific subject by identifier."""
-    try:
-        row = data_loader.get_subject_by_id(organization, namespace, name)
-        if not row:
-            raise HTTPException(
-                status_code=404,
-                detail={
-                    "errors": [{
-                        "kind": "NotFound",
-                        "entity": f"Subject with namespace '{organization}/{namespace}' and name '{name}'",
-                        "message": f"Subject with namespace '{organization}/{namespace}' and name '{name}' not found."
-                    }]
-                }
-            )
-        
-        return create_subject_from_row(row)
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error getting subject {organization}/{namespace}/{name}: {e}")
-        raise HTTPException(status_code=500, detail="Internal server error")
-
-
 @router.get("/by/{field}/count", response_model=CountResults)
 async def get_subjects_count_by_field(
     field: str,
@@ -200,6 +169,37 @@ async def get_subjects_count_by_field(
         raise
     except Exception as e:
         logger.error(f"Error getting subject counts by {field}: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+
+@router.get("/{organization}/{namespace}/{name}", response_model=Subject)
+async def get_subject(
+    organization: str,
+    namespace: str,
+    name: str,
+    data_loader: DataLoader = Depends(get_data_loader)
+):
+    """Get a specific subject by identifier."""
+    try:
+        row = data_loader.get_subject_by_id(organization, namespace, name)
+        if not row:
+            raise HTTPException(
+                status_code=404,
+                detail={
+                    "errors": [{
+                        "kind": "NotFound",
+                        "entity": f"Subject with namespace '{organization}/{namespace}' and name '{name}'",
+                        "message": f"Subject with namespace '{organization}/{namespace}' and name '{name}' not found."
+                    }]
+                }
+            )
+        
+        return create_subject_from_row(row)
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error getting subject {organization}/{namespace}/{name}: {e}")
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
