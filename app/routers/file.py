@@ -140,37 +140,6 @@ async def get_files(
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
-@router.get("/{organization}/{namespace}/{name}", response_model=File)
-async def get_file(
-    organization: str,
-    namespace: str,
-    name: str,
-    data_loader: DataLoader = Depends(get_data_loader)
-):
-    """Get a specific file by identifier."""
-    try:
-        row = data_loader.get_file_by_id(organization, namespace, name)
-        if not row:
-            raise HTTPException(
-                status_code=404,
-                detail={
-                    "errors": [{
-                        "kind": "NotFound",
-                        "entity": f"File with namespace '{organization}/{namespace}' and name '{name}'",
-                        "message": f"File with namespace '{organization}/{namespace}' and name '{name}' not found."
-                    }]
-                }
-            )
-        
-        return create_file_from_row(row)
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error getting file {organization}/{namespace}/{name}: {e}")
-        raise HTTPException(status_code=500, detail="Internal server error")
-
-
 @router.get("/by/{field}/count", response_model=CountResults)
 async def get_files_count_by_field(
     field: str,
@@ -214,6 +183,37 @@ async def get_files_count_by_field(
         raise
     except Exception as e:
         logger.error(f"Error getting file counts by {field}: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+
+@router.get("/{organization}/{namespace}/{name}", response_model=File)
+async def get_file(
+    organization: str,
+    namespace: str,
+    name: str,
+    data_loader: DataLoader = Depends(get_data_loader)
+):
+    """Get a specific file by identifier."""
+    try:
+        row = data_loader.get_file_by_id(organization, namespace, name)
+        if not row:
+            raise HTTPException(
+                status_code=404,
+                detail={
+                    "errors": [{
+                        "kind": "NotFound",
+                        "entity": f"File with namespace '{organization}/{namespace}' and name '{name}'",
+                        "message": f"File with namespace '{organization}/{namespace}' and name '{name}' not found."
+                    }]
+                }
+            )
+        
+        return create_file_from_row(row)
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error getting file {organization}/{namespace}/{name}: {e}")
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
