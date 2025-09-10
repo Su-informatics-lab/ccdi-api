@@ -100,6 +100,71 @@ def create_sample_from_row(row: dict) -> Sample:
     )
 
 
+@router.get("/by/{field}/count", response_model=CountResults)
+async def get_samples_count_by_field(
+    field: str,
+    data_loader: DataLoader = Depends(get_data_loader)
+):
+    """Group samples by the specified field and return counts."""
+    try:
+        df = data_loader.samples_df
+        if df.empty:
+            return CountResults(
+                summary=EntitySummary(counts=EntityCounts(all=0, current=0)),
+                data=[]
+            )
+        
+        # Check if field is supported
+        supported_fields = [
+            'disease_phase', 'anatomical_sites', 'library_strategy', 
+            'tissue_type', 'tumor_classification', 'preservation_method',
+            'library_source_material', 'diagnosis'
+        ]
+        if field not in supported_fields:
+            raise HTTPException(
+                status_code=422,
+                detail={
+                    "errors": [{
+                        "kind": "UnsupportedField",
+                        "field": field,
+                        "reason": "This field is not present for samples.",
+                        "message": f"Field '{field}' is not supported: this field is not present for samples."
+                    }]
+                }
+            )
+        
+        counts = data_loader.count_by_field(df, field)
+        total = sum(item['count'] for item in counts)
+        
+        count_results = [CountResult(name=item['name'], count=item['count']) for item in counts]
+        
+        return CountResults(
+            summary=EntitySummary(counts=EntityCounts(all=total, current=len(count_results))),
+            data=count_results
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error getting sample counts by {field}: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+
+@router.get("/summary", response_model=EntityPureSummary)
+async def get_samples_summary(
+    data_loader: DataLoader = Depends(get_data_loader)
+):
+    """Get summary information for samples."""
+    try:
+        sample_count = len(data_loader.samples_df) if not data_loader.samples_df.empty else 0
+        
+        return EntityPureSummary(counts=EntityPureCounts(total=sample_count))
+        
+    except Exception as e:
+        logger.error(f"Error getting samples summary: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+
 @router.get("", response_model=SamplesResponse)
 async def get_samples(
     data_loader: DataLoader = Depends(get_data_loader),
@@ -217,71 +282,6 @@ async def get_sample(
         raise
     except Exception as e:
         logger.error(f"Error getting sample {organization}/{namespace}/{name}: {e}")
-        raise HTTPException(status_code=500, detail="Internal server error")
-
-
-@router.get("/by/{field}/count", response_model=CountResults)
-async def get_samples_count_by_field(
-    field: str,
-    data_loader: DataLoader = Depends(get_data_loader)
-):
-    """Group samples by the specified field and return counts."""
-    try:
-        df = data_loader.samples_df
-        if df.empty:
-            return CountResults(
-                summary=EntitySummary(counts=EntityCounts(all=0, current=0)),
-                data=[]
-            )
-        
-        # Check if field is supported
-        supported_fields = [
-            'disease_phase', 'anatomical_sites', 'library_strategy', 
-            'tissue_type', 'tumor_classification', 'preservation_method',
-            'library_source_material', 'diagnosis'
-        ]
-        if field not in supported_fields:
-            raise HTTPException(
-                status_code=422,
-                detail={
-                    "errors": [{
-                        "kind": "UnsupportedField",
-                        "field": field,
-                        "reason": "This field is not present for samples.",
-                        "message": f"Field '{field}' is not supported: this field is not present for samples."
-                    }]
-                }
-            )
-        
-        counts = data_loader.count_by_field(df, field)
-        total = sum(item['count'] for item in counts)
-        
-        count_results = [CountResult(name=item['name'], count=item['count']) for item in counts]
-        
-        return CountResults(
-            summary=EntitySummary(counts=EntityCounts(all=total, current=len(count_results))),
-            data=count_results
-        )
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error getting sample counts by {field}: {e}")
-        raise HTTPException(status_code=500, detail="Internal server error")
-
-
-@router.get("/summary", response_model=EntityPureSummary)
-async def get_samples_summary(
-    data_loader: DataLoader = Depends(get_data_loader)
-):
-    """Get summary information for samples."""
-    try:
-        sample_count = len(data_loader.samples_df) if not data_loader.samples_df.empty else 0
-        
-        return EntityPureSummary(counts=EntityPureCounts(total=sample_count))
-        
-    except Exception as e:
-        logger.error(f"Error getting samples summary: {e}")
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
