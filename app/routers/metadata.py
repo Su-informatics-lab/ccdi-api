@@ -68,18 +68,12 @@ async def get_subject_fields(
             HarmonizedFieldDescription(
                 path="age_at_vital_status",
                 wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Subject-Metadata-Fields#age_at_vital_status",
-                standard=Standard(
-                    name="caDSR CDE 5432687 v1.00",
-                    url="https://cadsr.cancer.gov/onedata/dmdirect/NIH/NCI/CO/CDEDD?filter=CDEDD.ITEM_ID=5432687%20and%20ver_nr=1"
-                )
+                standard=None
             ),
             HarmonizedFieldDescription(
                 path="associated_diagnoses",
                 wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Subject-Metadata-Fields#associated_diagnoses",
-                standard=Standard(
-                    name="caDSR CDE 5432687 v1.00",
-                    url="https://cadsr.cancer.gov/onedata/dmdirect/NIH/NCI/CO/CDEDD?filter=CDEDD.ITEM_ID=5432687%20and%20ver_nr=1"
-                )
+                standard=None
             ),
             HarmonizedFieldDescription(
                 path="depositions",
