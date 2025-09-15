@@ -384,7 +384,18 @@ class ErrorResponse(BaseModel):
     errors: List[Error]
 
 
-# Metadata field description models
+# Metadata field description models (Swagger-compliant)
+class HarmonizedFieldDescription(BaseModel):
+    harmonized: bool = True
+    path: str = Field(..., description="Path to the field in metadata objects")
+    wiki_url: str = Field(..., description="URL to field documentation")
+
+
+class MetadataFieldDescriptions(BaseModel):
+    fields: List[HarmonizedFieldDescription]
+
+
+# Legacy field description models (for backward compatibility)
 class FieldDescription(BaseModel):
     name: str
     description: str

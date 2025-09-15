@@ -5,7 +5,7 @@ Metadata router for CCDI API.
 from fastapi import APIRouter, Depends, HTTPException, Request
 import logging
 
-from app.models import FieldDescriptions, FieldDescription
+from app.models import MetadataFieldDescriptions, HarmonizedFieldDescription
 from app.services.data_loader import DataLoader
 
 logger = logging.getLogger(__name__)
@@ -17,188 +17,160 @@ def get_data_loader(request: Request) -> DataLoader:
     return request.app.state.data_loader
 
 
-@router.get("/fields/subject", response_model=FieldDescriptions)
+@router.get("/fields/subject", response_model=MetadataFieldDescriptions)
 async def get_subject_fields(
     data_loader: DataLoader = Depends(get_data_loader)
 ):
     """Get metadata fields for subjects that are supported by this server."""
     try:
         fields = [
-            FieldDescription(
-                name="sex",
-                description="The sex of the subject",
-                required=False
+            HarmonizedFieldDescription(
+                path="sex",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Subject-Metadata-Fields#sex"
             ),
-            FieldDescription(
-                name="race",
-                description="The race(s) of the subject",
-                required=False
+            HarmonizedFieldDescription(
+                path="race",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Subject-Metadata-Fields#race"
             ),
-            FieldDescription(
-                name="ethnicity", 
-                description="The ethnicity of the subject",
-                required=False
+            HarmonizedFieldDescription(
+                path="ethnicity",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Subject-Metadata-Fields#ethnicity"
             ),
-            FieldDescription(
-                name="identifiers",
-                description="Alternative identifiers for the subject",
-                required=False
+            HarmonizedFieldDescription(
+                path="identifiers",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Subject-Metadata-Fields#identifiers"
             ),
-            FieldDescription(
-                name="vital_status",
-                description="The vital status of the subject",
-                required=False
+            HarmonizedFieldDescription(
+                path="vital_status",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Subject-Metadata-Fields#vital_status"
             ),
-            FieldDescription(
-                name="age_at_vital_status",
-                description="Age at vital status determination",
-                required=False
+            HarmonizedFieldDescription(
+                path="age_at_vital_status",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Subject-Metadata-Fields#age_at_vital_status"
             ),
-            FieldDescription(
-                name="associated_diagnoses",
-                description="Diagnoses associated with the subject",
-                required=False
+            HarmonizedFieldDescription(
+                path="associated_diagnoses",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Subject-Metadata-Fields#associated_diagnoses"
             ),
-            FieldDescription(
-                name="depositions",
-                description="Data depositions associated with the subject",
-                required=False
+            HarmonizedFieldDescription(
+                path="depositions",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Subject-Metadata-Fields#depositions"
             )
         ]
         
-        return FieldDescriptions(fields=fields)
+        return MetadataFieldDescriptions(fields=fields)
         
     except Exception as e:
         logger.error(f"Error getting subject fields: {e}")
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
-@router.get("/fields/sample", response_model=FieldDescriptions)
+@router.get("/fields/sample", response_model=MetadataFieldDescriptions)
 async def get_sample_fields(
     data_loader: DataLoader = Depends(get_data_loader)
 ):
     """Get metadata fields for samples that are supported by this server."""
     try:
         fields = [
-            FieldDescription(
-                name="disease_phase",
-                description="The phase of disease when the sample was collected",
-                required=False
+            HarmonizedFieldDescription(
+                path="disease_phase",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Sample-Metadata-Fields#disease_phase"
             ),
-            FieldDescription(
-                name="anatomical_sites",
-                description="Anatomical site(s) where the sample was collected",
-                required=False
+            HarmonizedFieldDescription(
+                path="anatomical_sites",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Sample-Metadata-Fields#anatomical_sites"
             ),
-            FieldDescription(
-                name="library_selection_method",
-                description="The method used to select library fragments",
-                required=False
+            HarmonizedFieldDescription(
+                path="library_selection_method",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Sample-Metadata-Fields#library_selection_method"
             ),
-            FieldDescription(
-                name="library_strategy",
-                description="The overall strategy for library construction",
-                required=False
+            HarmonizedFieldDescription(
+                path="library_strategy",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Sample-Metadata-Fields#library_strategy"
             ),
-            FieldDescription(
-                name="library_source_material",
-                description="The source material for library construction",
-                required=False
+            HarmonizedFieldDescription(
+                path="library_source_material",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Sample-Metadata-Fields#library_source_material"
             ),
-            FieldDescription(
-                name="preservation_method",
-                description="The method used to preserve the sample",
-                required=False
+            HarmonizedFieldDescription(
+                path="preservation_method",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Sample-Metadata-Fields#preservation_method"
             ),
-            FieldDescription(
-                name="tumor_grade",
-                description="The grade of the tumor sample",
-                required=False
+            HarmonizedFieldDescription(
+                path="tumor_grade",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Sample-Metadata-Fields#tumor_grade"
             ),
-            FieldDescription(
-                name="specimen_molecular_analyte_type",
-                description="The type of molecular analyte in the specimen",
-                required=False
+            HarmonizedFieldDescription(
+                path="specimen_molecular_analyte_type",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Sample-Metadata-Fields#specimen_molecular_analyte_type"
             ),
-            FieldDescription(
-                name="tissue_type",
-                description="The type of tissue in the sample",
-                required=False
+            HarmonizedFieldDescription(
+                path="tissue_type",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Sample-Metadata-Fields#tissue_type"
             ),
-            FieldDescription(
-                name="tumor_classification",
-                description="The classification of the tumor",
-                required=False
+            HarmonizedFieldDescription(
+                path="tumor_classification",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Sample-Metadata-Fields#tumor_classification"
             ),
-            FieldDescription(
-                name="age_at_diagnosis",
-                description="Age at diagnosis",
-                required=False
+            HarmonizedFieldDescription(
+                path="age_at_diagnosis",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Sample-Metadata-Fields#age_at_diagnosis"
             ),
-            FieldDescription(
-                name="age_at_collection",
-                description="Age when the sample was collected",
-                required=False
+            HarmonizedFieldDescription(
+                path="age_at_collection",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Sample-Metadata-Fields#age_at_collection"
             ),
-            FieldDescription(
-                name="tumor_tissue_morphology",
-                description="Morphology of the tumor tissue",
-                required=False
+            HarmonizedFieldDescription(
+                path="tumor_tissue_morphology",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Sample-Metadata-Fields#tumor_tissue_morphology"
             ),
-            FieldDescription(
-                name="depositions",
-                description="Data depositions associated with the sample",
-                required=False
+            HarmonizedFieldDescription(
+                path="depositions",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Sample-Metadata-Fields#depositions"
             ),
-            FieldDescription(
-                name="diagnosis",
-                description="The diagnosis associated with the sample",
-                required=False
+            HarmonizedFieldDescription(
+                path="diagnosis",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/Sample-Metadata-Fields#diagnosis"
             )
         ]
         
-        return FieldDescriptions(fields=fields)
+        return MetadataFieldDescriptions(fields=fields)
         
     except Exception as e:
         logger.error(f"Error getting sample fields: {e}")
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
-@router.get("/fields/file", response_model=FieldDescriptions)
+@router.get("/fields/file", response_model=MetadataFieldDescriptions)
 async def get_file_fields(
     data_loader: DataLoader = Depends(get_data_loader)
 ):
     """Get metadata fields for files that are supported by this server."""
     try:
         fields = [
-            FieldDescription(
-                name="type",
-                description="The type/format of the file",
-                required=False
+            HarmonizedFieldDescription(
+                path="type",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/File-Metadata-Fields#type"
             ),
-            FieldDescription(
-                name="size",
-                description="The size of the file in bytes",
-                required=False
+            HarmonizedFieldDescription(
+                path="size",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/File-Metadata-Fields#size"
             ),
-            FieldDescription(
-                name="checksums",
-                description="Checksums for file integrity verification",
-                required=False
+            HarmonizedFieldDescription(
+                path="checksums",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/File-Metadata-Fields#checksumsmd5"
             ),
-            FieldDescription(
-                name="description",
-                description="A description of the file contents",
-                required=False
+            HarmonizedFieldDescription(
+                path="description",
+                wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/File-Metadata-Fields#description"
             ),
-            FieldDescription(
-                name="depositions",
-                description="Data depositions associated with the file",
-                required=False
-            )
+            # HarmonizedFieldDescription(
+            #     path="depositions",
+            #     wiki_url="https://github.com/CBIIT/ccdi-federation-api-spec/wiki/File-Metadata-Fields#depositions"
+            # )
         ]
         
-        return FieldDescriptions(fields=fields)
+        return MetadataFieldDescriptions(fields=fields)
         
     except Exception as e:
         logger.error(f"Error getting file fields: {e}")
