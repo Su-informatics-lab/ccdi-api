@@ -385,10 +385,16 @@ class ErrorResponse(BaseModel):
 
 
 # Metadata field description models (Swagger-compliant)
+class Standard(BaseModel):
+    name: str = Field(..., description="The name of the standard")
+    url: str = Field(..., description="URL to the standard documentation")
+
+
 class HarmonizedFieldDescription(BaseModel):
     harmonized: bool = True
     path: str = Field(..., description="Path to the field in metadata objects")
     wiki_url: str = Field(..., description="URL to field documentation")
+    standard: Optional[Standard] = Field(None, description="Standard to which the field is harmonized")
 
 
 class MetadataFieldDescriptions(BaseModel):
