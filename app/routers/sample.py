@@ -254,7 +254,7 @@ async def get_samples(
         
         return SamplesResponse(
             summary=EntitySummary(counts=EntityCounts(all=total_count, current=len(samples))),
-            page_info=page_info,
+            #page_info=page_info,
             data=samples
         )
         

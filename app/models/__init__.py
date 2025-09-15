@@ -312,19 +312,19 @@ class Summary(BaseModel):
 
 class SubjectsResponse(BaseModel):
     summary: EntitySummary
-    page_info: Optional[PageInfo] = None
+    #page_info: Optional[PageInfo] = None
     data: List[Subject]
 
 
 class SamplesResponse(BaseModel):
     summary: EntitySummary
-    page_info: Optional[PageInfo] = None
+    #page_info: Optional[PageInfo] = None
     data: List[Sample]
 
 
 class FilesResponse(BaseModel):
     summary: EntitySummary
-    page_info: Optional[PageInfo] = None
+    #page_info: Optional[PageInfo] = None
     data: List[File]
 
 
