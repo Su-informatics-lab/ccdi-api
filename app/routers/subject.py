@@ -5,6 +5,7 @@ Subject router for CCDI API.
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from typing import Optional, List
 import logging
+import pandas as pd
 
 from app.models import (
     EntityPureSummary, Subject, SubjectsResponse, EntitySummary, EntityCounts, CountResults, CountResult, EntityPureCounts,EntityPureSummary,
@@ -143,12 +144,33 @@ async def get_subjects(
             'sex': sex,
             'race': race,
             'ethnicity': ethnicity,
-            'identifiers': identifiers,
             'vital_status': vital_status,
             'age_at_vital_status': age_at_vital_status
         }
         
         filtered_df = data_loader.filter_dataframe(df, filters)
+        
+        # Handle identifiers filtering separately since it works with generated data
+        if identifiers:
+            filtered_subjects = []
+            for _, row in filtered_df.iterrows():
+                try:
+                    subject = create_subject_from_row(row.to_dict())
+                    # Check if any of the generated identifiers match the search term
+                    if subject.metadata and subject.metadata.identifiers:
+                        for ident_field in subject.metadata.identifiers:
+                            if hasattr(ident_field.value, 'name') and identifiers in ident_field.value.name:
+                                filtered_subjects.append(row)
+                                break
+                except Exception as e:
+                    logger.warning(f"Failed to create subject from row during identifier filtering: {e}")
+            
+            # Convert back to DataFrame for consistent handling
+            if filtered_subjects:
+                filtered_df = pd.DataFrame(filtered_subjects)
+            else:
+                filtered_df = pd.DataFrame()  # No matches found
+        
         total_count = len(filtered_df)
         
         # Apply pagination
@@ -312,12 +334,33 @@ async def get_subjects_by_diagnosis(
             'sex': sex,
             'race': race,
             'ethnicity': ethnicity,
-            'identifiers': identifiers,
             'vital_status': vital_status,
             'age_at_vital_status': age_at_vital_status
         }
         
         filtered_df = data_loader.filter_dataframe(df, filters)
+        
+        # Handle identifiers filtering separately since it works with generated data
+        if identifiers:
+            filtered_subjects = []
+            for _, row in filtered_df.iterrows():
+                try:
+                    subject = create_subject_from_row(row.to_dict())
+                    # Check if any of the generated identifiers match the search term
+                    if subject.metadata and subject.metadata.identifiers:
+                        for ident_field in subject.metadata.identifiers:
+                            if hasattr(ident_field.value, 'name') and identifiers in ident_field.value.name:
+                                filtered_subjects.append(row)
+                                break
+                except Exception as e:
+                    logger.warning(f"Failed to create subject from row during identifier filtering: {e}")
+            
+            # Convert back to DataFrame for consistent handling
+            if filtered_subjects:
+                filtered_df = pd.DataFrame(filtered_subjects)
+            else:
+                filtered_df = pd.DataFrame()  # No matches found
+        
         total_count = len(filtered_df)
         
         # Apply pagination

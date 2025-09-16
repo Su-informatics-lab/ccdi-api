@@ -5,6 +5,7 @@ Sample router for CCDI API.
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from typing import Optional, List
 import logging
+import pandas as pd
 
 from app.models import (
     Sample, SamplesResponse, EntitySummary, EntityCounts, CountResults, CountResult, EntityPureCounts, EntityPureSummary,
@@ -241,6 +242,7 @@ async def get_samples(
     tumor_tissue_morphology: Optional[str] = Query(None, description="Filter by tumor tissue morphology"),
     depositions: Optional[str] = Query(None, description="Filter by depositions"),
     diagnosis: Optional[str] = Query(None, description="Filter by diagnosis"),
+    identifiers: Optional[str] = Query(None, description="Filter by identifiers"),
     page: int = Query(1, ge=1, description="Page number"),
     per_page: int = Query(100, ge=1, description="Number of results per page")
 ):
@@ -279,6 +281,28 @@ async def get_samples(
         }
         
         filtered_df = data_loader.filter_dataframe(df, filters)
+        
+        # Handle identifiers filtering separately since it works with generated data
+        if identifiers:
+            filtered_samples = []
+            for _, row in filtered_df.iterrows():
+                try:
+                    sample = create_sample_from_row(row.to_dict())
+                    # Check if any of the generated identifiers match the search term
+                    if sample.metadata and sample.metadata.identifiers:
+                        for ident_field in sample.metadata.identifiers:
+                            if hasattr(ident_field.value, 'name') and identifiers in ident_field.value.name:
+                                filtered_samples.append(row)
+                                break
+                except Exception as e:
+                    logger.warning(f"Failed to create sample from row during identifier filtering: {e}")
+            
+            # Convert back to DataFrame for consistent handling
+            if filtered_samples:
+                filtered_df = pd.DataFrame(filtered_samples)
+            else:
+                filtered_df = pd.DataFrame()  # No matches found
+        
         total_count = len(filtered_df)
         # Calculate pagination
         total_pages = (total_count + per_page - 1) // per_page if total_count > 0 else 0

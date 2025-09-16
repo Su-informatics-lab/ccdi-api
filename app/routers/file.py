@@ -5,6 +5,7 @@ File router for CCDI API.
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from typing import Optional, List
 import logging
+import pandas as pd
 
 from app.models import (
     File, FilesResponse, EntitySummary, EntityCounts, CountResults, CountResult, EntityPureCounts, EntityPureSummary,
@@ -20,6 +21,47 @@ router = APIRouter()
 def get_data_loader(request: Request) -> DataLoader:
     """Dependency to get the data loader from app state."""
     return request.app.state.data_loader
+
+
+def generate_file_identifiers(file_id: FileIdentifier) -> List[FileIdentifierField]:
+    """
+    Generate identifiers for a file based on the ID structure.
+    
+    Given a file ID like:
+    {"namespace": {"organization": "IUSCCC", "name": "PST001"}, "name": "data_file123.txt"}
+    
+    Generates three identifiers:
+    1. "IUSCCC/PST001/data_file123.txt" with comment "file_id"
+    2. "data_file123.txt" with comment "file_name"  
+    3. "PST001_data_file123.txt" with comment "file_with_study_id"
+    """
+    organization = file_id.namespace.organization
+    namespace_name = file_id.namespace.name
+    file_name = file_id.name
+    
+    identifiers = []
+    
+    # 1. Full file ID: organization/namespace/name
+    full_id = f"{organization}/{namespace_name}/{file_name}"
+    identifiers.append(FileIdentifierField(
+        value=ReferencedIdentifier(name=full_id, type="Unlinked"),
+        comment="file_id"
+    ))
+    
+    # 2. File name: just the name
+    identifiers.append(FileIdentifierField(
+        value=ReferencedIdentifier(name=file_name, type="Unlinked"),
+        comment="file_name"
+    ))
+    
+    # 3. File with study ID: namespace_name
+    study_file_id = f"{namespace_name}_{file_name}"
+    identifiers.append(FileIdentifierField(
+        value=ReferencedIdentifier(name=study_file_id, type="Unlinked"),
+        comment="file_with_study_id"
+    ))
+    
+    return identifiers
 
 
 def generate_file_identifiers(file_id: FileIdentifier) -> List[FileIdentifierField]:
@@ -138,6 +180,7 @@ async def get_files(
     checksums: Optional[str] = Query(None, description="Filter by checksums"),
     description: Optional[str] = Query(None, description="Filter by description (substring match)"),
     depositions: Optional[str] = Query(None, description="Filter by depositions"),
+    identifiers: Optional[str] = Query(None, description="Filter by identifiers"),
     page: int = Query(1, ge=1, description="Page number"),
     per_page: int = Query(100, ge=1, description="Number of results per page")
 ):
@@ -164,6 +207,27 @@ async def get_files(
         # Description uses substring match
         if description:
             filtered_df = filtered_df[filtered_df['description'].str.contains(description, case=False, na=False)]
+        
+        # Handle identifiers filtering separately since it works with generated data
+        if identifiers:
+            filtered_files = []
+            for _, row in filtered_df.iterrows():
+                try:
+                    file_obj = create_file_from_row(row.to_dict())
+                    # Check if any of the generated identifiers match the search term
+                    if file_obj.metadata and file_obj.metadata.identifiers:
+                        for ident_field in file_obj.metadata.identifiers:
+                            if hasattr(ident_field.value, 'name') and identifiers in ident_field.value.name:
+                                filtered_files.append(row)
+                                break
+                except Exception as e:
+                    logger.warning(f"Failed to create file from row during identifier filtering: {e}")
+            
+            # Convert back to DataFrame for consistent handling
+            if filtered_files:
+                filtered_df = pd.DataFrame(filtered_files)
+            else:
+                filtered_df = pd.DataFrame()  # No matches found
         
         total_count = len(filtered_df)
         
