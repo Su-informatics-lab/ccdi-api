@@ -202,6 +202,12 @@ class SampleIdentifierField(BaseModel):
     ancestors: Optional[List[str]] = None
 
 
+class FileIdentifierField(BaseModel):
+    value: ReferencedIdentifier
+    comment: Optional[str] = None
+    ancestors: Optional[List[str]] = None
+
+
 # Metadata field wrapper
 class MetadataField(BaseModel):
     value: Any
@@ -265,6 +271,7 @@ class FileMetadata(BaseModel):
     size: Optional[MetadataField] = None
     checksums: Optional[MetadataField] = None
     description: Optional[MetadataField] = None
+    identifiers: Optional[List[MetadataField]] = None
     depositions: Optional[List[MetadataField]] = None
     unharmonized: Optional[Dict[str, Any]] = {}
 

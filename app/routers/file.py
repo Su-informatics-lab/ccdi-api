@@ -3,13 +3,13 @@ File router for CCDI API.
 """
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
-from typing import Optional
+from typing import Optional, List
 import logging
 
 from app.models import (
     File, FilesResponse, EntitySummary, EntityCounts, CountResults, CountResult, EntityPureCounts, EntityPureSummary,
     FileIdentifier, SampleIdentifier, NamespaceIdentifier, MetadataField, FileMetadata, FileChecksum,
-    PageInfo, FileCountResults, ValueCount
+    PageInfo, FileCountResults, ValueCount, ReferencedIdentifier, FileIdentifierField
 )
 from app.services.data_loader import DataLoader
 
@@ -20,6 +20,47 @@ router = APIRouter()
 def get_data_loader(request: Request) -> DataLoader:
     """Dependency to get the data loader from app state."""
     return request.app.state.data_loader
+
+
+def generate_file_identifiers(file_id: FileIdentifier) -> List[FileIdentifierField]:
+    """
+    Generate identifiers for a file based on the ID structure.
+    
+    Given a file ID like:
+    {"namespace": {"organization": "IUSCCC", "name": "PST001"}, "name": "file123.txt"}
+    
+    Generates three identifiers:
+    1. "IUSCCC/PST001/file123.txt" with comment "file_id"
+    2. "file123.txt" with comment "file_name"  
+    3. "PST001_file123.txt" with comment "file_with_study_id"
+    """
+    organization = file_id.namespace.organization
+    namespace_name = file_id.namespace.name
+    file_name = file_id.name
+    
+    identifiers = []
+    
+    # 1. Full file ID: organization/namespace/name
+    full_id = f"{organization}/{namespace_name}/{file_name}"
+    identifiers.append(FileIdentifierField(
+        value=ReferencedIdentifier(name=full_id, type="Unlinked"),
+        comment="file_id"
+    ))
+    
+    # 2. File name: just the name
+    identifiers.append(FileIdentifierField(
+        value=ReferencedIdentifier(name=file_name, type="Unlinked"),
+        comment="file_name"
+    ))
+    
+    # 3. File with study ID: namespace_name
+    study_file_id = f"{namespace_name}_{file_name}"
+    identifiers.append(FileIdentifierField(
+        value=ReferencedIdentifier(name=study_file_id, type="Unlinked"),
+        comment="file_with_study_id"
+    ))
+    
+    return identifiers
 
 
 def create_file_from_row(row: dict) -> File:
@@ -73,6 +114,14 @@ def create_file_from_row(row: dict) -> File:
     
     if row.get('description'):
         metadata.description = MetadataField(value=row['description'])
+    
+    # Generate identifiers based on file ID structure
+    generated_identifiers = generate_file_identifiers(file_id)
+    # Convert FileIdentifierField objects to MetadataField objects
+    metadata.identifiers = [
+        MetadataField(value=ident.value, comment=ident.comment) 
+        for ident in generated_identifiers
+    ]
     
     return File(
         id=file_id,

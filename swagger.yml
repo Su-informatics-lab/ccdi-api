@@ -2281,6 +2281,28 @@ components:
         comment:
           type: string
           description: A free-text comment field.
+    field.unowned.file.Identifier:
+      type: object
+      required:
+      - value
+      properties:
+        value:
+          $ref: '#/components/schemas/models.file.identifier.referenced.Identifier'
+        ancestors:
+          type: array
+          items:
+            type: string
+          description: |-
+            The ancestors from which this field was derived.
+
+            Ancestors should be provided as period (`.`) delimited paths
+            from the `metadata` key in the subject response object.
+        details:
+          allOf:
+          - $ref: '#/components/schemas/models.metadata.field.Details'
+        comment:
+          type: string
+          description: A free-text comment field.
     field.unowned.namespace.StudyFundingId:
       type: object
       required:
@@ -3189,6 +3211,7 @@ components:
         - size
         - checksums
         - description
+        - identifiers
         properties:
           type:
             allOf:
@@ -3206,6 +3229,16 @@ components:
             allOf:
             - $ref: '#/components/schemas/field.unowned.file.Description'
             nullable: true
+          identifiers:
+            type: array
+            items:
+              $ref: '#/components/schemas/field.unowned.file.Identifier'
+            description: |-
+              The alternate identifiers for the file.
+
+              Note that this list of identifiers *must* include the main identifier
+              for the [`File`].
+            nullable: true
           unharmonized:
             $ref: '#/components/schemas/fields.Unharmonized'
       description: Metadata associated with a file.
@@ -3217,6 +3250,67 @@ components:
           allOf:
           - $ref: '#/components/schemas/cde.v1.file.checksum.MD5'
           nullable: true
+    models.file.identifier.linked.Identifier:
+      allOf:
+      - $ref: '#/components/schemas/models.file.Identifier'
+      - type: object
+        required:
+        - server
+        properties:
+          server:
+            $ref: '#/components/schemas/models.Url'
+      description: |-
+        A linked identifier for a [`File`](crate::File).
+
+        Linked identifiers are identifiers that are able to be linked back to servers within
+        the federated ecosystem (i.e., the server that owns this identifier within the
+        ecosystem is known).
+    models.file.identifier.referenced.Identifier:
+      oneOf:
+      - allOf:
+        - $ref: '#/components/schemas/models.file.identifier.linked.Identifier'
+        - type: object
+          required:
+          - type
+          properties:
+            type:
+              type: string
+              enum:
+              - Linked
+      - allOf:
+        - $ref: '#/components/schemas/models.file.identifier.unlinked.Identifier'
+        - type: object
+          required:
+          - type
+          properties:
+            type:
+              type: string
+              enum:
+              - Unlinked
+      description: |-
+        A referenced identifier for a [`File`](crate::File).
+
+        A referenced identifier is a reference to either an identifier whose owner is known
+        and operates an authoritative federation server containing that identifier (i.e., a
+        [linked identifier](linked::Identifier)) _or_ a reference to an identifier that is
+        generally known to be associated with the file but does not have an associated
+        server that asserts ownership of the identifier (i.e., an [unlinked
+        identifier](unlinked::Identifier)).
+      discriminator:
+        propertyName: type
+    models.file.identifier.unlinked.Identifier:
+      type: object
+      description: |-
+        An unlinked identifier for a [`File`](crate::File).
+
+        This represents an arbitrary identitier that cannot be linked to any source server
+        in the broader federated ecosystem. There are no restricted values for this
+        identifier.
+      required:
+      - name
+      properties:
+        name:
+          type: string
     models.gateway.AnonymousOrReference:
       oneOf:
       - type: object
