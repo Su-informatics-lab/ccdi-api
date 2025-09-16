@@ -179,6 +179,23 @@ class FileIdentifier(BaseModel):
     name: str = Field(..., description="The file name", example="File001.txt")
 
 
+# Subject identifier classes for the identifiers field
+class UnlinkedIdentifier(BaseModel):
+    name: str = Field(..., description="The identifier value")
+    type: str = Field(default="Unlinked", description="The identifier type")
+
+
+class ReferencedIdentifier(BaseModel):
+    name: str = Field(..., description="The identifier value")
+    type: str = Field(default="Unlinked", description="The identifier type")
+
+
+class SubjectIdentifierField(BaseModel):
+    value: ReferencedIdentifier
+    comment: Optional[str] = None
+    ancestors: Optional[List[str]] = None
+
+
 # Metadata field wrapper
 class MetadataField(BaseModel):
     value: Any

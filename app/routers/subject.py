@@ -9,7 +9,8 @@ import logging
 from app.models import (
     EntityPureSummary, Subject, SubjectsResponse, EntitySummary, EntityCounts, CountResults, CountResult, EntityPureCounts,EntityPureSummary,
     SubjectIdentifier, NamespaceIdentifier, MetadataField, SubjectMetadata,
-    ErrorResponse, Error, FieldDescriptions, FieldDescription, PageInfo, SubjectCountResults, ValueCount
+    ErrorResponse, Error, FieldDescriptions, FieldDescription, PageInfo, SubjectCountResults, ValueCount,
+    UnlinkedIdentifier, ReferencedIdentifier, SubjectIdentifierField
 )
 from app.services.data_loader import DataLoader
 
@@ -20,6 +21,47 @@ router = APIRouter()
 def get_data_loader(request: Request) -> DataLoader:
     """Dependency to get the data loader from app state."""
     return request.app.state.data_loader
+
+
+def generate_subject_identifiers(subject_id: SubjectIdentifier) -> List[SubjectIdentifierField]:
+    """
+    Generate identifiers for a subject based on the ID structure.
+    
+    Given a subject ID like:
+    {"namespace": {"organization": "IUSCCC", "name": "PST001"}, "name": "535"}
+    
+    Generates three identifiers:
+    1. "IUSCCC/PST001/535" with comment "subject_id"
+    2. "535" with comment "subject_number"  
+    3. "PST001_535" with comment "subject_with_study_id"
+    """
+    organization = subject_id.namespace.organization
+    namespace_name = subject_id.namespace.name
+    subject_name = subject_id.name
+    
+    identifiers = []
+    
+    # 1. Full subject ID: organization/namespace/name
+    full_id = f"{organization}/{namespace_name}/{subject_name}"
+    identifiers.append(SubjectIdentifierField(
+        value=ReferencedIdentifier(name=full_id, type="Unlinked"),
+        comment="subject_id"
+    ))
+    
+    # 2. Subject number: just the name
+    identifiers.append(SubjectIdentifierField(
+        value=ReferencedIdentifier(name=subject_name, type="Unlinked"),
+        comment="subject_number"
+    ))
+    
+    # 3. Subject with study ID: namespace_name
+    study_subject_id = f"{namespace_name}_{subject_name}"
+    identifiers.append(SubjectIdentifierField(
+        value=ReferencedIdentifier(name=study_subject_id, type="Unlinked"),
+        comment="subject_with_study_id"
+    ))
+    
+    return identifiers
 
 
 def create_subject_from_row(row: dict) -> Subject:
@@ -48,8 +90,13 @@ def create_subject_from_row(row: dict) -> Subject:
     if row.get('ethnicity'):
         metadata.ethnicity = MetadataField(value=row['ethnicity'])
     
-    if row.get('identifiers'):
-        metadata.identifiers = [MetadataField(value=row['identifiers'])]
+    # Generate identifiers based on subject ID structure
+    generated_identifiers = generate_subject_identifiers(subject_id)
+    # Convert SubjectIdentifierField objects to MetadataField objects
+    metadata.identifiers = [
+        MetadataField(value=ident.value, comment=ident.comment) 
+        for ident in generated_identifiers
+    ]
     
     if row.get('vital_status'):
         metadata.vital_status = MetadataField(value=row['vital_status'])
