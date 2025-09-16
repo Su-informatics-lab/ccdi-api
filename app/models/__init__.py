@@ -196,6 +196,12 @@ class SubjectIdentifierField(BaseModel):
     ancestors: Optional[List[str]] = None
 
 
+class SampleIdentifierField(BaseModel):
+    value: ReferencedIdentifier
+    comment: Optional[str] = None
+    ancestors: Optional[List[str]] = None
+
+
 # Metadata field wrapper
 class MetadataField(BaseModel):
     value: Any

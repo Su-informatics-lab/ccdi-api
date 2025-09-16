@@ -3,13 +3,13 @@ Sample router for CCDI API.
 """
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
-from typing import Optional
+from typing import Optional, List
 import logging
 
 from app.models import (
     Sample, SamplesResponse, EntitySummary, EntityCounts, CountResults, CountResult, EntityPureCounts, EntityPureSummary,
     SampleIdentifier, SubjectIdentifier, NamespaceIdentifier, MetadataField, SampleMetadata,
-    PageInfo, SampleCountResults, ValueCount
+    PageInfo, SampleCountResults, ValueCount, ReferencedIdentifier, SampleIdentifierField
 )
 from app.services.data_loader import DataLoader
 
@@ -20,6 +20,47 @@ router = APIRouter()
 def get_data_loader(request: Request) -> DataLoader:
     """Dependency to get the data loader from app state."""
     return request.app.state.data_loader
+
+
+def generate_sample_identifiers(sample_id: SampleIdentifier) -> List[SampleIdentifierField]:
+    """
+    Generate identifiers for a sample based on the ID structure.
+    
+    Given a sample ID like:
+    {"namespace": {"organization": "IUSCCC", "name": "PST001"}, "name": "Sample123"}
+    
+    Generates three identifiers:
+    1. "IUSCCC/PST001/Sample123" with comment "sample_id"
+    2. "Sample123" with comment "sample_number"  
+    3. "PST001_Sample123" with comment "sample_with_study_id"
+    """
+    organization = sample_id.namespace.organization
+    namespace_name = sample_id.namespace.name
+    sample_name = sample_id.name
+    
+    identifiers = []
+    
+    # 1. Full sample ID: organization/namespace/name
+    full_id = f"{organization}/{namespace_name}/{sample_name}"
+    identifiers.append(SampleIdentifierField(
+        value=ReferencedIdentifier(name=full_id, type="Unlinked"),
+        comment="sample_id"
+    ))
+    
+    # 2. Sample number: just the name
+    identifiers.append(SampleIdentifierField(
+        value=ReferencedIdentifier(name=sample_name, type="Unlinked"),
+        comment="sample_number"
+    ))
+    
+    # 3. Sample with study ID: namespace_name
+    study_sample_id = f"{namespace_name}_{sample_name}"
+    identifiers.append(SampleIdentifierField(
+        value=ReferencedIdentifier(name=study_sample_id, type="Unlinked"),
+        comment="sample_with_study_id"
+    ))
+    
+    return identifiers
 
 
 def create_sample_from_row(row: dict) -> Sample:
@@ -92,6 +133,14 @@ def create_sample_from_row(row: dict) -> Sample:
     
     if row.get('diagnosis'):
         metadata.diagnosis = MetadataField(value=row['diagnosis'])
+    
+    # Generate identifiers based on sample ID structure
+    generated_identifiers = generate_sample_identifiers(sample_id)
+    # Convert SampleIdentifierField objects to MetadataField objects
+    metadata.identifiers = [
+        MetadataField(value=ident.value, comment=ident.comment) 
+        for ident in generated_identifiers
+    ]
     
     return Sample(
         id=sample_id,
