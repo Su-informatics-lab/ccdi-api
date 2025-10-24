@@ -53,6 +53,8 @@ def translate_row(row, mapping):
             translated[ccdi_col] = '0'
         elif value in value_map:
             translated[ccdi_col] = value_map[value]
+        elif pd.isnull(value):
+            translated[ccdi_col] = value
         elif any_to_any:
             translated[ccdi_col] = value
         else:

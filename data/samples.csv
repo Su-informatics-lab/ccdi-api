@@ -1,132 +1,132 @@
 namespace_organization,namespace_name,sample_name,subject_namespace_organization,subject_namespace_name,subject_name,disease_phase,tissue_type,tumor_classification,anatomical_sites,library_strategy,library_source_material,preservation_method,diagnosis,age_at_diagnosis,age_at_collection
-IUSCCC,PST001,3,IUSCCC,PST001,7,Initial Diagnosis,Normal,Primary,Lungs,WGS,Bulk Tissue,Fresh,Malignant neoplasm of brain,1027,4801
-IUSCCC,PST001,8,IUSCCC,PST001,17,Initial Diagnosis,Tumor,Primary,Skin,WGS,Bulk Tissue,Fresh,Embryonal rhabdomyosarcoma,1520,2335
-IUSCCC,PST001,12,IUSCCC,PST001,18,Initial Diagnosis,Normal,Primary,Liver,WGS,Bulk Tissue,Fresh,Hepatoblastoma,3426,3910
-IUSCCC,PST001,14,IUSCCC,PST001,23,Initial Diagnosis,Normal,Primary,Stomach,WGS,Bulk Tissue,Fresh,Leukemia,4042,5165
-IUSCCC,PST001,17,IUSCCC,PST001,26,Initial Diagnosis,Tumor,Primary,Heart,WGS,Bulk Tissue,Fresh,Malignant tumor of kidney,191,75
-IUSCCC,PST001,21,IUSCCC,PST001,28,Initial Diagnosis,Normal,Primary,Bone,WGS,Bulk Tissue,Fresh,Alveolar rhabdomyosarcoma,385,1060
-IUSCCC,PST001,27,IUSCCC,PST001,29,Initial Diagnosis,Tumor,Primary,Heart,WGS,Bulk Tissue,Fresh,Malignant neoplasm of long bone of lower limb,2989,3083
-IUSCCC,PST001,32,IUSCCC,PST001,30,Initial Diagnosis,Normal,Primary,Heart,WGS,Bulk Tissue,Fresh,Neuroblastoma,515,533
-IUSCCC,PST001,33,IUSCCC,PST001,33,Initial Diagnosis,Tumor,Primary,Brain,WGS,Bulk Tissue,Fresh,Malignant neoplastic disease,6601,6708
-IUSCCC,PST001,40,IUSCCC,PST001,35,Initial Diagnosis,Normal,Primary,Breast,WGS,Bulk Tissue,Fresh,Primary malignant neoplasm,782,864
-IUSCCC,PST001,42,IUSCCC,PST001,36,Initial Diagnosis,Normal,Primary,Kidney,WGS,Bulk Tissue,Fresh,Malignant neoplasm of bones of skull and face,4705,4798
-IUSCCC,PST001,45,IUSCCC,PST001,40,Initial Diagnosis,Normal,Primary,Stomach,WGS,Bulk Tissue,Fresh,Malignant tumor of pineal gland,4089,3489
-IUSCCC,PST001,49,IUSCCC,PST001,42,Initial Diagnosis,Normal,Primary,Kidney,WGS,Bulk Tissue,Fresh,Primary malignant neoplasm of soft tissues of upper limb,5790,6910
-IUSCCC,PST001,56,IUSCCC,PST001,43,Initial Diagnosis,Tumor,Primary,Skin,WGS,Bulk Tissue,Fresh,Malignant neoplastic disease,5305,5754
-IUSCCC,PST001,59,IUSCCC,PST001,45,Initial Diagnosis,Tumor,Primary,Bone,WGS,Bulk Tissue,Fresh,CA - Cancer,2920,5928
-IUSCCC,PST001,62,IUSCCC,PST001,46,Initial Diagnosis,Normal,Primary,Blood,WGS,Bulk Tissue,Fresh,"Hodgkin's disease, nodular sclerosis of lymph nodes of head, face AND/OR neck",4589,5186
-IUSCCC,PST001,63,IUSCCC,PST001,48,Initial Diagnosis,Tumor,Primary,Bone,WGS,Bulk Tissue,Fresh,Neoplasm of brain,979,3973
-IUSCCC,PST001,70,IUSCCC,PST001,56,Initial Diagnosis,Normal,Primary,Lungs,WGS,Bulk Tissue,Fresh,Malignant neoplasm of bone,6246,7692
-IUSCCC,PST001,72,IUSCCC,PST001,57,Initial Diagnosis,Normal,Primary,Breast,WGS,Bulk Tissue,Fresh,Malignant neoplasm of occipital lobe,1606,1625
-IUSCCC,PST001,75,IUSCCC,PST001,58,Initial Diagnosis,Tumor,Primary,Bone,WGS,Bulk Tissue,Fresh,Embryonal rhabdomyosarcoma,1100,2047
-IUSCCC,PST001,80,IUSCCC,PST001,60,Initial Diagnosis,Normal,Primary,Skin,WGS,Bulk Tissue,Fresh,Acute lymphoblastic leukemia *Philadelphia Like*,1033,2069
-IUSCCC,PST001,83,IUSCCC,PST001,63,Initial Diagnosis,Normal,Primary,Brain,WGS,Bulk Tissue,Fresh,Malignant neoplasm of brain,86,116
-IUSCCC,PST001,85,IUSCCC,PST001,65,Initial Diagnosis,Normal,Primary,Skin,WGS,Bulk Tissue,Fresh,Malignant tumor of spinal cord,4712,4703
-IUSCCC,PST001,88,IUSCCC,PST001,66,Initial Diagnosis,Tumor,Primary,Kidney,WGS,Bulk Tissue,Fresh,Malignant neoplastic disease,4143,4688
-IUSCCC,PST001,90,IUSCCC,PST001,67,Initial Diagnosis,Normal,Primary,Lungs,WGS,Bulk Tissue,Fresh,Primary malignant neoplasm,5720,6386
-IUSCCC,PST001,92,IUSCCC,PST001,68,Initial Diagnosis,Normal,Primary,Lungs,WGS,Bulk Tissue,Fresh,Malignant neoplasm of skeletal system,6920,6934
-IUSCCC,PST001,94,IUSCCC,PST001,70,Initial Diagnosis,Normal,Primary,Blood,WGS,Bulk Tissue,Fresh,Malignant neoplasm of long bone of lower limb,3800,3799
-IUSCCC,PST001,104,IUSCCC,PST001,74,Initial Diagnosis,Normal,Primary,Stomach,WGS,Bulk Tissue,Fresh,Malignant neoplasm of upper limb bones and scapula,5332,5331
-IUSCCC,PST001,108,IUSCCC,PST001,79,Initial Diagnosis,Normal,Primary,Breast,WGS,Bulk Tissue,Fresh,Malignant neoplasm of brainstem,489,390
-IUSCCC,PST001,115,IUSCCC,PST001,83,Initial Diagnosis,Tumor,Primary,Liver,WGS,Bulk Tissue,Fresh,Malignant tumor of ovary,1940,2151
-IUSCCC,PST001,120,IUSCCC,PST001,85,Initial Diagnosis,Normal,Primary,Blood,WGS,Bulk Tissue,Fresh,Hodgkin's disease (clinical),5483,5514
-IUSCCC,PST001,125,IUSCCC,PST001,86,Initial Diagnosis,Normal,Primary,Lungs,WGS,Bulk Tissue,Fresh,"Acute myeloid leukemia, disease",839,1241
-IUSCCC,PST001,121,IUSCCC,PST001,87,Initial Diagnosis,Normal,Primary,Skin,WGS,Bulk Tissue,Fresh,Non-rhabdomyosarcoma soft tissue sarcoma,5865,6345
-IUSCCC,PST001,130,IUSCCC,PST001,88,Initial Diagnosis,Normal,Primary,Bone,WGS,Bulk Tissue,Fresh,Leukemia,2270,2417
-IUSCCC,PST001,132,IUSCCC,PST001,89,Initial Diagnosis,Normal,Primary,Brain,WGS,Bulk Tissue,Fresh,Malignant neoplasm of brain,1278,4385
-IUSCCC,PST001,135,IUSCCC,PST001,92,Initial Diagnosis,Normal,Primary,Liver,WGS,Bulk Tissue,Fresh,Malignant neoplasm of brain,5082,5227
-IUSCCC,PST001,138,IUSCCC,PST001,94,Initial Diagnosis,Normal,Primary,Brain,WGS,Bulk Tissue,Fresh,Medulloblastoma,3434,3433
-IUSCCC,PST001,141,IUSCCC,PST001,96,Initial Diagnosis,Normal,Primary,Heart,WGS,Bulk Tissue,Fresh,Retinoblastoma,75,7197
-IUSCCC,PST001,142,IUSCCC,PST001,98,Initial Diagnosis,Normal,Primary,Breast,WGS,Bulk Tissue,Fresh,Neoplasm of brain,2848,4145
-IUSCCC,PST001,144,IUSCCC,PST001,99,Initial Diagnosis,Tumor,Primary,Liver,WGS,Bulk Tissue,Fresh,Malignant neoplasm of cerebellum,885,1237
-IUSCCC,PST001,152,IUSCCC,PST001,106,Initial Diagnosis,Normal,Primary,Stomach,WGS,Bulk Tissue,Fresh,Malignant neoplasm of brain,4194,5189
-IUSCCC,PST001,156,IUSCCC,PST001,113,Initial Diagnosis,Normal,Primary,Kidney,WGS,Bulk Tissue,Fresh,B-cell acute lymphoblastic leukemia,3333,4666
-IUSCCC,PST001,160,IUSCCC,PST001,121,Initial Diagnosis,Normal,Primary,Kidney,WGS,Bulk Tissue,Fresh,Malignant neoplasm of connective and soft tissue of hip and lower limb,4800,4799
-IUSCCC,PST001,168,IUSCCC,PST001,124,Initial Diagnosis,Tumor,Primary,Bone,WGS,Bulk Tissue,Fresh,Primary malignant neoplasm of respiratory tract,3095,5637
-IUSCCC,PST001,172,IUSCCC,PST001,127,Initial Diagnosis,Normal,Primary,Stomach,WGS,Bulk Tissue,Fresh,Malignant neoplasm of skeletal system,2111,2207
-IUSCCC,PST001,175,IUSCCC,PST001,129,Initial Diagnosis,Tumor,Primary,Skin,WGS,Bulk Tissue,Fresh,Malignant neoplasm of mandible,472,612
-IUSCCC,PST001,178,IUSCCC,PST001,131,Initial Diagnosis,Tumor,Primary,Brain,WGS,Bulk Tissue,Fresh,Malignant neoplastic disease,3040,3381
-IUSCCC,PST001,180,IUSCCC,PST001,140,Initial Diagnosis,Normal,Primary,Brain,WGS,Bulk Tissue,Fresh,Malignant neoplasm of skeletal system,6008,6009
-IUSCCC,PST001,185,IUSCCC,PST001,141,Initial Diagnosis,Normal,Primary,Stomach,WGS,Bulk Tissue,Fresh,Secondary malignant neoplasm of lung,5321,5289
-IUSCCC,PST001,188,IUSCCC,PST001,143,Initial Diagnosis,Normal,Primary,Bone,WGS,Bulk Tissue,Fresh,Acute lymphoblastic leukemia *Philadelphia Like*,5447,5994
-IUSCCC,PST001,190,IUSCCC,PST001,145,Initial Diagnosis,Normal,Primary,Lungs,WGS,Bulk Tissue,Fresh,Nephroblastoma,2184,2430
-IUSCCC,PST001,193,IUSCCC,PST001,146,Initial Diagnosis,Normal,Primary,Kidney,WGS,Bulk Tissue,Fresh,Acute lymphoid leukemia,2428,2453
-IUSCCC,PST001,195,IUSCCC,PST001,147,Initial Diagnosis,Tumor,Primary,Blood,WGS,Bulk Tissue,Fresh,Nephroblastoma,2847,3568
-IUSCCC,PST001,200,IUSCCC,PST001,153,Initial Diagnosis,Normal,Primary,Skin,WGS,Bulk Tissue,Fresh,Pleuropulmonary blastoma,1016,3166
-IUSCCC,PST001,204,IUSCCC,PST001,154,Initial Diagnosis,Normal,Primary,Bone,WGS,Bulk Tissue,Fresh,Neuroblastoma,726,1072
-IUSCCC,PST001,207,IUSCCC,PST001,155,Initial Diagnosis,Tumor,Primary,Brain,WGS,Bulk Tissue,Fresh,Glioblastoma multiforme,6093,6092
-IUSCCC,PST001,209,IUSCCC,PST001,157,Initial Diagnosis,Normal,Primary,Lungs,WGS,Bulk Tissue,Fresh,Malignant tumor of lymphoid hemopoietic and related tissue,5579,5689
-IUSCCC,PST001,211,IUSCCC,PST001,158,Initial Diagnosis,Normal,Primary,Blood,WGS,Bulk Tissue,Fresh,T-cell acute lymphoblastic leukemia,4601,4919
-IUSCCC,PST001,215,IUSCCC,PST001,168,Initial Diagnosis,Normal,Primary,Stomach,WGS,Bulk Tissue,Fresh,"Acute myeloid leukemia, disease",447,647
-IUSCCC,PST001,221,IUSCCC,PST001,178,Initial Diagnosis,Normal,Primary,Heart,WGS,Bulk Tissue,Fresh,Non-rhabdomyosarcoma soft tissue sarcoma,4217,4331
-IUSCCC,PST001,226,IUSCCC,PST001,184,Initial Diagnosis,Tumor,Primary,Heart,WGS,Bulk Tissue,Fresh,Malignant neoplastic disease,4787,4820
-IUSCCC,PST001,228,IUSCCC,PST001,185,Initial Diagnosis,Normal,Primary,Blood,WGS,Bulk Tissue,Fresh,T-cell acute lymphoblastic leukemia,1135,1134
-IUSCCC,PST001,234,IUSCCC,PST001,192,Initial Diagnosis,Tumor,Primary,Lungs,WGS,Bulk Tissue,Fresh,Malignant neoplasm of skeletal system,6922,7031
-IUSCCC,PST001,237,IUSCCC,PST001,194,Initial Diagnosis,Normal,Primary,Brain,WGS,Bulk Tissue,Fresh,Glioblastoma multiforme,4937,4936
-IUSCCC,PST001,240,IUSCCC,PST001,197,Initial Diagnosis,Tumor,Primary,Skin,WGS,Bulk Tissue,Fresh,Malignant neoplasm of cerebellum,3144,3135
-IUSCCC,PST001,245,IUSCCC,PST001,200,Initial Diagnosis,Normal,Primary,Skin,WGS,Bulk Tissue,Fresh,"Acute myeloid leukemia, disease",1808,2153
-IUSCCC,PST001,249,IUSCCC,PST001,205,Initial Diagnosis,Tumor,Primary,Heart,WGS,Bulk Tissue,Fresh,Malignant tumor of pelvis,2863,3282
-IUSCCC,PST001,252,IUSCCC,PST001,207,Initial Diagnosis,Normal,Primary,Stomach,WGS,Bulk Tissue,Fresh,Malignant neoplasm of brain,518,495
-IUSCCC,PST001,257,IUSCCC,PST001,208,Initial Diagnosis,Normal,Primary,Kidney,WGS,Bulk Tissue,Fresh,Malignant neoplasm of long bone of lower limb,3308,3307
-IUSCCC,PST001,267,IUSCCC,PST001,209,Initial Diagnosis,Tumor,Primary,Kidney,WGS,Bulk Tissue,Fresh,Malignant neoplasm of brain,1487,2285
-IUSCCC,PST001,272,IUSCCC,PST001,225,Initial Diagnosis,Normal,Primary,Liver,WGS,Bulk Tissue,Fresh,Acute leukemia,4305,6427
-IUSCCC,PST001,274,IUSCCC,PST001,228,Initial Diagnosis,Normal,Primary,Breast,WGS,Bulk Tissue,Fresh,Embryonal rhabdomyosarcoma,5779,6793
-IUSCCC,PST001,277,IUSCCC,PST001,233,Initial Diagnosis,Normal,Primary,Heart,WGS,Bulk Tissue,Fresh,Non-rhabdomyosarcoma soft tissue sarcoma,5745,6220
-IUSCCC,PST001,282,IUSCCC,PST001,238,Initial Diagnosis,Normal,Primary,Breast,WGS,Bulk Tissue,Fresh,Precursor T-cell lymphoblastic lymphoma,8325,8537
-IUSCCC,PST001,283,IUSCCC,PST001,243,Initial Diagnosis,Tumor,Primary,Breast,WGS,Bulk Tissue,Fresh,Non-rhabdomyosarcoma soft tissue sarcoma,0,6867
-IUSCCC,PST001,287,IUSCCC,PST001,245,Initial Diagnosis,Normal,Primary,Heart,WGS,Bulk Tissue,Fresh,Embryonal rhabdomyosarcoma,1554,1634
-IUSCCC,PST001,290,IUSCCC,PST001,250,Initial Diagnosis,Tumor,Primary,Brain,WGS,Bulk Tissue,Fresh,Malignant neoplasm of brainstem,1674,1992
-IUSCCC,PST001,292,IUSCCC,PST001,251,Initial Diagnosis,Normal,Primary,Breast,WGS,Bulk Tissue,Fresh,Malignant neoplasm of parietal lobe,4704,5580
-IUSCCC,PST001,297,IUSCCC,PST001,252,Initial Diagnosis,Normal,Primary,Skin,WGS,Bulk Tissue,Fresh,Malignant tumor of nasal cavity,4937,6058
-IUSCCC,PST001,300,IUSCCC,PST001,254,Initial Diagnosis,Normal,Primary,Stomach,WGS,Bulk Tissue,Fresh,Malignant neoplasm of brainstem,3177,3171
-IUSCCC,PST001,303,IUSCCC,PST001,255,Initial Diagnosis,Normal,Primary,Kidney,WGS,Bulk Tissue,Fresh,Malignant neoplasm of connective and soft tissue of upper limb and shoulder,4712,4966
-IUSCCC,PST001,306,IUSCCC,PST001,257,Initial Diagnosis,Tumor,Primary,Skin,WGS,Bulk Tissue,Fresh,Malignant neoplasm of short bone of lower limb,5836,6628
-IUSCCC,PST001,310,IUSCCC,PST001,264,Initial Diagnosis,Tumor,Primary,Breast,WGS,Bulk Tissue,Fresh,Malignant neoplasm of connective and soft tissue of hip and lower limb,6547,6587
-IUSCCC,PST001,313,IUSCCC,PST001,267,Initial Diagnosis,Normal,Primary,Kidney,WGS,Bulk Tissue,Fresh,Neuroendocrine tumor,1997,5894
-IUSCCC,PST001,317,IUSCCC,PST001,268,Initial Diagnosis,Normal,Primary,Lungs,WGS,Bulk Tissue,Fresh,Malignant tumor of pleura,5550,6545
-IUSCCC,PST001,324,IUSCCC,PST001,271,Initial Diagnosis,Normal,Primary,Brain,WGS,Bulk Tissue,Fresh,Acute lymphoid leukemia,8932,9391
-IUSCCC,PST001,326,IUSCCC,PST001,272,Initial Diagnosis,Normal,Primary,Breast,WGS,Bulk Tissue,Fresh,Malignant neoplasm of peripheral nerves and autonomic nervous system,4700,4698
-IUSCCC,PST001,328,IUSCCC,PST001,274,Initial Diagnosis,Normal,Primary,Brain,WGS,Bulk Tissue,Fresh,Precursor T-cell lymphoblastic lymphoma,3633,3629
-IUSCCC,PST001,331,IUSCCC,PST001,278,Initial Diagnosis,Tumor,Primary,Stomach,WGS,Bulk Tissue,Fresh,Medulloblastoma,5009,5591
-IUSCCC,PST001,337,IUSCCC,PST001,287,Initial Diagnosis,Tumor,Primary,Lungs,WGS,Bulk Tissue,Fresh,Malignant neoplasm of brain,787,786
-IUSCCC,PST001,339,IUSCCC,PST001,289,Initial Diagnosis,Tumor,Primary,Breast,WGS,Bulk Tissue,Fresh,Primary malignant neoplasm of long bone of lower limb,3801,4843
-IUSCCC,PST001,340,IUSCCC,PST001,290,Initial Diagnosis,Tumor,Primary,Liver,WGS,Bulk Tissue,Fresh,Malignant neoplasm of brain,1851,2430
-IUSCCC,PST001,342,IUSCCC,PST001,292,Initial Diagnosis,Tumor,Primary,Heart,WGS,Bulk Tissue,Fresh,Malignant neoplasm of long bone of lower limb,5538,5534
-IUSCCC,PST001,344,IUSCCC,PST001,298,Initial Diagnosis,Normal,Primary,Kidney,WGS,Bulk Tissue,Fresh,Malignant neoplasm of skeletal system,4702,4808
-IUSCCC,PST001,348,IUSCCC,PST001,303,Initial Diagnosis,Normal,Primary,Blood,WGS,Bulk Tissue,Fresh,Malignant neoplasm of brain,958,1838
-IUSCCC,PST001,357,IUSCCC,PST001,312,Initial Diagnosis,Normal,Primary,Breast,WGS,Bulk Tissue,Fresh,Malignant neoplasm of brain,702,687
-IUSCCC,PST001,367,IUSCCC,PST001,315,Initial Diagnosis,Normal,Primary,Breast,WGS,Bulk Tissue,Fresh,Malignant neoplasm of brain,2457,2936
-IUSCCC,PST001,375,IUSCCC,PST001,318,Initial Diagnosis,Normal,Primary,Kidney,WGS,Bulk Tissue,Fresh,Malignant neoplasm of skeletal system,3334,3431
-IUSCCC,PST001,443,IUSCCC,PST001,319,Initial Diagnosis,Tumor,Primary,Lungs,WGS,Bulk Tissue,Fresh,Malignant neoplastic disease,5289,7619
-IUSCCC,PST001,382,IUSCCC,PST001,322,Initial Diagnosis,Normal,Primary,Liver,WGS,Bulk Tissue,Fresh,Malignant neoplasm of temporal lobe,3249,3245
-IUSCCC,PST001,388,IUSCCC,PST001,326,Initial Diagnosis,Normal,Primary,Kidney,WGS,Bulk Tissue,Fresh,Malignant neoplasm of temporal lobe,4181,4165
-IUSCCC,PST001,390,IUSCCC,PST001,330,Initial Diagnosis,Normal,Primary,Stomach,WGS,Bulk Tissue,Fresh,Acute lymphoid leukemia,6589,6617
-IUSCCC,PST001,397,IUSCCC,PST001,332,Initial Diagnosis,Normal,Primary,Skin,WGS,Bulk Tissue,Fresh,B-cell acute lymphoblastic leukemia,6947,8063
-IUSCCC,PST001,393,IUSCCC,PST001,333,Initial Diagnosis,Normal,Primary,Lungs,WGS,Bulk Tissue,Fresh,Pleuropulmonary blastoma,1145,1144
-IUSCCC,PST001,402,IUSCCC,PST001,335,Initial Diagnosis,Normal,Primary,Kidney,WGS,Bulk Tissue,Fresh,Primary malignant neoplasm of soft tissues of trunk,5938,7149
-IUSCCC,PST001,406,IUSCCC,PST001,337,Initial Diagnosis,Normal,Primary,Heart,WGS,Bulk Tissue,Fresh,B-cell acute lymphoblastic leukemia,4428,4902
-IUSCCC,PST001,410,IUSCCC,PST001,342,Initial Diagnosis,Tumor,Primary,Skin,WGS,Bulk Tissue,Fresh,Non-rhabdomyosarcoma soft tissue sarcoma,42,2982
-IUSCCC,PST001,415,IUSCCC,PST001,347,Initial Diagnosis,Normal,Primary,Skin,WGS,Bulk Tissue,Fresh,Leukemia,3916,3921
-IUSCCC,PST001,417,IUSCCC,PST001,348,Initial Diagnosis,Normal,Primary,Blood,WGS,Bulk Tissue,Fresh,Malignant neoplasm of cerebral ventricles,74,237
-IUSCCC,PST001,418,IUSCCC,PST001,350,Initial Diagnosis,Normal,Primary,Skin,WGS,Bulk Tissue,Fresh,Medulloblastoma,1571,1573
-IUSCCC,PST001,421,IUSCCC,PST001,351,Initial Diagnosis,Normal,Primary,Lungs,WGS,Bulk Tissue,Fresh,Malignant neoplasm of long bone of lower limb,5717,5807
-IUSCCC,PST001,426,IUSCCC,PST001,352,Initial Diagnosis,Normal,Primary,Liver,WGS,Bulk Tissue,Fresh,Primary malignant neoplasm of adrenal gland,669,1690
-IUSCCC,PST001,424,IUSCCC,PST001,353,Initial Diagnosis,Normal,Primary,Heart,WGS,Bulk Tissue,Fresh,Neuroblastoma,719,2258
-IUSCCC,PST001,428,IUSCCC,PST001,354,Initial Diagnosis,Normal,Primary,Bone,WGS,Bulk Tissue,Fresh,Acute lymphoid leukemia,5832,5859
-IUSCCC,PST001,432,IUSCCC,PST001,355,Initial Diagnosis,Normal,Primary,Kidney,WGS,Bulk Tissue,Fresh,Neuroblastoma,45,290
-IUSCCC,PST001,436,IUSCCC,PST001,361,Initial Diagnosis,Tumor,Primary,Stomach,WGS,Bulk Tissue,Fresh,Malignant neoplasm of long bone of lower limb,7560,7565
-IUSCCC,PST001,444,IUSCCC,PST001,366,Initial Diagnosis,Normal,Primary,Brain,WGS,Bulk Tissue,Fresh,Malignant neoplasm of connective and soft tissue of hip and lower limb,3082,3199
-IUSCCC,PST001,439,IUSCCC,PST001,370,Initial Diagnosis,Tumor,Primary,Skin,WGS,Bulk Tissue,Fresh,Primary malignant neoplasm of soft tissues,779,6003
-IUSCCC,PST001,445,IUSCCC,PST001,379,Initial Diagnosis,Normal,Primary,Skin,WGS,Bulk Tissue,Fresh,Malignant neoplasm of connective and soft tissue of hip and lower limb,2882,2973
-IUSCCC,PST001,447,IUSCCC,PST001,388,Initial Diagnosis,Tumor,Primary,Stomach,WGS,Bulk Tissue,Fresh,Malignant neoplasm of long bone of lower limb,3284,3277
-IUSCCC,PST001,462,IUSCCC,PST001,421,Initial Diagnosis,Normal,Primary,Skin,WGS,Bulk Tissue,Fresh,Malignant neoplasm of ribs and/or sternum and/or clavicle,5658,5650
-IUSCCC,PST001,470,IUSCCC,PST001,455,Initial Diagnosis,Normal,Primary,Stomach,WGS,Bulk Tissue,Fresh,Malignant neoplasm of skeletal system,4757,4751
-IUSCCC,PST001,475,IUSCCC,PST001,456,Initial Diagnosis,Normal,Primary,Stomach,WGS,Bulk Tissue,Fresh,Malignant neoplasm of long bone of lower limb,5064,5056
-IUSCCC,PST001,471,IUSCCC,PST001,457,Initial Diagnosis,Normal,Primary,Blood,WGS,Bulk Tissue,Fresh,Malignant neoplasm of skeletal system,6346,6346
-IUSCCC,PST001,477,IUSCCC,PST001,458,Initial Diagnosis,Tumor,Primary,Brain,WGS,Bulk Tissue,Fresh,Malignant neoplasm of long bone of lower limb,3311,3310
-IUSCCC,PST001,473,IUSCCC,PST001,459,Initial Diagnosis,Normal,Primary,Skin,WGS,Bulk Tissue,Fresh,Malignant neoplasm of skeletal system,4148,4148
-IUSCCC,PST001,474,IUSCCC,PST001,460,Initial Diagnosis,Tumor,Primary,Blood,WGS,Bulk Tissue,Fresh,Malignant neoplasm of long bone of lower limb,4554,4554
-IUSCCC,PST001,485,IUSCCC,PST001,461,Initial Diagnosis,Normal,Primary,Kidney,WGS,Bulk Tissue,Fresh,Embryonal rhabdomyosarcoma,1754,1754
-IUSCCC,PST001,468,IUSCCC,PST001,462,Initial Diagnosis,Normal,Primary,Bone,WGS,Bulk Tissue,Fresh,Malignant neoplasm of skeletal system,5534,5678
-IUSCCC,PST001,469,IUSCCC,PST001,463,Initial Diagnosis,Normal,Primary,Lungs,WGS,Bulk Tissue,Fresh,Malignant neoplasm of long bone of lower limb,5242,5242
-IUSCCC,PST001,508,IUSCCC,PST001,492,Initial Diagnosis,Tumor,Primary,Bone,WGS,Bulk Tissue,Fresh,Malignant neoplasm of long bone of lower limb,5799,5898
+IUSCCC,PST001,3,IUSCCC,PST001,7,Initial Diagnosis,,,,,,,Malignant neoplasm of brain,1027,4801
+IUSCCC,PST001,8,IUSCCC,PST001,17,Initial Diagnosis,,,,,,,Embryonal rhabdomyosarcoma,1520,2335
+IUSCCC,PST001,12,IUSCCC,PST001,18,Initial Diagnosis,,,,,,,Hepatoblastoma,3426,3910
+IUSCCC,PST001,14,IUSCCC,PST001,23,Initial Diagnosis,,,,,,,Leukemia,4042,5165
+IUSCCC,PST001,17,IUSCCC,PST001,26,Initial Diagnosis,,,,,,,Malignant tumor of kidney,191,75
+IUSCCC,PST001,21,IUSCCC,PST001,28,Initial Diagnosis,,,,,,,Alveolar rhabdomyosarcoma,385,1060
+IUSCCC,PST001,27,IUSCCC,PST001,29,Initial Diagnosis,,,,,,,Malignant neoplasm of long bone of lower limb,2989,3083
+IUSCCC,PST001,32,IUSCCC,PST001,30,Initial Diagnosis,,,,,,,Neuroblastoma,515,533
+IUSCCC,PST001,33,IUSCCC,PST001,33,Initial Diagnosis,,,,,,,Malignant neoplastic disease,6601,6708
+IUSCCC,PST001,40,IUSCCC,PST001,35,Initial Diagnosis,,,,,,,Primary malignant neoplasm,782,864
+IUSCCC,PST001,42,IUSCCC,PST001,36,Initial Diagnosis,,,,,,,Malignant neoplasm of bones of skull and face,4705,4798
+IUSCCC,PST001,45,IUSCCC,PST001,40,Initial Diagnosis,,,,,,,Malignant tumor of pineal gland,4089,3489
+IUSCCC,PST001,49,IUSCCC,PST001,42,Initial Diagnosis,,,,,,,Primary malignant neoplasm of soft tissues of upper limb,5790,6910
+IUSCCC,PST001,56,IUSCCC,PST001,43,Initial Diagnosis,,,,,,,Malignant neoplastic disease,5305,5754
+IUSCCC,PST001,59,IUSCCC,PST001,45,Initial Diagnosis,,,,,,,CA - Cancer,2920,5928
+IUSCCC,PST001,62,IUSCCC,PST001,46,Initial Diagnosis,,,,,,,"Hodgkin's disease, nodular sclerosis of lymph nodes of head, face AND/OR neck",4589,5186
+IUSCCC,PST001,63,IUSCCC,PST001,48,Initial Diagnosis,,,,,,,Neoplasm of brain,979,3973
+IUSCCC,PST001,70,IUSCCC,PST001,56,Initial Diagnosis,,,,,,,Malignant neoplasm of bone,6246,7692
+IUSCCC,PST001,72,IUSCCC,PST001,57,Initial Diagnosis,,,,,,,Malignant neoplasm of occipital lobe,1606,1625
+IUSCCC,PST001,75,IUSCCC,PST001,58,Initial Diagnosis,,,,,,,Embryonal rhabdomyosarcoma,1100,2047
+IUSCCC,PST001,80,IUSCCC,PST001,60,Initial Diagnosis,,,,,,,Acute lymphoblastic leukemia *Philadelphia Like*,1033,2069
+IUSCCC,PST001,83,IUSCCC,PST001,63,Initial Diagnosis,,,,,,,Malignant neoplasm of brain,86,116
+IUSCCC,PST001,85,IUSCCC,PST001,65,Initial Diagnosis,,,,,,,Malignant tumor of spinal cord,4712,4703
+IUSCCC,PST001,88,IUSCCC,PST001,66,Initial Diagnosis,,,,,,,Malignant neoplastic disease,4143,4688
+IUSCCC,PST001,90,IUSCCC,PST001,67,Initial Diagnosis,,,,,,,Primary malignant neoplasm,5720,6386
+IUSCCC,PST001,92,IUSCCC,PST001,68,Initial Diagnosis,,,,,,,Malignant neoplasm of skeletal system,6920,6934
+IUSCCC,PST001,94,IUSCCC,PST001,70,Initial Diagnosis,,,,,,,Malignant neoplasm of long bone of lower limb,3800,3799
+IUSCCC,PST001,104,IUSCCC,PST001,74,Initial Diagnosis,,,,,,,Malignant neoplasm of upper limb bones and scapula,5332,5331
+IUSCCC,PST001,108,IUSCCC,PST001,79,Initial Diagnosis,,,,,,,Malignant neoplasm of brainstem,489,390
+IUSCCC,PST001,115,IUSCCC,PST001,83,Initial Diagnosis,,,,,,,Malignant tumor of ovary,1940,2151
+IUSCCC,PST001,120,IUSCCC,PST001,85,Initial Diagnosis,,,,,,,Hodgkin's disease (clinical),5483,5514
+IUSCCC,PST001,125,IUSCCC,PST001,86,Initial Diagnosis,,,,,,,"Acute myeloid leukemia, disease",839,1241
+IUSCCC,PST001,121,IUSCCC,PST001,87,Initial Diagnosis,,,,,,,Non-rhabdomyosarcoma soft tissue sarcoma,5865,6345
+IUSCCC,PST001,130,IUSCCC,PST001,88,Initial Diagnosis,,,,,,,Leukemia,2270,2417
+IUSCCC,PST001,132,IUSCCC,PST001,89,Initial Diagnosis,,,,,,,Malignant neoplasm of brain,1278,4385
+IUSCCC,PST001,135,IUSCCC,PST001,92,Initial Diagnosis,,,,,,,Malignant neoplasm of brain,5082,5227
+IUSCCC,PST001,138,IUSCCC,PST001,94,Initial Diagnosis,,,,,,,Medulloblastoma,3434,3433
+IUSCCC,PST001,141,IUSCCC,PST001,96,Initial Diagnosis,,,,,,,Retinoblastoma,75,7197
+IUSCCC,PST001,142,IUSCCC,PST001,98,Initial Diagnosis,,,,,,,Neoplasm of brain,2848,4145
+IUSCCC,PST001,144,IUSCCC,PST001,99,Initial Diagnosis,,,,,,,Malignant neoplasm of cerebellum,885,1237
+IUSCCC,PST001,152,IUSCCC,PST001,106,Initial Diagnosis,,,,,,,Malignant neoplasm of brain,4194,5189
+IUSCCC,PST001,156,IUSCCC,PST001,113,Initial Diagnosis,,,,,,,B-cell acute lymphoblastic leukemia,3333,4666
+IUSCCC,PST001,160,IUSCCC,PST001,121,Initial Diagnosis,,,,,,,Malignant neoplasm of connective and soft tissue of hip and lower limb,4800,4799
+IUSCCC,PST001,168,IUSCCC,PST001,124,Initial Diagnosis,,,,,,,Primary malignant neoplasm of respiratory tract,3095,5637
+IUSCCC,PST001,172,IUSCCC,PST001,127,Initial Diagnosis,,,,,,,Malignant neoplasm of skeletal system,2111,2207
+IUSCCC,PST001,175,IUSCCC,PST001,129,Initial Diagnosis,,,,,,,Malignant neoplasm of mandible,472,612
+IUSCCC,PST001,178,IUSCCC,PST001,131,Initial Diagnosis,,,,,,,Malignant neoplastic disease,3040,3381
+IUSCCC,PST001,180,IUSCCC,PST001,140,Initial Diagnosis,,,,,,,Malignant neoplasm of skeletal system,6008,6009
+IUSCCC,PST001,185,IUSCCC,PST001,141,Initial Diagnosis,,,,,,,Secondary malignant neoplasm of lung,5321,5289
+IUSCCC,PST001,188,IUSCCC,PST001,143,Initial Diagnosis,,,,,,,Acute lymphoblastic leukemia *Philadelphia Like*,5447,5994
+IUSCCC,PST001,190,IUSCCC,PST001,145,Initial Diagnosis,,,,,,,Nephroblastoma,2184,2430
+IUSCCC,PST001,193,IUSCCC,PST001,146,Initial Diagnosis,,,,,,,Acute lymphoid leukemia,2428,2453
+IUSCCC,PST001,195,IUSCCC,PST001,147,Initial Diagnosis,,,,,,,Nephroblastoma,2847,3568
+IUSCCC,PST001,200,IUSCCC,PST001,153,Initial Diagnosis,,,,,,,Pleuropulmonary blastoma,1016,3166
+IUSCCC,PST001,204,IUSCCC,PST001,154,Initial Diagnosis,,,,,,,Neuroblastoma,726,1072
+IUSCCC,PST001,207,IUSCCC,PST001,155,Initial Diagnosis,,,,,,,Glioblastoma multiforme,6093,6092
+IUSCCC,PST001,209,IUSCCC,PST001,157,Initial Diagnosis,,,,,,,Malignant tumor of lymphoid hemopoietic and related tissue,5579,5689
+IUSCCC,PST001,211,IUSCCC,PST001,158,Initial Diagnosis,,,,,,,T-cell acute lymphoblastic leukemia,4601,4919
+IUSCCC,PST001,215,IUSCCC,PST001,168,Initial Diagnosis,,,,,,,"Acute myeloid leukemia, disease",447,647
+IUSCCC,PST001,221,IUSCCC,PST001,178,Initial Diagnosis,,,,,,,Non-rhabdomyosarcoma soft tissue sarcoma,4217,4331
+IUSCCC,PST001,226,IUSCCC,PST001,184,Initial Diagnosis,,,,,,,Malignant neoplastic disease,4787,4820
+IUSCCC,PST001,228,IUSCCC,PST001,185,Initial Diagnosis,,,,,,,T-cell acute lymphoblastic leukemia,1135,1134
+IUSCCC,PST001,234,IUSCCC,PST001,192,Initial Diagnosis,,,,,,,Malignant neoplasm of skeletal system,6922,7031
+IUSCCC,PST001,237,IUSCCC,PST001,194,Initial Diagnosis,,,,,,,Glioblastoma multiforme,4937,4936
+IUSCCC,PST001,240,IUSCCC,PST001,197,Initial Diagnosis,,,,,,,Malignant neoplasm of cerebellum,3144,3135
+IUSCCC,PST001,245,IUSCCC,PST001,200,Initial Diagnosis,,,,,,,"Acute myeloid leukemia, disease",1808,2153
+IUSCCC,PST001,249,IUSCCC,PST001,205,Initial Diagnosis,,,,,,,Malignant tumor of pelvis,2863,3282
+IUSCCC,PST001,252,IUSCCC,PST001,207,Initial Diagnosis,,,,,,,Malignant neoplasm of brain,518,495
+IUSCCC,PST001,257,IUSCCC,PST001,208,Initial Diagnosis,,,,,,,Malignant neoplasm of long bone of lower limb,3308,3307
+IUSCCC,PST001,267,IUSCCC,PST001,209,Initial Diagnosis,,,,,,,Malignant neoplasm of brain,1487,2285
+IUSCCC,PST001,272,IUSCCC,PST001,225,Initial Diagnosis,,,,,,,Acute leukemia,4305,6427
+IUSCCC,PST001,274,IUSCCC,PST001,228,Initial Diagnosis,,,,,,,Embryonal rhabdomyosarcoma,5779,6793
+IUSCCC,PST001,277,IUSCCC,PST001,233,Initial Diagnosis,,,,,,,Non-rhabdomyosarcoma soft tissue sarcoma,5745,6220
+IUSCCC,PST001,282,IUSCCC,PST001,238,Initial Diagnosis,,,,,,,Precursor T-cell lymphoblastic lymphoma,8325,8537
+IUSCCC,PST001,283,IUSCCC,PST001,243,Initial Diagnosis,,,,,,,Non-rhabdomyosarcoma soft tissue sarcoma,0,6867
+IUSCCC,PST001,287,IUSCCC,PST001,245,Initial Diagnosis,,,,,,,Embryonal rhabdomyosarcoma,1554,1634
+IUSCCC,PST001,290,IUSCCC,PST001,250,Initial Diagnosis,,,,,,,Malignant neoplasm of brainstem,1674,1992
+IUSCCC,PST001,292,IUSCCC,PST001,251,Initial Diagnosis,,,,,,,Malignant neoplasm of parietal lobe,4704,5580
+IUSCCC,PST001,297,IUSCCC,PST001,252,Initial Diagnosis,,,,,,,Malignant tumor of nasal cavity,4937,6058
+IUSCCC,PST001,300,IUSCCC,PST001,254,Initial Diagnosis,,,,,,,Malignant neoplasm of brainstem,3177,3171
+IUSCCC,PST001,303,IUSCCC,PST001,255,Initial Diagnosis,,,,,,,Malignant neoplasm of connective and soft tissue of upper limb and shoulder,4712,4966
+IUSCCC,PST001,306,IUSCCC,PST001,257,Initial Diagnosis,,,,,,,Malignant neoplasm of short bone of lower limb,5836,6628
+IUSCCC,PST001,310,IUSCCC,PST001,264,Initial Diagnosis,,,,,,,Malignant neoplasm of connective and soft tissue of hip and lower limb,6547,6587
+IUSCCC,PST001,313,IUSCCC,PST001,267,Initial Diagnosis,,,,,,,Neuroendocrine tumor,1997,5894
+IUSCCC,PST001,317,IUSCCC,PST001,268,Initial Diagnosis,,,,,,,Malignant tumor of pleura,5550,6545
+IUSCCC,PST001,324,IUSCCC,PST001,271,Initial Diagnosis,,,,,,,Acute lymphoid leukemia,8932,9391
+IUSCCC,PST001,326,IUSCCC,PST001,272,Initial Diagnosis,,,,,,,Malignant neoplasm of peripheral nerves and autonomic nervous system,4700,4698
+IUSCCC,PST001,328,IUSCCC,PST001,274,Initial Diagnosis,,,,,,,Precursor T-cell lymphoblastic lymphoma,3633,3629
+IUSCCC,PST001,331,IUSCCC,PST001,278,Initial Diagnosis,,,,,,,Medulloblastoma,5009,5591
+IUSCCC,PST001,337,IUSCCC,PST001,287,Initial Diagnosis,,,,,,,Malignant neoplasm of brain,787,786
+IUSCCC,PST001,339,IUSCCC,PST001,289,Initial Diagnosis,,,,,,,Primary malignant neoplasm of long bone of lower limb,3801,4843
+IUSCCC,PST001,340,IUSCCC,PST001,290,Initial Diagnosis,,,,,,,Malignant neoplasm of brain,1851,2430
+IUSCCC,PST001,342,IUSCCC,PST001,292,Initial Diagnosis,,,,,,,Malignant neoplasm of long bone of lower limb,5538,5534
+IUSCCC,PST001,344,IUSCCC,PST001,298,Initial Diagnosis,,,,,,,Malignant neoplasm of skeletal system,4702,4808
+IUSCCC,PST001,348,IUSCCC,PST001,303,Initial Diagnosis,,,,,,,Malignant neoplasm of brain,958,1838
+IUSCCC,PST001,357,IUSCCC,PST001,312,Initial Diagnosis,,,,,,,Malignant neoplasm of brain,702,687
+IUSCCC,PST001,367,IUSCCC,PST001,315,Initial Diagnosis,,,,,,,Malignant neoplasm of brain,2457,2936
+IUSCCC,PST001,375,IUSCCC,PST001,318,Initial Diagnosis,,,,,,,Malignant neoplasm of skeletal system,3334,3431
+IUSCCC,PST001,443,IUSCCC,PST001,319,Initial Diagnosis,,,,,,,Malignant neoplastic disease,5289,7619
+IUSCCC,PST001,382,IUSCCC,PST001,322,Initial Diagnosis,,,,,,,Malignant neoplasm of temporal lobe,3249,3245
+IUSCCC,PST001,388,IUSCCC,PST001,326,Initial Diagnosis,,,,,,,Malignant neoplasm of temporal lobe,4181,4165
+IUSCCC,PST001,390,IUSCCC,PST001,330,Initial Diagnosis,,,,,,,Acute lymphoid leukemia,6589,6617
+IUSCCC,PST001,397,IUSCCC,PST001,332,Initial Diagnosis,,,,,,,B-cell acute lymphoblastic leukemia,6947,8063
+IUSCCC,PST001,393,IUSCCC,PST001,333,Initial Diagnosis,,,,,,,Pleuropulmonary blastoma,1145,1144
+IUSCCC,PST001,402,IUSCCC,PST001,335,Initial Diagnosis,,,,,,,Primary malignant neoplasm of soft tissues of trunk,5938,7149
+IUSCCC,PST001,406,IUSCCC,PST001,337,Initial Diagnosis,,,,,,,B-cell acute lymphoblastic leukemia,4428,4902
+IUSCCC,PST001,410,IUSCCC,PST001,342,Initial Diagnosis,,,,,,,Non-rhabdomyosarcoma soft tissue sarcoma,42,2982
+IUSCCC,PST001,415,IUSCCC,PST001,347,Initial Diagnosis,,,,,,,Leukemia,3916,3921
+IUSCCC,PST001,417,IUSCCC,PST001,348,Initial Diagnosis,,,,,,,Malignant neoplasm of cerebral ventricles,74,237
+IUSCCC,PST001,418,IUSCCC,PST001,350,Initial Diagnosis,,,,,,,Medulloblastoma,1571,1573
+IUSCCC,PST001,421,IUSCCC,PST001,351,Initial Diagnosis,,,,,,,Malignant neoplasm of long bone of lower limb,5717,5807
+IUSCCC,PST001,426,IUSCCC,PST001,352,Initial Diagnosis,,,,,,,Primary malignant neoplasm of adrenal gland,669,1690
+IUSCCC,PST001,424,IUSCCC,PST001,353,Initial Diagnosis,,,,,,,Neuroblastoma,719,2258
+IUSCCC,PST001,428,IUSCCC,PST001,354,Initial Diagnosis,,,,,,,Acute lymphoid leukemia,5832,5859
+IUSCCC,PST001,432,IUSCCC,PST001,355,Initial Diagnosis,,,,,,,Neuroblastoma,45,290
+IUSCCC,PST001,436,IUSCCC,PST001,361,Initial Diagnosis,,,,,,,Malignant neoplasm of long bone of lower limb,7560,7565
+IUSCCC,PST001,444,IUSCCC,PST001,366,Initial Diagnosis,,,,,,,Malignant neoplasm of connective and soft tissue of hip and lower limb,3082,3199
+IUSCCC,PST001,439,IUSCCC,PST001,370,Initial Diagnosis,,,,,,,Primary malignant neoplasm of soft tissues,779,6003
+IUSCCC,PST001,445,IUSCCC,PST001,379,Initial Diagnosis,,,,,,,Malignant neoplasm of connective and soft tissue of hip and lower limb,2882,2973
+IUSCCC,PST001,447,IUSCCC,PST001,388,Initial Diagnosis,,,,,,,Malignant neoplasm of long bone of lower limb,3284,3277
+IUSCCC,PST001,462,IUSCCC,PST001,421,Initial Diagnosis,,,,,,,Malignant neoplasm of ribs and/or sternum and/or clavicle,5658,5650
+IUSCCC,PST001,470,IUSCCC,PST001,455,Initial Diagnosis,,,,,,,Malignant neoplasm of skeletal system,4757,4751
+IUSCCC,PST001,475,IUSCCC,PST001,456,Initial Diagnosis,,,,,,,Malignant neoplasm of long bone of lower limb,5064,5056
+IUSCCC,PST001,471,IUSCCC,PST001,457,Initial Diagnosis,,,,,,,Malignant neoplasm of skeletal system,6346,6346
+IUSCCC,PST001,477,IUSCCC,PST001,458,Initial Diagnosis,,,,,,,Malignant neoplasm of long bone of lower limb,3311,3310
+IUSCCC,PST001,473,IUSCCC,PST001,459,Initial Diagnosis,,,,,,,Malignant neoplasm of skeletal system,4148,4148
+IUSCCC,PST001,474,IUSCCC,PST001,460,Initial Diagnosis,,,,,,,Malignant neoplasm of long bone of lower limb,4554,4554
+IUSCCC,PST001,485,IUSCCC,PST001,461,Initial Diagnosis,,,,,,,Embryonal rhabdomyosarcoma,1754,1754
+IUSCCC,PST001,468,IUSCCC,PST001,462,Initial Diagnosis,,,,,,,Malignant neoplasm of skeletal system,5534,5678
+IUSCCC,PST001,469,IUSCCC,PST001,463,Initial Diagnosis,,,,,,,Malignant neoplasm of long bone of lower limb,5242,5242
+IUSCCC,PST001,508,IUSCCC,PST001,492,Initial Diagnosis,,,,,,,Malignant neoplasm of long bone of lower limb,5799,5898
